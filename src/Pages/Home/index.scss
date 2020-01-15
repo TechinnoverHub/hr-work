@@ -41,12 +41,10 @@
 // }
 
 .heading-text {
-  // position: absolute;
-  // left: 30%;
-  // top: 60%;
   text-align: center;
   color: white;
 }
+
 
 .social-icons {
   position: absolute;
@@ -104,6 +102,17 @@
   }
 }
 
+.paragraph {
+  font-size: 16px;
+  line-height: 25px;
+  color: #565656;
+}
+
+.paragraph p {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
 .col {
   display: flex;
   justify-content: space-between;
@@ -124,6 +133,14 @@
     width: 100%;
     object-fit: cover;
   }
+}
+
+.col1 {
+  flex-basis: 47.5%;
+}
+
+.col2 {
+  flex-basis: 47.5%;
 }
 
 .Col-small-box {
