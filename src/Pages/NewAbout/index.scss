@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.about-image {
+  background-image: url(../../Assets/images/about-header-image.png);
+  width: 100%;
+  height: 110vh;
+  background-size: cover;
+  position: relative;
+}
+
+.about-text {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  left: 45%;
+  top: 50%;
+}
+
+// SECTION WHO ARE STYLING
+.section-who-we-are {
+  margin: 50px 130px;
+}
+
+.section-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  color: #ef0633;
+  margin-bottom: 50px;
+}
+
+.section-who-we-are > .container-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-box1 {
+  flex-basis: 60.5%;
+}
+
+.container-box1-text p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 30px;
+  color: #565656;
+}
+
+.container-box1-text :nth-child(3) {
+  margin-bottom: 0px;
+}
+
+.container-box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.small-box {
+  color: #ef0633;
+  background-color: rgba(249, 155, 173, 0.5);
+  font-size: 16px;
+  line-height: 25px;
+  padding: 30px;
+  width: 358px;
+  height: 129px;
+}
+
+// WHY HR WORK SECTION
+.section2 {
+  background-color: #efefef;
+}
+.why-hr-work-section {
+  background-image: url(../../Assets/images/about-why-hr-work-section.png);
+  width: 100%;
+  height: 700px;
+  position: relative;
+  background-size: cover;
+  z-index: -1;
+}
+
+.why-hr-work-section span h3 {
+  font-size: 40px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  padding-top: 80px;
+}
+
+.why-hr-work-section span p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.why-hr-work-container {
+  margin: 0px 100px;
+}
+
+.why-hr-work-three-boxes,
+.why-hr-work-two-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.why-hr-work-container span {
+  text-align: center;
+  color: #ffffff;
+}
+
+.why-hr-work-box1,
+.why-hr-work-box3 {
+  background-color: #ef0633;
+  padding: 40px;
+  color: #ffffff;
+  border-radius: 6px;
+  width: 356px;
+  height: 384px;
+}
+
+.why-hr-work-box2 {
+  background-color: #212223;
+  padding: 40px;
+  color: #ffffff;
+  border-radius: 6px;
+  width: 356px;
+  height: 384px;
+}
+
+.why-hr-work-box1,
+.why-hr-work-box2,
+.why-hr-work-box3 {
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: -200px;
+  font-weight: 300;
+}
+
+.two-box1 {
+  background-color: #ef0633;
+  color: #ffffff;
+  width: 545px;
+  height: 288px;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.two-box2 {
+  background-color: #212223;
+  color: #ffffff;
+  width: 545px;
+  height: 288px;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+// VALUES SECTION
+.section-our-value {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.side-image {
+  background-image: url(../../Assets/images/why-hr-work-side-image.png);
+  width: 416px;
+  height: 513px;
+  flex-basis: 45.5%;
+  background-repeat: no-repeat;
+}
+
+.values {
+  flex-basis: 65.7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 513px;
+}
+
+.values-box {
+  height: 157px;
+  background-color: #ffffff;
+  padding: 50px;
+}
+
+// NEWSLETTER
+.newsletter {
+  background-color: #212223;
+  text-align: center;
+  height: 395px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.newsletter h3 {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 34px;
+  text-align: center;
+  color: #ef0633;
+}
+
+.newsletter p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
+  margin: 30px;
+}
+
+.newsletter-field input {
+  border: 1px solid #ffffff;
+  width: 551px;
+  height: 54px;
+  background-color: #212223;
+}
+
+::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #ffffff;
+  padding-left: 30px;
+}
+
+.newsletter-field button {
+  width: 148px;
+  height: 54px;
+  left: 935px;
+  top: 3368px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ef0633;
+}
