@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from 'Assets/svg/logo.svg';
 import './index.scss';
 import Header from 'Components/Header';
 import homepageImage from 'Assets/images/homepage-side-image.png';
