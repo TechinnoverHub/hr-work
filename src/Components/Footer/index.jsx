@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import footer from '../Assets/svg/footer.svg';
+import footer from 'Assets/svg/footer.svg';
+import Styles from './index.module.scss';
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <div className="footer">
-        <div className="footer-first-layer">
+export default () => {
+  return (
+    <div className={Styles.footer}>
+      <div className={Styles.footer__container}>
+        <div className={Styles.footer__first__layer}>
           <div>
             <Link>
               <img src={footer} alt="Hr-work" />
@@ -14,23 +15,23 @@ export default class Footer extends Component {
           </div>
           <div>
             <ul>
-              <Link className="link">
+              <Link className={Styles.link}>
                 <li>About</li>
               </Link>
               |
-              <Link className="link">
+              <Link className={Styles.link}>
                 <li>Our Packages</li>
               </Link>
               |
-              <Link className="link">
+              <Link className={Styles.link}>
                 <li>Blog</li>
               </Link>
               |
-              <Link className="link">
+              <Link className={Styles.link}>
                 <li>Careers</li>
               </Link>
               |
-              <Link className="link">
+              <Link className={Styles.link}>
                 <li>Contact</li>
               </Link>
             </ul>
@@ -46,14 +47,14 @@ export default class Footer extends Component {
           </div>
         </div>
 
-        <div className="footer-second-layer">
+        <div className={Styles.footer__second__layer}>
           <div>
             <p>© 2019 HR Work All right reserved</p>
           </div>
           <div>
             <p>Terms & Conditions | Privacy Policy</p>
           </div>
-          <div className="font-awesome-icon">
+          <div className={Styles.font__awesome__icon}>
             <i className="fa fa-facebook"></i>
             <i className="fa fa-instagram"></i>
             <i className="fa fa-twitter"></i>
@@ -61,6 +62,6 @@ export default class Footer extends Component {
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
