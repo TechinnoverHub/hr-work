@@ -3,8 +3,45 @@
   position: absolute;
   z-index: 1;
   width: 100%;
-  height: 157px;
   padding-top: 2.625rem;
+  padding-bottom: 2.325rem;
+}
+
+.sticky {
+  top: 0;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  position: fixed;
+  // width: '100%';
+  background: white;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  animation: slideleft 0.5s ease-in forwards;
+  nav {
+    width: '100%';
+  }
+}
+
+.stickOut {
+  animation: slideOut 0.5s ease-in forwards;
+}
+
+@keyframes slideleft {
+  0% {
+    background: transparent;
+  }
+  100% {
+    background: white;
+  }
+}
+@keyframes slideOut {
+  0% {
+    background: white;
+  }
+  100% {
+    background: transparent;
+  }
 }
 
 nav {
@@ -30,6 +67,8 @@ nav {
 .link {
   text-decoration: none;
   color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s ease-out;
 }
 
 .container {
@@ -42,6 +81,15 @@ nav {
   li {
     margin: 0 1.09375em;
     list-style: none;
-    color: #ffffff;
+  }
+
+  &.link_sticky {
+    li {
+      .link {
+        color: #ef0633;
+        font-weight: bold;
+        transition: color 0.1s ease-out;
+      }
+    }
   }
 }
