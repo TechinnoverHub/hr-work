@@ -16,6 +16,7 @@ function Home() {
           <i className="fa fa-twitter"></i>
           <i className="fa fa-linkedin"></i>
         </div>
+
         <p className="heading-text">
           <span className="heading-primary-small">
             We know that you are busy with deadlines and customer demands and
