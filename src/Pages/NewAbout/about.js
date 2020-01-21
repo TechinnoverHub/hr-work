@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from 'components/header';
-import Footer from 'components/footer';
+import Header from 'Components/Header';
+import Footer from 'Components/Footer';
 import './index.scss';
-import NewsLetter from 'components/newsletter';
+import NewsLetter from 'Components/newsletter';
 
 function About() {
   return (
