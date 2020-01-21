@@ -35,23 +35,33 @@ export default () => {
           }`}
         >
           <li>
-            <Link className={Styles.link}>Who we are</Link>
+            <Link className={Styles.link} to="/about">
+              Who we are
+            </Link>
           </li>
 
           <li>
-            <Link className={Styles.link}>Packages</Link>
+            <Link className={Styles.link} to="/">
+              Packages
+            </Link>
           </li>
 
           <li>
-            <Link className={Styles.link}>Blog</Link>
+            <Link className={Styles.link} to="/">
+              Blog
+            </Link>
           </li>
 
           <li>
-            <Link className={Styles.link}>Careers</Link>
+            <Link className={Styles.link} to="/">
+              Careers
+            </Link>
           </li>
 
           <li>
-            <Link className={Styles.link}>Contact</Link>
+            <Link className={Styles.link} to="/">
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
