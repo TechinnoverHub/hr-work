@@ -9,7 +9,9 @@ function About() {
     <div>
       <Header />
       <div className="about-image">
-        <h3 className="about-text">About Us</h3>
+        <div className="about-image-wrapper">
+          <h3 className="about-text">About Us</h3>
+        </div>
       </div>
       <div className="section-who-we-are">
         <div className="section-text">Who we are</div>
@@ -27,7 +29,7 @@ function About() {
                 expands, your employee challenges begin to multiply and then
                 problems with hiring, setting and measuring performance,
                 policies for direction among others become more evitable.
-                <b> WE ARE HR EXPERTS WE CAN HELP</b>
+                <strong> WE ARE HR EXPERTS WE CAN HELP</strong>
               </p>
               <p>
                 Our focus is on supporting small and medium sized companies,
