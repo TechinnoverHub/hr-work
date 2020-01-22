@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from 'Pages/Home';
-import About from 'Pages/NewAbout/about';
+import About from 'Pages/NewAbout';
 
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home}>
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/about" component={About}>
+        <Route path="/about">
           <About />
         </Route>
       </Switch>

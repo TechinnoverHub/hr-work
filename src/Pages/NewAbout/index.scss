@@ -36,31 +36,34 @@
 
 // SECTION WHO ARE STYLING
 .section-who-we-are {
-  margin: 50px 100px;
+  max-width: 1100px;
+  margin: 4.375rem auto 7.1875rem;
 }
 
 .section-text {
   text-align: center;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 2.5rem;
   color: #ef0633;
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .section-who-we-are > .container-box {
   display: flex;
   justify-content: space-between;
+  padding: 0 3%;
+  width: 100%;
 }
 
 .container-box1 {
-  flex-basis: 55.5%;
+  flex-basis: 60%;
 }
 
 .container-box1-text p {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5625;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   color: #565656;
 }
 
@@ -102,7 +105,8 @@
   text-align: center;
   color: #ffffff;
   font-weight: 600;
-  padding-top: 80px;
+  padding-top: 90px;
+  padding-bottom: 20px;
 }
 
 .why-hr-work-section span p {
@@ -114,7 +118,8 @@
 }
 
 .why-hr-work-container {
-  margin: 0px 100px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .why-hr-work-three-boxes,
@@ -169,19 +174,28 @@
 .why-hr-work-box3 {
   font-size: 16px;
   line-height: 25px;
-  margin-top: -200px;
+  margin-top: -171px;
   font-weight: 300;
   flex-basis: 31.3%;
+}
+
+.two-box-container {
+  padding: 2.5rem 12.5%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 .two-box1 {
   background-color: #ef0633;
   color: #ffffff;
-  width: 545px;
   height: 288px;
-  padding: 30px;
   border-radius: 6px;
   flex-basis: 48.5%;
+  max-width: 48.5%;
   font-size: 16px;
   line-height: 25px;
   font-weight: 300;
@@ -190,11 +204,10 @@
 .two-box2 {
   background-color: #212223;
   color: #ffffff;
-  width: 545px;
   height: 288px;
-  padding: 30px;
   border-radius: 6px;
   flex-basis: 48.5%;
+  max-width: 48.5%;
   font-size: 16px;
   line-height: 25px;
   font-weight: 300;
@@ -212,19 +225,24 @@
   background-image: url(../../Assets/images/why-hr-work-side-image.png);
   width: 416px;
   height: 513px;
-  flex-basis: 45.5%;
+  flex-basis: 40%;
   background-repeat: no-repeat;
+  display: flex;
+}
+
+.side-image-container {
+  padding: 0 10% 4.0625rem;
+  margin-top: auto;
 }
 
 .side-image h2 {
   font-size: 40px;
   line-height: 34px;
   color: #ffffff;
-  margin: 23rem 50px;
 }
 
 .values {
-  flex-basis: 59.7%;
+  flex-basis: 59%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -234,63 +252,18 @@
 .values-box {
   height: 157px;
   background-color: #ffffff;
-  padding: 25px 50px;
+}
+
+.values-box-container {
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
 }
 
 .values-box p {
-  font-size: 15px;
+  font-size: 1rem;
   line-height: 25px;
   color: #565656;
-}
-
-// NEWSLETTER
-.newsletter {
-  background-color: #212223;
-  text-align: center;
-  height: 395px;
-  padding-top: 100px;
-  padding-bottom: 80px;
-}
-
-.newsletter h3 {
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 34px;
-  text-align: center;
-  color: #ef0633;
-}
-
-.newsletter p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
-  text-align: center;
-  color: #ffffff;
-  margin: 30px;
-}
-
-.newsletter-field input {
-  border: 1px solid #ffffff;
-  width: 551px;
-  height: 54px;
-  background-color: #212223;
-}
-
-::-webkit-input-placeholder {
-  font-size: 16px;
-  color: #ffffff;
-  padding-left: 30px;
-}
-
-.newsletter-field button {
-  width: 148px;
-  height: 54px;
-  left: 935px;
-  top: 3368px;
-  background: #ffffff;
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  font-weight: bold;
-  font-size: 16px;
-  color: #ef0633;
 }

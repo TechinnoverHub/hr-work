@@ -2,7 +2,7 @@ import React from 'react';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import './index.scss';
-import NewsLetter from 'Components/newsletter';
+import NewsLetter from 'Components/Newsletter';
 
 function About() {
   return (
@@ -17,7 +17,7 @@ function About() {
         <div className="section-text">Who we are</div>
         <div className="container-box">
           <div className="container-box1">
-            <p className="container-box1-text">
+            <div className="container-box1-text">
               <p>
                 HR Work is an advisory firm with strong competence and
                 experience in providing Human Resources Retainership Services to
@@ -39,7 +39,7 @@ function About() {
                 will help resolve employee related issues, give you the peace of
                 mind you deserve so you can focus on growing your business.
               </p>
-            </p>
+            </div>
           </div>
           <div className="container-box2">
             <div className="small-box">
@@ -57,7 +57,6 @@ function About() {
               </p>
             </div>
           </div>
-          <div></div>
         </div>
       </div>
 
@@ -105,50 +104,62 @@ function About() {
             </div>
             <div className="why-hr-work-two-boxes">
               <div className="two-box1">
-                <h3>Concerned about your business</h3>
-                <p>
-                  <b>Results Minded!</b>
-                  <br /> We want you to succeed, we carry you along through out
-                  the entire process in a timely and professional manner
-                </p>
+                <div className="two-box-container">
+                  <h3>Concerned about your business</h3>
+                  <p>
+                    <strong>Results Minded!</strong>
+                    <br /> We want you to succeed, we carry you along through
+                    out the entire process in a timely and professional manner
+                  </p>
+                </div>
               </div>
               <div className="two-box2">
-                <h3>Affordable </h3>
-                <p>
-                  <b>Highly Affordable!</b>
-                  <br /> You can get AC for a fraction of the cost of an
-                  in-house HR Unit, but you would still receive the quality
-                  expertise you need at the time you need it
-                </p>
+                <div className="two-box-container">
+                  <h3>Affordable </h3>
+                  <p>
+                    <strong>Highly Affordable!</strong>
+                    <br /> You can get AC for a fraction of the cost of an
+                    in-house HR Unit, but you would still receive the quality
+                    expertise you need at the time you need it
+                  </p>
+                </div>
               </div>
             </div>
           </div>
           <div className="section-our-value">
             <div className="side-image">
-              <h2>Our Value Proposition</h2>
+              <div className="side-image-container">
+                <h2>Our Value Proposition</h2>
+              </div>
             </div>
             <div className="values">
               <div className="values-box">
-                <p>
-                  We take pride in our team of highly experienced HR
-                  professionals who have a deep understanding of being a
-                  business partner.
-                </p>
+                <div className="values-box-container">
+                  <p>
+                    We take pride in our team of highly experienced HR
+                    professionals who have a deep understanding of being a
+                    business partner.
+                  </p>
+                </div>
               </div>
               <div className="values-box">
-                <p>
-                  We focus on getting results, we understand your need and
-                  advise you on how to solve the problem with proven and clear
-                  methods borne out of experience.
-                </p>
+                <div className="values-box-container">
+                  <p>
+                    We focus on getting results, we understand your need and
+                    advise you on how to solve the problem with proven and clear
+                    methods borne out of experience.
+                  </p>
+                </div>
               </div>
               <div className="values-box">
-                <p>
-                  All our customers are important and unique and so we don’t use
-                  a ‘one size fits all' template, we ensure you get the best
-                  solution to your need and so we customize our solutions to
-                  suit your business and make it work for you!
-                </p>
+                <div className="values-box-container">
+                  <p>
+                    All our customers are important and unique and so we don’t
+                    use a ‘one size fits all' template, we ensure you get the
+                    best solution to your need and so we customize our solutions
+                    to suit your business and make it work for you!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
