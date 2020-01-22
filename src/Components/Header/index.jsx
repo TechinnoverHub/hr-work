@@ -59,7 +59,7 @@ export default () => {
           </li>
 
           <li>
-            <Link className={Styles.link} to="/">
+            <Link className={Styles.link} to="/contact">
               Contact
             </Link>
           </li>
