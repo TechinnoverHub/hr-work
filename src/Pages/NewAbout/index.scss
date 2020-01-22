@@ -4,12 +4,27 @@
   padding: 0;
 }
 
+.about-image-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .about-image {
-  background-image: url(../../Assets/images/about-header-image.png);
-  width: 100%;
-  height: 110vh;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 15.36%,
+      rgba(0, 0, 0, 0.688) 90.13%
+    ),
+    url(../../Assets/images/about-header-image.png);
+  clip-path: ellipse(70% 80% at 50% 20%);
+  max-width: 100vw;
+  height: 70vh;
   background-size: cover;
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 24.5vh;
 }
 
 .about-text {
@@ -17,39 +32,38 @@
   font-size: 50px;
   text-align: center;
   color: #ffffff;
-  position: absolute;
-  left: 45%;
-  top: 50%;
 }
 
 // SECTION WHO ARE STYLING
 .section-who-we-are {
-  margin: 50px 130px;
+  max-width: 1100px;
+  margin: 4.375rem auto 7.1875rem;
 }
 
 .section-text {
   text-align: center;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 2.5rem;
   color: #ef0633;
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .section-who-we-are > .container-box {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  padding: 0 3%;
+  width: 100%;
 }
 
 .container-box1 {
-  flex-basis: 60.5%;
+  flex-basis: 60%;
 }
 
 .container-box1-text p {
   font-weight: normal;
-  font-size: 16px;
-  line-height: 25px;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.5625;
+  margin-bottom: 1.875rem;
   color: #565656;
 }
 
@@ -61,6 +75,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-basis: 33.5%;
 }
 
 .small-box {
@@ -69,13 +84,12 @@
   font-size: 16px;
   line-height: 25px;
   padding: 30px;
-  width: 358px;
-  height: 129px;
 }
 
 // WHY HR WORK SECTION
 .section2 {
   background-color: #efefef;
+  height: 100%;
 }
 .why-hr-work-section {
   background-image: url(../../Assets/images/about-why-hr-work-section.png);
@@ -91,7 +105,8 @@
   text-align: center;
   color: #ffffff;
   font-weight: 600;
-  padding-top: 80px;
+  padding-top: 90px;
+  padding-bottom: 20px;
 }
 
 .why-hr-work-section span p {
@@ -103,7 +118,8 @@
 }
 
 .why-hr-work-container {
-  margin: 0px 100px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .why-hr-work-three-boxes,
@@ -118,6 +134,22 @@
   color: #ffffff;
 }
 
+.why-hr-work-three-boxes h3,
+.two-box1 h3,
+.two-box2 h3 {
+  font-size: 30px;
+  line-height: calc(34 / 30);
+  height: 68px;
+  margin-bottom: 29px;
+}
+
+.why-hr-work-three-boxes p,
+.two-box1 p,
+.two-box2 p {
+  font-size: 1rem;
+  line-height: calc(25 / 16);
+}
+
 .why-hr-work-box1,
 .why-hr-work-box3 {
   background-color: #ef0633;
@@ -125,7 +157,7 @@
   color: #ffffff;
   border-radius: 6px;
   width: 356px;
-  height: 384px;
+  // height: 384px;
 }
 
 .why-hr-work-box2 {
@@ -134,7 +166,7 @@
   color: #ffffff;
   border-radius: 6px;
   width: 356px;
-  height: 384px;
+  // height: 384px;
 }
 
 .why-hr-work-box1,
@@ -142,45 +174,75 @@
 .why-hr-work-box3 {
   font-size: 16px;
   line-height: 25px;
-  margin-top: -200px;
+  margin-top: -171px;
   font-weight: 300;
+  flex-basis: 31.3%;
+}
+
+.two-box-container {
+  padding: 2.5rem 12.5%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 .two-box1 {
   background-color: #ef0633;
   color: #ffffff;
-  width: 545px;
   height: 288px;
-  padding: 30px;
   border-radius: 6px;
+  flex-basis: 48.5%;
+  max-width: 48.5%;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 300;
 }
 
 .two-box2 {
   background-color: #212223;
   color: #ffffff;
-  width: 545px;
   height: 288px;
-  padding: 30px;
   border-radius: 6px;
+  flex-basis: 48.5%;
+  max-width: 48.5%;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 300;
 }
 
 // VALUES SECTION
 .section-our-value {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-top: 80px;
+  padding-bottom: 80px;
 }
 
 .side-image {
   background-image: url(../../Assets/images/why-hr-work-side-image.png);
   width: 416px;
   height: 513px;
-  flex-basis: 45.5%;
+  flex-basis: 40%;
   background-repeat: no-repeat;
+  display: flex;
+}
+
+.side-image-container {
+  padding: 0 10% 4.0625rem;
+  margin-top: auto;
+}
+
+.side-image h2 {
+  font-size: 40px;
+  line-height: 34px;
+  color: #ffffff;
 }
 
 .values {
-  flex-basis: 65.7%;
+  flex-basis: 59%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -190,57 +252,18 @@
 .values-box {
   height: 157px;
   background-color: #ffffff;
-  padding: 50px;
 }
 
-// NEWSLETTER
-.newsletter {
-  background-color: #212223;
-  text-align: center;
-  height: 395px;
-  padding-top: 100px;
-  padding-bottom: 80px;
+.values-box-container {
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
 }
 
-.newsletter h3 {
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 34px;
-  text-align: center;
-  color: #ef0633;
-}
-
-.newsletter p {
-  font-weight: 400;
-  font-size: 16px;
+.values-box p {
+  font-size: 1rem;
   line-height: 25px;
-  text-align: center;
-  color: #ffffff;
-  margin: 30px;
-}
-
-.newsletter-field input {
-  border: 1px solid #ffffff;
-  width: 551px;
-  height: 54px;
-  background-color: #212223;
-}
-
-::-webkit-input-placeholder {
-  font-size: 16px;
-  color: #ffffff;
-  padding-left: 30px;
-}
-
-.newsletter-field button {
-  width: 148px;
-  height: 54px;
-  left: 935px;
-  top: 3368px;
-  background: #ffffff;
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  font-weight: bold;
-  font-size: 16px;
-  color: #ef0633;
+  color: #565656;
 }

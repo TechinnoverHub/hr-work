@@ -9,29 +9,29 @@ export default () => {
       <div className={Styles.footer__container}>
         <div className={Styles.footer__first__layer}>
           <div>
-            <Link>
+            <Link to="/">
               <img src={footer} alt="Hr-work" />
             </Link>
           </div>
           <div>
             <ul>
-              <Link className={Styles.link}>
+              <Link className={Styles.link} to="/about">
                 <li>About</li>
               </Link>
               |
-              <Link className={Styles.link}>
+              <Link className={Styles.link} to="/">
                 <li>Our Packages</li>
               </Link>
               |
-              <Link className={Styles.link}>
+              <Link className={Styles.link} to="/">
                 <li>Blog</li>
               </Link>
               |
-              <Link className={Styles.link}>
+              <Link className={Styles.link} to="/">
                 <li>Careers</li>
               </Link>
               |
-              <Link className={Styles.link}>
+              <Link className={Styles.link} to="/">
                 <li>Contact</li>
               </Link>
             </ul>
