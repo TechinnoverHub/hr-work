@@ -27,7 +27,7 @@ function About() {
                 expands, your employee challenges begin to multiply and then
                 problems with hiring, setting and measuring performance,
                 policies for direction among others become more evitable.
-                <b>WE ARE HR EXPERTS WE CAN HELP</b>
+                <b> WE ARE HR EXPERTS WE CAN HELP</b>
               </p>
               <p>
                 Our focus is on supporting small and medium sized companies,
@@ -122,7 +122,9 @@ function About() {
             </div>
           </div>
           <div className="section-our-value">
-            <div className="side-image"></div>
+            <div className="side-image">
+              <h2>Our Value Proposition</h2>
+            </div>
             <div className="values">
               <div className="values-box">
                 <p>
@@ -141,7 +143,7 @@ function About() {
               <div className="values-box">
                 <p>
                   All our customers are important and unique and so we don’t use
-                  a ‘one size fits all’ template, we ensure you get the best
+                  a ‘one size fits all' template, we ensure you get the best
                   solution to your need and so we customize our solutions to
                   suit your business and make it work for you!
                 </p>
