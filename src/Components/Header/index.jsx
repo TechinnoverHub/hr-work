@@ -47,7 +47,7 @@ export default () => {
           </li>
 
           <li>
-            <Link className={Styles.link} to="/">
+            <Link className={Styles.link} to="/blog">
               Blog
             </Link>
           </li>
