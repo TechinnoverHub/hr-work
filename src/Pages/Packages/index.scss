@@ -61,14 +61,26 @@
 }
 
 // SERVICES SECTION
+.services-section-wrapper {
+  background-color: #f8f8f8;
+  height: 400px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  //   flex-direction: column;
+  margin-top: 90px;
+}
+
 .services-section {
   display: flex;
   justify-content: center;
-  margin: 110px 0px 90px 0px;
+  //   margin: 110px 0px 90px 0px;
+  //   margin-top: 20px;
 }
 
 .services-text-wrapper {
   text-align: center;
+  //   margin-top: 40px;
 
   h3 {
     font-weight: bold;

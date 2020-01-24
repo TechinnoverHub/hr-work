@@ -174,7 +174,9 @@ function Packages() {
             </button>
           </div>
         </div>
+      </div>
 
+      <div className="services-section-wrapper">
         <div className="services-section">
           <div className="services-text-wrapper">
             <h3>Our Service Offerings</h3>
@@ -192,6 +194,7 @@ function Packages() {
           </div>
         </div>
       </div>
+
       <Newsletter />
       <Footer />
     </div>
