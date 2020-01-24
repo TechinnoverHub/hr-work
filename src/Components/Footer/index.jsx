@@ -19,11 +19,11 @@ export default () => {
                 <li>About</li>
               </Link>
               |
-              <Link className={Styles.link} to="/">
+              <Link className={Styles.link} to="/packages">
                 <li>Our Packages</li>
               </Link>
               |
-              <Link className={Styles.link} to="/">
+              <Link className={Styles.link} to="/blog">
                 <li>Blog</li>
               </Link>
               |
