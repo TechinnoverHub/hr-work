@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from 'Pages/Home';
 import About from 'Pages/NewAbout';
+import Career from 'Pages/Career';
 
 export default function App() {
   return (
@@ -13,6 +14,9 @@ export default function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/career">
+          <Career />
         </Route>
       </Switch>
     </Router>
