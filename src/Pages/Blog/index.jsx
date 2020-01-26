@@ -2,16 +2,14 @@ import React from 'react';
 import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
+import Hero from 'Components/Hero';
+import heroImage from 'Assets/images/blog-header-image.png';
 
 function Blog() {
   return (
-    <div>
+    <div className="blog-body">
       <Header />
-      <div className="blog-header-image">
-        <div className="blog-header-text">
-          <h3>Events, pictures, videos and more</h3>
-        </div>
-      </div>
+      <Hero imgUrl={heroImage} heroTitle="Events, pictures, videos and more" />
       <div className="News-section">
         <span className="News-text">
           <h3>News</h3>
@@ -97,9 +95,9 @@ function Blog() {
       </div>
 
       <div className="gallery-section">
-        <span className="gallery-text">
+        <div className="gallery-text">
           <h3>Gallery</h3>
-        </span>
+        </div>
         <div className="gallery-box">
           <div className="single-gallery-container">
             <div className="single-gallery-image"></div>
