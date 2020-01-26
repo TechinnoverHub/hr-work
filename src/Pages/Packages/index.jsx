@@ -4,16 +4,14 @@ import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import PackagesLink from 'Components/PackagesLink';
 import Newsletter from 'Components/Newsletter';
+import Hero from 'Components/Hero';
+import packageImg from 'Assets/images/packages-header-image.png';
 
 function Packages() {
   return (
     <div>
       <Header />
-      <div className="packages-header-image">
-        <div className="packages-header-text-wrapper">
-          <h3>Our Packages</h3>
-        </div>
-      </div>
+      <Hero imgUrl={packageImg} heroTitle="Our Packages" />
       <div className="packages-section">
         <PackagesLink />
         <div className="packages-grid">
