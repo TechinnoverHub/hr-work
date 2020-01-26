@@ -53,13 +53,13 @@ export default () => {
           </li>
 
           <li>
-            <Link className={Styles.link} to="/career">
+            <Link className={Styles.link} to="/careers">
               Careers
             </Link>
           </li>
 
           <li>
-            <Link className={Styles.link} to="/">
+            <Link className={Styles.link} to="/contact">
               Contact
             </Link>
           </li>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from 'Pages/Home';
 import About from 'Pages/NewAbout';
 import Career from 'Pages/Career';
+import Contact from 'Pages/Contact';
 
 export default function App() {
   return (
@@ -15,8 +16,11 @@ export default function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/career">
+        <Route path="/careers">
           <Career />
+        </Route>
+        <Route path="/contact">
+          <Contact />
         </Route>
       </Switch>
     </Router>
