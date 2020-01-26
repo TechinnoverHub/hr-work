@@ -8,6 +8,7 @@ import Contact from 'Pages/Contact';
 import Blog from 'Pages/Blog';
 import Packages from 'Pages/Packages';
 import ScrollToTop from 'Components/ScrollToTop';
+import SinglePackage from 'Pages/SinglePackage';
 
 export default function App() {
   return (
@@ -30,6 +31,9 @@ export default function App() {
         </Route>
         <Route path="/packages">
           <Packages />
+        </Route>
+        <Route path="/singlepackage">
+          <SinglePackage />
         </Route>
       </Switch>
       <ScrollToTop />

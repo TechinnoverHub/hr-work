@@ -16,7 +16,7 @@ export default () => {
         </NavLink>
         <NavLink
           exact
-          to="/"
+          to="/singlepackage"
           className="list-item"
           activeClassName="list-item-active"
         >
