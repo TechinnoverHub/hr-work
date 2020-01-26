@@ -5,6 +5,7 @@ import Home from 'Pages/Home';
 import About from 'Pages/NewAbout';
 import Career from 'Pages/Career';
 import Contact from 'Pages/Contact';
+import Blog from 'Pages/Blog';
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="/blog">
+          <Blog />
         </Route>
       </Switch>
     </Router>
