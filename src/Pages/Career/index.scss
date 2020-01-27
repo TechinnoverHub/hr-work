@@ -3,6 +3,12 @@
   justify-content: space-between;
   max-width: 1100px;
   margin: 60px auto 155px;
+
+  @media screen and (max-width: 800px) {
+    max-width: 500px;
+    margin: 30px 40px;
+    display: block;
+  }
 }
 
 .working-at-hr-work-box1 {
@@ -11,6 +17,12 @@
   height: 433px;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+    text-align: center;
+    margin-bottom: 170px;
+  }
 }
 
 .working-at-hr-work-box1 p {
@@ -43,10 +55,37 @@
   box-shadow: 0px 6px 15px rgba(233, 40, 45, 0.25);
   margin-top: auto;
   width: 186px;
+  border: none;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .read-more i {
   margin-left: 15px;
+}
+
+.read-more2 {
+  padding: 10px 25px;
+  background-color: #ef0633;
+  border-radius: 9px;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0px 6px 15px rgba(233, 40, 45, 0.25);
+  margin-top: auto;
+  width: 186px;
+  border: none;
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+    margin: 50px auto;
+    margin-bottom: 120px;
+  }
 }
 
 .working-at-hr-work-box2 {
@@ -54,13 +93,27 @@
   width: 642px;
   height: 433px;
   flex-basis: 47.5%;
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+    height: 257px;
+    background-repeat: no-repeat;
+    background-image: url(../../Assets/images/career-side-image2.png);
+  }
 }
 
+// JOIN OUR TEAM
 .join-our-team {
   display: flex;
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto 140px;
+
+  @media screen and (max-width: 600px) {
+    max-width: 500px;
+    margin: 30px 50px;
+    display: block;
+  }
 }
 
 .join-our-team-box1 {
@@ -68,6 +121,12 @@
   width: 642px;
   height: 433px;
   flex-basis: 47.5%;
+
+  @media screen and (max-width: 600px) {
+    width: 320px;
+    height: 257px;
+    background-image: url(../../Assets/images/join-our-team2.png);
+  }
 }
 
 .join-our-team-box2 {
@@ -77,6 +136,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+    text-align: center;
+    margin-bottom: 120px;
+  }
 }
 
 .join-our-team-box2 h3 {
@@ -101,6 +166,13 @@
 .disclaimer {
   max-width: 1100px;
   margin: 0 auto;
+
+  @media screen and (max-width: 600px) {
+    max-width: 500px;
+    margin: 30px 50px;
+    display: block;
+    text-align: center;
+  }
 }
 
 .disclaimer--topSection {
@@ -122,11 +194,25 @@
     margin: 40px 0;
     width: 40%;
   }
+
+  @media screen and (max-width: 600px) {
+    text-align: center;
+
+    hr {
+      border: 0.5px solid #f99bad;
+      margin: 40px 0;
+      width: 100%;
+    }
+  }
 }
 
 .disclaimer--boxContainer {
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .disclaimer-box1 {
@@ -146,6 +232,11 @@
 .disclaimer-box2 {
   width: 642px;
   flex-basis: 44.5%;
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+    margin-top: 20px;
+  }
 }
 
 .disclaimer-box2 p {
@@ -158,6 +249,12 @@
 .form-area {
   max-width: 1100px;
   margin: 60px auto 120px;
+
+  @media screen and (max-width: 600px) {
+    max-width: 500px;
+    margin: 30px 50px;
+    display: block;
+  }
 }
 
 .form-area-container {
@@ -169,6 +266,14 @@
     flex-direction: column;
     justify-content: space-between;
     flex-basis: 47%;
+
+    @media screen and (max-width: 600px) {
+      width: 80vw;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    display: inline;
   }
 }
 
@@ -185,6 +290,10 @@
     color: #565656;
     font-size: 1rem;
     line-height: calc(25 / 16);
+  }
+
+  @media screen and (max-width: 600px) {
+    display: inline;
   }
 
   input {
@@ -240,6 +349,15 @@
   flex-basis: 47%;
   background-image: url(../../Assets/images/form-side-image.png);
   height: 689px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    background-size: contain;
+    margin-top: 60px;
+    background-repeat: no-repeat;
+    width: 80vw;
+    height: 400px;
+  }
 }
 
 .join-us {
@@ -252,6 +370,12 @@
   font-size: 17px;
   line-height: 34px;
   min-width: 186px;
+  border: none;
+
+  @media screen and (max-width: 600px) {
+    margin: auto 0;
+    width: 80vw;
+  }
 }
 
 .join-us i {
