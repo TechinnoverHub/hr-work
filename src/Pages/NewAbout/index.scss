@@ -38,6 +38,10 @@
 .section-who-we-are {
   max-width: 1100px;
   margin: 4.375rem auto 7.1875rem;
+
+  @media screen and (max-width: 600px) {
+    max-width: 800px;
+  }
 }
 
 .section-text {
@@ -53,6 +57,12 @@
   justify-content: space-between;
   padding: 0 3%;
   width: 100%;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .container-box1 {
@@ -76,6 +86,16 @@
   flex-direction: column;
   justify-content: space-between;
   flex-basis: 33.5%;
+
+  @media screen and (max-width: 600px) {
+    margin: 30px auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    :nth-child(2) {
+      margin-top: 30px;
+    }
+  }
 }
 
 .small-box {
@@ -90,6 +110,10 @@
 .section2 {
   background-color: #efefef;
   height: 100%;
+
+  @media screen and (max-width: 600px) {
+    max-width: 800px;
+  }
 }
 .why-hr-work-section {
   background-image: url(../../Assets/images/about-why-hr-work-section.png);
@@ -115,11 +139,21 @@
   line-height: 25px;
   text-align: center;
   color: #ffffff;
+
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 }
 
 .why-hr-work-container {
   max-width: 1100px;
   margin: 0 auto;
+
+  @media screen and (max-width: 600px) {
+    max-width: 800px;
+    width: 80vw;
+    margin: 0 auto;
+  }
 }
 
 .why-hr-work-three-boxes,
@@ -127,6 +161,10 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .why-hr-work-container span {
@@ -157,7 +195,6 @@
   color: #ffffff;
   border-radius: 6px;
   width: 356px;
-  // height: 384px;
 }
 
 .why-hr-work-box2 {
@@ -170,13 +207,29 @@
 }
 
 .why-hr-work-box1,
-.why-hr-work-box2,
+.why-hr-work-box2 {
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: -171px;
+  font-weight: 300;
+  flex-basis: 31.3%;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 200px;
+  }
+}
+
 .why-hr-work-box3 {
   font-size: 16px;
   line-height: 25px;
   margin-top: -171px;
   font-weight: 300;
   flex-basis: 31.3%;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .two-box-container {
@@ -185,24 +238,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
 }
 
 .two-box1 {
   background-color: #ef0633;
-  color: #ffffff;
-  height: 288px;
-  border-radius: 6px;
-  flex-basis: 48.5%;
-  max-width: 48.5%;
-  font-size: 16px;
-  line-height: 25px;
-  font-weight: 300;
 }
 
 .two-box2 {
   background-color: #212223;
+}
+
+.two-box1,
+.two-box2 {
   color: #ffffff;
   height: 288px;
   border-radius: 6px;
@@ -211,6 +259,12 @@
   font-size: 16px;
   line-height: 25px;
   font-weight: 300;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+  }
 }
 
 // VALUES SECTION
@@ -219,6 +273,13 @@
   justify-content: space-between;
   margin-top: 80px;
   padding-bottom: 80px;
+
+  @media screen and (max-width: 600px) {
+    max-width: 800px;
+    width: 80vw;
+    margin: 0 auto;
+    display: inline;
+  }
 }
 
 .side-image {
@@ -228,6 +289,11 @@
   flex-basis: 40%;
   background-repeat: no-repeat;
   display: flex;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .side-image-container {
@@ -247,11 +313,22 @@
   flex-direction: column;
   justify-content: space-between;
   height: 513px;
+
+  @media screen and (max-width: 600px) {
+    // width: 100%;
+    // margin-bottom: 80px;
+    height: 790px;
+  }
 }
 
 .values-box {
   height: 157px;
   background-color: #ffffff;
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 20px;
+    height: 245px;
+  }
 }
 
 .values-box-container {
@@ -260,6 +337,11 @@
   justify-content: center;
   height: 100%;
   flex-direction: column;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .values-box p {
