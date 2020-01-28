@@ -30,7 +30,7 @@ function Home() {
           </span>
         </p>
       </div>
-      <div className="section-who-we-are">
+      <div className="section-who-we-are-homepage">
         <h2>Who we are</h2>
         <hr />
         <div className="col">

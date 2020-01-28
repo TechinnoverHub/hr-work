@@ -9,6 +9,18 @@
     font-weight: bold;
     font-size: 2.5rem;
     padding-top: 2.5rem;
+
+    @media screen and (max-width: 600px) {
+      margin: 0px auto;
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 80%;
   }
 }
 
@@ -16,6 +28,10 @@
   border: 0.5px solid #f99bad;
   margin: 2.5rem 0px;
   width: 40%;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .latest_blog__image {
@@ -24,12 +40,21 @@
   height: 100%;
   background-image: url('../../Assets/images/latest-blog-image.png');
   background-size: cover;
+
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
+    height: 200px;
+  }
 }
 
 .latest_blog__box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .latest_blog__boxWrapper {
@@ -38,6 +63,11 @@
   margin-bottom: 2.5rem;
   height: 156px;
   display: flex;
+
+  @media screen and (max-width: 600px) {
+    display: inline;
+    height: 500px;
+  }
 }
 
 .latest_blog__textWrapper {
@@ -57,4 +87,8 @@
   font-weight: bold;
   font-size: 1.125rem;
   line-height: calc(26 / 18);
+
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
+  }
 }
