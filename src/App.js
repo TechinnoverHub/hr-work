@@ -7,6 +7,7 @@ import Career from 'Pages/Career';
 import Contact from 'Pages/Contact';
 import Blog from 'Pages/Blog';
 import Packages from 'Pages/Packages';
+import ScrollToTop from 'Components/ScrollToTop';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           <Packages />
         </Route>
       </Switch>
+      <ScrollToTop />
     </Router>
   );
 }
