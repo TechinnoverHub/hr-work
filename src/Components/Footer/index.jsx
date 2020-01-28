@@ -8,35 +8,45 @@ export default () => {
     <div className={Styles.footer}>
       <div className={Styles.footer__container}>
         <div className={Styles.footer__first__layer}>
-          <div>
+          <div className={Styles.navLogo}>
             <Link to="/">
               <img src={footer} alt="Hr-work" />
             </Link>
           </div>
-          <div>
-            <ul>
-              <Link className={Styles.link} to="/about">
-                <li>About</li>
-              </Link>
-              |
-              <Link className={Styles.link} to="/packages">
-                <li>Our Packages</li>
-              </Link>
-              |
-              <Link className={Styles.link} to="/blog">
-                <li>Blog</li>
-              </Link>
-              |
-              <Link className={Styles.link} to="/careers">
-                <li>Careers</li>
-              </Link>
-              |
-              <Link className={Styles.link} to="/contact">
-                <li>Contact</li>
-              </Link>
+          <div className={Styles.nav__wrapper__container}>
+            <ul className={Styles.nav__wrapper}>
+              <li>
+                <Link className={Styles.link} to="/about">
+                  About
+                </Link>
+              </li>
+
+              <li>
+                <Link className={Styles.link} to="/packages">
+                  Our Packages
+                </Link>
+              </li>
+
+              <li>
+                <Link className={Styles.link} to="/blog">
+                  Blog
+                </Link>
+              </li>
+
+              <li>
+                <Link className={Styles.link} to="/careers">
+                  Careers
+                </Link>
+              </li>
+
+              <li>
+                <Link className={Styles.link} to="/contact">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
-          <div>
+          <div className={Styles.nav__address}>
             <p>
               <b>CONTACT US</b>
               <br />
@@ -48,10 +58,10 @@ export default () => {
         </div>
 
         <div className={Styles.footer__second__layer}>
-          <div>
+          <div className={Styles.footer__copyright}>
             <p>© 2019 HR Work All right reserved</p>
           </div>
-          <div>
+          <div className={Styles.footer__termsAndConditions}>
             <p>Terms & Conditions | Privacy Policy</p>
           </div>
           <div className={Styles.font__awesome__icon}>
