@@ -18,7 +18,11 @@ export default () => {
 
   const toggleNav = () => {
     setNavOpen(!navOpen);
-    noScroll.toggle();
+    if (navOpen) {
+      noScroll.off();
+    } else {
+      noScroll.on();
+    }
   };
 
   const handleScroll = useCallback(() => {
@@ -27,11 +31,13 @@ export default () => {
 
   useEffect(() => {
     const listener = history.listen(() => {
-      noScroll.off();
+      if (navOpen) {
+        noScroll.off();
+      }
     });
 
     return () => listener();
-  }, [history]);
+  }, [history, navOpen]);
 
   useEffect(() => {
     // console.log('adding event listenerrr');

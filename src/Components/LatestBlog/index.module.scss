@@ -1,7 +1,11 @@
 .latest_blog {
-  max-width: 1100px;
   margin: 0 auto;
   padding: 3.5625rem 0 5.125rem;
+  width: 80vw;
+
+  @media screen and (min-width: 800px) {
+    max-width: 1100px;
+  }
 
   h2 {
     color: #ef0633;
@@ -9,70 +13,70 @@
     font-weight: bold;
     font-size: 2.5rem;
     padding-top: 2.5rem;
+    text-align: center;
 
-    @media screen and (max-width: 600px) {
-      margin: 0px auto;
-      justify-content: center;
-      display: flex;
+    @media screen and (min-width: 800px) {
+      text-align: left;
     }
-  }
-
-  @media screen and (max-width: 600px) {
-    max-width: 500px;
-    margin: 0 auto;
-    width: 80%;
   }
 }
 
 .latest_blog hr {
   border: 0.5px solid #f99bad;
   margin: 2.5rem 0px;
-  width: 40%;
 
-  @media screen and (max-width: 600px) {
-    width: 100%;
+  @media screen and (min-width: 800px) {
+    width: 40%;
   }
 }
 
 .latest_blog__image {
-  max-width: 169px;
-  flex-basis: 169px;
-  height: 100%;
   background-image: url('../../Assets/images/latest-blog-image.png');
   background-size: cover;
+  height: 156px;
 
-  @media screen and (max-width: 600px) {
-    max-width: 100%;
-    height: 200px;
+  @media screen and (min-width: 800px) {
+    max-width: 169px;
+    flex-basis: 169px;
+    height: auto;
+    height: 100%;
   }
 }
 
 .latest_blog__box {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 0 10%;
+  flex-direction: column;
 
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
+  @media screen and (min-width: 800px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0;
   }
 }
 
 .latest_blog__boxWrapper {
   background-color: rgba(242, 242, 242, 0.3);
-  flex-basis: 47.5%;
-  margin-bottom: 2.5rem;
-  height: 156px;
   display: flex;
+  margin-bottom: 2.5rem;
+  flex-direction: column;
 
-  @media screen and (max-width: 600px) {
-    display: inline;
-    height: 500px;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    height: 156px;
+    flex-basis: 47.5%;
   }
 }
 
 .latest_blog__textWrapper {
   flex: 1;
   padding: 2.5rem 10%;
+  order: 2;
+
+  @media screen and (min-width: 800px) {
+    order: 0;
+  }
 
   p {
     color: #888888;
