@@ -5,7 +5,7 @@ import Footer from 'Components/Footer';
 import NewsLetter from 'Components/Newsletter';
 import CustomMap from 'Components/CustomMap';
 import Hero from 'Components/Hero';
-import contactImg from 'Assets/images/get-in-touch-image.png';
+import contactImg from 'Assets/images/contactPGIMG.png';
 
 function Contact() {
   return (

@@ -26,11 +26,15 @@ function Career() {
             focus on growing your business.
           </p>
           <button className="read-more">
-            Read more<i className="fa fa-play"></i>
+            <span>Read more</span>
+            <i className="fa fa-play"></i>
           </button>
         </div>
         <div className="working-at-hr-work-box2"></div>
       </div>
+      <button className="read-more2">
+        Read more<i className="fa fa-play"></i>
+      </button>
       <div className="join-our-team">
         <div className="join-our-team-box1"></div>
         <div className="join-our-team-box2">
@@ -75,6 +79,7 @@ function Career() {
           </div>
         </div>
       </div>
+
       <div className="form-area">
         <div className="form-area-container">
           <form id="form1">
@@ -93,7 +98,7 @@ function Career() {
             <div className="second-row-form">
               <label htmlFor="email">
                 Email
-                <input type="email" name="email" id="email" required/>
+                <input type="email" name="email" id="email" required />
               </label>
 
               <label htmlFor="phoneNumber">
@@ -136,7 +141,8 @@ function Career() {
           <div className="image-box"></div>
         </div>
         <button className="join-us" type="submit" form="form1">
-          Join us today <i className="fa fa-play"></i>
+          <span>Join us today</span>
+          <i className="fa fa-play"></i>
         </button>
       </div>
       <Footer />

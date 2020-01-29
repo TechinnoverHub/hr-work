@@ -1,16 +1,32 @@
 .working-at-hr-work-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 60px auto 155px;
+  // max-width: 500px;
+  // margin: 30px 40px;
+  display: block;
+  width: 80vw;
+  margin: 90px auto 0;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 60px auto 0;
+  }
 }
 
 .working-at-hr-work-box1 {
-  flex-basis: 47.5%;
-  width: 642px;
-  height: 433px;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 60px;
+  text-align: center;
+
+  @media screen and (min-width: 800px) {
+    text-align: left;
+    margin-bottom: 170px;
+    flex-basis: 47.5%;
+    width: 642px;
+    height: 433px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .working-at-hr-work-box1 p {
@@ -32,51 +48,127 @@
 }
 
 .read-more {
-  padding: 10px 25px;
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+    padding: 15px 20px;
+    background-color: #ef0633;
+    border-radius: 9px;
+    color: white;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 17px;
+    border: none;
+    box-shadow: 0px 6px 15px rgba(233, 40, 45, 0.25);
+    align-items: center;
+    justify-content: center;
+    width: 186px;
+  }
+
+  span {
+    font-weight: bold;
+
+    @media screen and (min-width: 800px) {
+      margin-left: auto;
+    }
+  }
+
+  i {
+    margin-left: auto;
+  }
+}
+
+.read-more2 {
+  display: flex;
+  padding: 15px 20px;
   background-color: #ef0633;
   border-radius: 9px;
   color: white;
+  margin: 50px auto 120px;
   cursor: pointer;
   font-size: 17px;
-  text-align: center;
-  font-weight: 600;
+  border: none;
   box-shadow: 0px 6px 15px rgba(233, 40, 45, 0.25);
-  margin-top: auto;
-  width: 186px;
-}
+  align-items: center;
+  justify-content: center;
+  min-width: 147px;
 
-.read-more i {
-  margin-left: 15px;
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+
+  span {
+    font-weight: bold;
+
+    @media screen and (min-width: 800px) {
+      margin-left: auto;
+    }
+  }
+
+  i {
+    margin-left: auto;
+  }
 }
 
 .working-at-hr-work-box2 {
+  width: 80vw;
+  height: 257px;
   background-image: url(../../Assets/images/career-side-image.png);
-  width: 642px;
-  height: 433px;
-  flex-basis: 47.5%;
+  background-size: cover;
+
+  @media screen and (min-width: 800px) {
+    background-size: initial;
+    background-repeat: no-repeat;
+    width: 642px;
+    height: 433px;
+    flex-basis: 47.5%;
+  }
 }
 
+// JOIN OUR TEAM
 .join-our-team {
+  width: 80vw;
+  margin: 30px auto 50px;
   display: flex;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto 140px;
+  flex-direction: column;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    max-width: 1100px;
+    margin: 0 auto 140px;
+  }
 }
 
 .join-our-team-box1 {
   background-image: url(../../Assets/images/join-our-team.png);
-  width: 642px;
-  height: 433px;
-  flex-basis: 47.5%;
+  height: 257px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 47.5%;
+    height: 433px;
+    background-size: initial;
+  }
 }
 
 .join-our-team-box2 {
-  width: 642px;
+  text-align: center;
   height: 433px;
-  flex-basis: 44.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  order: -1;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0;
+    order: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 44.5%;
+  }
 }
 
 .join-our-team-box2 h3 {
@@ -99,8 +191,15 @@
 
 // DISCLAIMER
 .disclaimer {
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 80vw;
+  margin: 80px auto;
+  display: block;
+
+  @media screen and (min-width: 800px) {
+    margin: 0 auto;
+    width: auto;
+    max-width: 1100px;
+  }
 }
 
 .disclaimer--topSection {
@@ -108,6 +207,11 @@
     font-size: 16px;
     line-height: 25px;
     color: #565656;
+    text-align: center;
+
+    @media screen and (min-width: 800px) {
+      text-align: left;
+    }
   }
 
   h3 {
@@ -115,18 +219,31 @@
     line-height: 34px;
     color: #ef0633;
     margin-top: 20px;
+    text-align: center;
+
+    @media screen and (min-width: 800px) {
+      text-align: left;
+    }
   }
 
   hr {
     border: 0.5px solid #f99bad;
     margin: 40px 0;
-    width: 40%;
+
+    @media screen and (min-width: 800px) {
+      width: 40%;
+    }
   }
 }
 
 .disclaimer--boxContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: 800px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
 }
 
 .disclaimer-box1 {
@@ -137,6 +254,11 @@
   font-size: 16px;
   line-height: 25px;
   color: #565656;
+  text-align: center;
+
+  @media screen and (min-width: 800px) {
+    text-align: left;
+  }
 }
 
 .paragraph {
@@ -144,39 +266,67 @@
 }
 
 .disclaimer-box2 {
-  width: 642px;
-  flex-basis: 44.5%;
+  margin-top: 20px;
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 44.5%;
+    margin-top: 0;
+  }
 }
 
 .disclaimer-box2 p {
   font-size: 16px;
   line-height: 25px;
   color: #565656;
+
+  text-align: center;
+
+  @media screen and (min-width: 800px) {
+    text-align: left;
+  }
 }
 
 // FORM AREA
 .form-area {
-  max-width: 1100px;
-  margin: 60px auto 120px;
+  margin: 30px auto 50px;
+  width: 80vw;
+
+  @media screen and (min-width: 800px) {
+    margin: 100px auto 120px;
+    max-width: 1100px;
+    width: auto;
+  }
 }
 
 .form-area-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (min-width: 800px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
 
   form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-basis: 47%;
+
+    @media screen and (min-width: 800px) {
+      flex-basis: 47%;
+    }
   }
 }
 
 .first-row-form,
 .second-row-form,
 .fifth-row-form {
-  display: flex;
-  justify-content: space-between;
+  display: block;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   label {
     flex-basis: 47.5%;
@@ -185,6 +335,11 @@
     color: #565656;
     font-size: 1rem;
     line-height: calc(25 / 16);
+    margin-bottom: 41px;
+
+    @media screen and (min-width: 800px) {
+      margin-bottom: 0;
+    }
   }
 
   input {
@@ -204,6 +359,11 @@
     color: #565656;
     font-size: 1rem;
     line-height: calc(25 / 16);
+    margin-bottom: 41px;
+
+    @media screen and (min-width: 800px) {
+      margin-bottom: 0;
+    }
   }
 
   input {
@@ -223,6 +383,11 @@
     color: #565656;
     font-size: 1rem;
     line-height: calc(25 / 16);
+    margin-bottom: 41px;
+
+    @media screen and (min-width: 800px) {
+      margin-bottom: 0;
+    }
   }
 
   textarea {
@@ -237,21 +402,58 @@
 }
 
 .image-box {
-  flex-basis: 47%;
+  flex-direction: column;
+  background-size: contain;
+  margin-top: 60px;
+  background-repeat: no-repeat;
+  height: 400px;
   background-image: url(../../Assets/images/form-side-image.png);
-  height: 689px;
+  background-size: cover;
+
+  @media screen and (min-width: 800px) {
+    margin-top: 0;
+    height: 689px;
+    flex-basis: 47%;
+    background-size: initial;
+  }
 }
 
 .join-us {
-  padding: 10px 25px;
+  padding: 15px 20px;
   background-color: #ef0633;
   border-radius: 9px;
   color: white;
   margin-top: 50px;
   cursor: pointer;
   font-size: 17px;
-  line-height: 34px;
-  min-width: 186px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 6px 15px rgba(233, 40, 45, 0.25);
+  width: 100%;
+  margin-bottom: 150px;
+
+  @media screen and (min-width: 800px) {
+    width: auto;
+    min-width: 186px;
+    margin-bottom: 0;
+  }
+
+  span {
+    font-weight: bold;
+
+    @media screen and (min-width: 800px) {
+      margin-left: auto;
+    }
+  }
+
+  i {
+    margin-left: 20px;
+    @media screen and (min-width: 800px) {
+      margin-left: auto;
+    }
+  }
 }
 
 .join-us i {
