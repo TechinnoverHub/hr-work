@@ -20,27 +20,25 @@ function Home() {
         <p className="heading-text">
           <span className="heading-primary-small">
             We know that you are busy with deadlines and customer demands and
-            this
-            <br />
-            consumes all your available time and as your business expands.
+            this consumes all your available time and as your business expands.
           </span>
-          <br />
           <span className="heading-primary-big">
             We are HR Experts we can help
           </span>
         </p>
       </div>
-      <div className="section-who-we-are">
+
+      <div className="section-who-we-are-homepage">
         <h2>Who we are</h2>
         <hr />
         <div className="col">
           <div className="col1">
-            <p className="paragraph">
+            <p className="home-paragraph">
               HR Work is an advisory firm with strong competence and experience
               in providing Human Resources Retainership Services to small or
               medium sized organisations.
             </p>
-            <p className="paragraph paragraph-two">
+            <p className="home-paragraph paragraph-two">
               We know that you are busy with deadlines and customer demands and
               this consumes all your available time and as your business
               expands, your employee challenges begin to multiply and then

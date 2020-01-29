@@ -1,6 +1,11 @@
 .packages-section {
   max-width: 1100px;
   margin: 100px auto 0;
+
+  @media screen and (max-width: 600px) {
+    max-width: 800px;
+    width: 70vw;
+  }
 }
 
 .package-box {
