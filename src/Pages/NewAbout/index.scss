@@ -36,20 +36,32 @@
 
 // SECTION WHO ARE STYLING
 .section-who-we-are {
-  max-width: 1100px;
-  margin: 4.375rem auto 7.1875rem;
+  max-width: 800px;
 
-  @media screen and (max-width: 600px) {
-    max-width: 800px;
+  @media screen and (min-width: 800px) {
+    max-width: 1100px;
+    margin: 4.375rem auto 7.1875rem;
+  }
+
+  .red-line {
+    @media screen and (max-width: 600px) {
+      border: 0.5px solid #f99bad;
+      width: 80vw;
+      margin: 20px auto 30px;
+    }
   }
 }
 
 .section-text {
+  margin-bottom: 0px;
   text-align: center;
   font-weight: bold;
   font-size: 2.5rem;
   color: #ef0633;
-  margin-bottom: 3.125rem;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 3.125rem;
+  }
 }
 
 .section-who-we-are > .container-box {
@@ -70,11 +82,16 @@
 }
 
 .container-box1-text p {
-  font-weight: normal;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #565656;
   font-size: 1rem;
   line-height: 1.5625;
-  margin-bottom: 1.875rem;
-  color: #565656;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 1.875rem;
+    text-align: left;
+  }
 }
 
 .container-box1-text :nth-child(3) {
@@ -88,7 +105,9 @@
   flex-basis: 33.5%;
 
   @media screen and (max-width: 600px) {
+    width: 70%;
     margin: 30px auto;
+    text-align: center;
   }
 
   @media screen and (max-width: 600px) {
@@ -104,6 +123,14 @@
   font-size: 16px;
   line-height: 25px;
   padding: 30px;
+
+  @media screen and (max-width: 600px) {
+    height: 154px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
 }
 
 // WHY HR WORK SECTION
@@ -125,12 +152,16 @@
 }
 
 .why-hr-work-section span h3 {
+  padding-top: 30px;
   font-size: 40px;
   text-align: center;
   color: #ffffff;
   font-weight: 600;
-  padding-top: 90px;
   padding-bottom: 20px;
+
+  @media screen and (min-width: 800px) {
+    padding-top: 90px;
+  }
 }
 
 .why-hr-work-section span p {
@@ -191,7 +222,7 @@
 .why-hr-work-box1,
 .why-hr-work-box3 {
   background-color: #ef0633;
-  padding: 40px;
+  padding: 35px;
   color: #ffffff;
   border-radius: 6px;
   width: 356px;
@@ -199,7 +230,7 @@
 
 .why-hr-work-box2 {
   background-color: #212223;
-  padding: 40px;
+  padding: 35px;
   color: #ffffff;
   border-radius: 6px;
   width: 356px;
@@ -241,12 +272,19 @@
   justify-content: center;
 }
 
+.two-box-container h3 {
+  @media screen and (max-width: 600px) {
+    font-size: 25px;
+  }
+}
+
 .two-box1 {
   background-color: #ef0633;
 }
 
 .two-box2 {
   background-color: #212223;
+  order: -1;
 }
 
 .two-box1,
@@ -255,14 +293,10 @@
   height: 288px;
   border-radius: 6px;
   flex-basis: 48.5%;
-  max-width: 48.5%;
-  font-size: 16px;
-  line-height: 25px;
   font-weight: 300;
+  font-size: 16px;
 
   @media screen and (max-width: 600px) {
-    width: 100%;
-    max-width: 800px;
     margin-bottom: 40px;
   }
 }
@@ -275,8 +309,8 @@
   padding-bottom: 80px;
 
   @media screen and (max-width: 600px) {
-    max-width: 800px;
-    width: 80vw;
+    // max-width: 800px;
+    // width: 80vw;
     margin: 0 auto;
     display: inline;
   }
@@ -315,8 +349,6 @@
   height: 513px;
 
   @media screen and (max-width: 600px) {
-    // width: 100%;
-    // margin-bottom: 80px;
     height: 790px;
   }
 }
