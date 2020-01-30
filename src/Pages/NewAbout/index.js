@@ -15,6 +15,7 @@ function About() {
       </div>
       <div className="section-who-we-are">
         <div className="section-text">Who we are</div>
+        <div className="red-line"></div>
         <div className="container-box">
           <div className="container-box1">
             <div className="container-box1-text">
