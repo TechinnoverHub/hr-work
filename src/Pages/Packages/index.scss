@@ -9,7 +9,8 @@
 }
 
 .packages-grid {
-  margin: 46px 0px 0;
+  margin: 46px;
+  width: 80vw;
 }
 
 .package-page-grid-box {
@@ -34,7 +35,7 @@
 
   @media screen and (min-width: 800px) {
     width: 30%;
-    margin-bottom: 0;
+    margin-bottom: 50px;
     height: 555px;
   }
 }
@@ -151,6 +152,22 @@
   text-align: center;
   color: #888888;
   margin: 10px 0 21px;
+}
+
+.package-page-grid-button {
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1.5px solid #565656;
+  color: #565656;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  width: 90%;
+  padding: 10px;
+
+  @media screen and (min-width: 800px) {
+    padding: 15px 40px;
+  }
 }
 
 .package-body .price {

@@ -28,7 +28,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -44,7 +46,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -60,7 +64,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -78,7 +84,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -94,7 +102,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -110,7 +120,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -128,7 +140,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -144,7 +158,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -160,7 +176,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
