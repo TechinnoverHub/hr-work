@@ -111,6 +111,12 @@ export default () => {
                 Contact
               </Link>
             </li>
+
+            <li>
+              <Link className={Styles.link} to="/account">
+                Account
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
