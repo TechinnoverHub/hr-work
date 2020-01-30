@@ -10,6 +10,7 @@ import Packages from 'Pages/Packages';
 import ScrollToTop from 'Components/ScrollToTop';
 import SinglePackage from 'Pages/SinglePackage';
 import Login from 'Pages/Login';
+import CreateAccount from 'Pages/CreateAccount';
 
 export default function App() {
   return (
@@ -38,6 +39,9 @@ export default function App() {
         </Route>
         <Route path="/account">
           <Login />
+        </Route>
+        <Route path="/signup">
+          <CreateAccount />
         </Route>
       </Switch>
       <ScrollToTop />
