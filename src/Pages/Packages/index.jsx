@@ -12,10 +12,10 @@ function Packages() {
     <div>
       <Header />
       <Hero imgUrl={packageImg} heroTitle="Our Packages" />
-      <div className="packages-section">
+      <div className="package-page-section">
         <PackagesLink />
         <div className="packages-grid">
-          <div className="package-box">
+          <div className="package-page-grid-box">
             <div className="box-image1">
               <div className="package-image">
                 <div className="package-image-label-blue">
@@ -28,7 +28,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -44,7 +46,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -60,12 +64,14 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
 
-          <div className="package-box">
+          <div className="package-page-grid-box">
             <div className="box-image1">
               <div className="package-image">
                 <div className="package-image-label-blue">
@@ -78,7 +84,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -94,7 +102,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -110,12 +120,14 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
 
-          <div className="package-box">
+          <div className="package-page-grid-box">
             <div className="box-image1">
               <div className="package-image">
                 <div className="package-image-label-blue">
@@ -128,7 +140,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -144,7 +158,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -160,7 +176,9 @@ function Packages() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="package-page-grid-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
