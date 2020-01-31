@@ -9,9 +9,13 @@
 }
 
 .login-section {
-  width: 50%;
+  width: 80%;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
-  padding: 20px 0px;
+
+  @media screen and (min-width: 800px) {
+    width: 50%;
+    padding: 20px 0px;
+  }
 }
 
 .login-text {
@@ -30,22 +34,34 @@
 }
 
 .media-login-wrapper {
-  display: flex;
-  justify-content: space-around;
   height: 65px;
-  margin: 50px;
+  margin: 30px 50px 50px;
+
+  @media screen and (min-width: 800px) {
+    justify-content: space-around;
+    height: 65px;
+    margin: 50px;
+    display: flex;
+  }
 }
 
 .facebook-login,
 .google-login {
+  margin-bottom: 20px;
+  padding: 5.2px 30px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  border-radius: 6px;
+  flex-basis: 40.5%;
   background: #ffffff;
   border: 1px solid #ef0633;
   box-sizing: border-box;
-  border-radius: 6px;
-  flex-basis: 40.5%;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0px;
+    justify-content: space-around;
+  }
 }
 
 .facebook-login-text {
@@ -94,7 +110,11 @@
 ::-webkit-input-placeholder {
   color: rgba(86, 86, 86, 0.5);
   padding: 25px 10px;
-  font-size: 15px;
+  font-size: 12px;
+
+  @media screen and (min-width: 800px) {
+    font-size: 15px;
+  }
 }
 
 .login-label {
@@ -143,7 +163,11 @@
   color: #ef0633;
   cursor: pointer;
   border: 1px solid #ef0633;
-  font-size: 17px;
   width: 100%;
   font-weight: bold;
+  font-size: 14px;
+
+  @media screen and (min-width: 800px) {
+    font-size: 17px;
+  }
 }
