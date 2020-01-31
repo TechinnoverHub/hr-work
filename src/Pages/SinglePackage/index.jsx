@@ -104,7 +104,7 @@ function SinglePackage() {
 
         <div className="product-you-like-wrapper">
           <h3 className="product-you-like-text">You might also like</h3>
-          <div className="package-box">
+          <div className="product-you-like-box">
             <div className="box-image1">
               <div className="package-image">
                 <div className="package-image-label-blue">
@@ -117,7 +117,9 @@ function SinglePackage() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="product-you-like-box-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -133,7 +135,9 @@ function SinglePackage() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="product-you-like-box-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -149,10 +153,14 @@ function SinglePackage() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="product-you-like-box-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
+
+          {/* Stop here */}
 
           <div className="show-more-wrapper">
             <button className="show-more-btn">
@@ -177,7 +185,9 @@ function SinglePackage() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="recently-viewed-box-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -193,7 +203,9 @@ function SinglePackage() {
                 <p className="package-body-category">
                   Basic, Bronze, Foundation
                 </p>
-                <button className="package-box-button">Add to Cart</button>
+                <button className="recently-viewed-box-button">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
