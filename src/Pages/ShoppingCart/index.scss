@@ -1,0 +1,368 @@
+.shopping-cart-wrapper {
+  //   max-width: 1100px;
+  //   margin: 0px auto;
+  background-color: #efefef;
+
+  @media screen and (min-width: 800px) {
+    background-color: #fff;
+  }
+}
+
+.shopping-cart-header {
+  flex-direction: column;
+  display: flex;
+  align-items: left;
+  padding-top: 190px;
+  margin: 20px auto;
+  max-width: 1100px;
+  width: 80vw;
+
+  @media screen and (min-width: 800px) {
+    margin: 50px auto;
+  }
+}
+
+.shopping-cart-navigation-link ul {
+  display: flex;
+
+  li {
+    list-style: none;
+  }
+
+  span {
+    margin: 0px 20px;
+  }
+
+  .shopping-navigation-list {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    color: #565656;
+    text-decoration: none;
+  }
+}
+
+// .shopping-cart-header {
+// }
+
+.shopping-cart-header h3 {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 34px;
+  color: #ef0633;
+  margin-top: 20px;
+}
+
+.shopping-cart-details-wrapper {
+  background: #efefef;
+  min-height: 1105px;
+}
+
+.shopping-cart-details-contents {
+  max-width: 1100px;
+  margin: 50px auto;
+  width: 80vw;
+}
+
+.shopping-cart-details-contents button {
+  padding: 0.8125rem 1.5rem;
+  background-color: #ef0633;
+  border-radius: 6px;
+  color: white;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+
+  i {
+    padding-left: 10px;
+    transform: scaleX(-1);
+  }
+}
+
+.two-boxes-wrapper {
+  display: block;
+  margin-top: 50px;
+  justify-content: space-between;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+}
+
+.item-details {
+  flex-basis: 65.5%;
+  background-color: #fff;
+}
+
+.item-details-header {
+  display: none;
+  justify-content: space-between;
+  padding: 30px;
+  background: #c4c4c4;
+  font-size: 16px;
+  line-height: 23px;
+  color: #4a4a4a;
+  font-weight: bold;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+}
+
+.each-items {
+  display: flex;
+}
+
+#itemDetails {
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: 60%;
+  }
+}
+
+#itemQuantity {
+  width: 20%;
+}
+
+#itemPrice {
+  width: 30%;
+}
+
+.item-quantity-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 800px) {
+    width: 50%;
+  }
+}
+
+#itemAction {
+  text-align: right;
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: 20%;
+  }
+}
+
+.each-items {
+  margin: 30px;
+  display: block;
+  //   flex-direction: column;
+
+  @media screen and (min-width: 800px) {
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.each-item-image-wrapper {
+  display: flex;
+
+  @media screen and (min-width: 800px) {
+  }
+}
+
+.each-item-image {
+  background-image: url(../../Assets/images/each-item-image.png);
+  width: 214px;
+  height: 123px;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+  flex-basis: 70%;
+
+  @media screen and (min-width: 800px) {
+    padding: 0px;
+  }
+}
+
+.each-item-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #565656;
+  padding: 30px 0px;
+
+  p {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 23px;
+    color: #888888;
+  }
+}
+
+.quantity-counter {
+  padding: 30px;
+}
+
+.price-items {
+  padding: 30px 0px;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 23px;
+  color: #ef0633;
+
+  span {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    color: rgba(239, 6, 51, 0.5);
+  }
+}
+
+.action-links {
+  font-size: 14px;
+  line-height: 23px;
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 800px) {
+    display: inline;
+  }
+
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: #888888;
+    background: #ffffff;
+    border: 1px solid #ef0633;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 9px 30px;
+
+    @media screen and (min-width: 800px) {
+      border: none;
+    }
+  }
+}
+
+.item-details-horizontal-line {
+  border: 0.5px solid rgba(136, 136, 136, 0.5);
+  margin: 0px 30px;
+}
+
+.order-summary {
+  flex-basis: 30.5%;
+  background-color: #fff;
+  height: 590px;
+}
+
+.order-summary > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-summary-horizontal-line {
+  border: 0.5px solid rgba(192, 192, 192, 0.5);
+}
+
+.order-head {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
+  color: #4a4a4a;
+  padding: 30px 30px;
+}
+
+.order-subtotal {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 23px;
+  color: #565656;
+  padding: 30px 30px;
+}
+
+.delivery-charges-box {
+  padding: 30px 30px;
+  .delivery-charges {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+    color: #565656;
+  }
+
+  .delivery-charge-text {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: right;
+    color: #888888;
+  }
+}
+
+.total-box {
+  padding: 30px 30px;
+
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
+
+  .total {
+    color: #565656;
+  }
+
+  .total-figure {
+    color: #ef0633;
+  }
+}
+
+.checkout-button {
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+.checkout-button button {
+  background-color: #ef0633;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 17px;
+  width: 100%;
+}
+
+.we-accept {
+  display: flex;
+  padding: 20px;
+}
+
+.we-accept-text {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 15px;
+  color: #888888;
+}
+
+.paystack-image {
+  background-image: url(../../Assets/images/paystack-image.png);
+  width: 43px;
+  height: 43px;
+  background-repeat: no-repeat;
+}
+
+.mastercard-image {
+  background-image: url(../../Assets/images/mastercard-image.png);
+  width: 43px;
+  height: 43px;
+  background-repeat: no-repeat;
+}
+
+.visa-image {
+  background-image: url(../../Assets/images/visa-image.png);
+  width: 51px;
+  height: 45px;
+  background-repeat: no-repeat;
+}
+
+.verve-image {
+  background-image: url(../../Assets/images/verve-image.png);
+  width: 43px;
+  height: 43px;
+  background-repeat: no-repeat;
+}
