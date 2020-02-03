@@ -1,0 +1,176 @@
+.account-wrapper {
+  min-height: 2000px;
+  max-width: 1100px;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 800px) {
+    min-height: 1400px;
+  }
+}
+
+.account-section {
+  display: block;
+  width: 80%;
+
+  @media screen and (min-width: 800px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.account-left-box-wrapper {
+  flex-basis: 30.5%;
+}
+
+.account-left-box-text {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 34px;
+  color: #ef0633;
+  margin: 30px 0px;
+}
+
+.account-left-box {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+
+  ul {
+    list-style: none;
+  }
+  li {
+    height: 40px;
+    padding: 40px;
+  }
+  .account-left-list {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+    color: #565656;
+  }
+
+  li:hover {
+    background-color: #ef0633;
+  }
+
+  li:hover a {
+    color: #fff;
+  }
+}
+
+.account-left-horizontal-line {
+  border: 0.5px solid rgba(158, 158, 158, 0.5);
+}
+
+.account-right-box-wrapper {
+  flex-basis: 65.5%;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  margin: 100px 0px;
+  padding: 20px 0px;
+}
+
+.account-form {
+  margin-bottom: 80px;
+}
+
+.account-form-container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0px 9%;
+
+  ::-webkit-input-placeholder {
+    color: rgba(86, 86, 86, 0.5);
+  }
+
+  .name-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 35px 0px;
+
+    @media screen and (max-width: 800px) {
+      display: inline;
+    }
+
+    label {
+      flex-basis: 47.5%;
+      display: flex;
+      flex-direction: column;
+      color: #888888;
+      font-size: 1rem;
+      line-height: calc(25 / 16);
+
+      @media screen and (max-width: 800px) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  input {
+    margin-top: 18px;
+    border: 0.5px solid #888888;
+    height: 45px;
+    padding: 0.8rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+}
+
+.field-row {
+  label {
+    display: flex;
+    flex-direction: column;
+    color: #888888;
+    font-size: 1rem;
+    line-height: calc(25 / 16);
+
+    span {
+      color: #ef0633;
+    }
+  }
+
+  input {
+    margin: 20px 0px 35px;
+    border: 0.5px solid #888888;
+    padding: 0.8rem 0.7rem;
+    font-size: 1rem;
+    height: 45px;
+    border-radius: 6px;
+  }
+}
+
+.change-password-text {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 23px;
+  color: #818181;
+}
+
+.change-password-section {
+  border: 0.5px solid rgba(165, 164, 164, 0.5);
+  margin-bottom: 20px;
+}
+
+.account-save-button {
+  display: flex;
+  justify-content: left;
+}
+
+.account-save-button button {
+  padding: 15px 20px;
+  background-color: #ef0633;
+  border-radius: 9px;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  border: none;
+
+  @media screen and (min-width: 800px) {
+    width: auto;
+    min-width: 186px;
+  }
+}

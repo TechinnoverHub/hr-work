@@ -5,6 +5,7 @@ import { NavLink, Switch, Route, useRouteMatch } from 'react-router-dom';
 import AltHeader from 'Components/AltHeader';
 import AccountOrders from 'Pages/AccountOrders';
 import OrderDetail from 'Pages/OrderDetail';
+import AccountDetails from 'Pages/AccountDetails';
 
 const MyAccount = () => {
   const { path } = useRouteMatch();
@@ -69,7 +70,7 @@ const MyAccount = () => {
                 <AccountOrders />
               </Route>
               <Route path={`${path}/details`}>
-                <AccountOrders />
+                <AccountDetails />
               </Route>
             </Switch>
           </div>
