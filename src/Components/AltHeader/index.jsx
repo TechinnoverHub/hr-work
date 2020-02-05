@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import logo from 'Assets/svg/logo.svg';
 import logoDark from 'Assets/svg/DarkLogo.svg';
 import Styles from './index.module.scss';
 import noScroll from 'no-scroll';
@@ -25,9 +24,9 @@ export default () => {
     }
   };
 
-  const handleScroll = useCallback(() => {
-    setSticky(window.pageYOffset > 40);
-  }, []);
+  // const handleScroll = useCallback(() => {
+  //   setSticky(window.pageYOffset > 40);
+  // }, []);
 
   useEffect(() => {
     const listener = history.listen(() => {
@@ -39,14 +38,14 @@ export default () => {
     return () => listener();
   }, [history, navOpen]);
 
-  useEffect(() => {
-    // console.log('adding event listenerrr');
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      // console.log('removing event listenerrr');
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleScroll]);
+  // useEffect(() => {
+  //   // console.log('adding event listenerrr');
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     // console.log('removing event listenerrr');
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [handleScroll]);
 
   return (
     <header
@@ -61,7 +60,7 @@ export default () => {
       >
         <div className={Styles.logoContainer}>
           <Link to="/">
-            <img src={isSticky || navOpen ? logoDark : logo} alt="logo" />
+            <img src={logoDark} alt="logo" />
           </Link>
         </div>
 
