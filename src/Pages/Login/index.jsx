@@ -1,24 +1,32 @@
 import React from 'react';
 import './index.scss';
-import Header from 'Components/Header';
+import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
+import facebookIcon from 'Assets/svg/facebook.svg';
+import googleIcon from 'Assets/svg/google.png';
 
 function Login() {
   return (
     <div>
-      <Header />
+      <AltHeader />
       <div className="login-section-wrapper">
         <div className="login-section">
           <span className="login-text">Login</span>
           <div className="login-horizontal-line"></div>
           <div className="media-login-wrapper">
-            <div className="facebook-login">
-              <div className="facebook-login-text">Login with</div>
-              <div className="facebook-login-icon"></div>
-            </div>
-            <div className="google-login">
-              <span className="google-login-text">Login with</span>
-              <div className="google-login-icon"></div>
+            <div className="media-login-wrapper-container">
+              <div className="facebook-login">
+                <div className="facebook-login-text">Login with</div>
+                <div className="facebook-login-icon">
+                  <img src={facebookIcon} alt="facebook icon" />
+                </div>
+              </div>
+              <div className="google-login">
+                <span className="google-login-text">Login with</span>
+                <div className="google-login-icon">
+                  <img src={googleIcon} alt="google icon" />
+                </div>
+              </div>
             </div>
           </div>
           <div className="login-horizontal-line"></div>

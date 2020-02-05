@@ -1,0 +1,185 @@
+// NavBAr styling
+.header {
+  // position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding-top: 2.625rem;
+  padding-bottom: 2.325rem;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.sticky {
+  top: 0;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background: white;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+nav {
+  &.open {
+    margin-left: 0;
+    pointer-events: all;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: rgb(242, 242, 242);
+    position: fixed;
+    padding-top: 20vh;
+    z-index: 1;
+    height: 100vh;
+
+    ul {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    li {
+      display: flex;
+      transform: scale(1);
+      padding: 5% 0;
+      a {
+        color: #ef0633;
+      }
+    }
+
+    .toggleMenu {
+      z-index: 1;
+      position: absolute;
+      top: 2.325rem;
+      right: 10vw;
+
+      div {
+        transition: all 0.2s ease-out;
+
+        &:nth-of-type(1) {
+          transform: rotate(-45deg) translateX(-2px);
+        }
+        &:nth-of-type(2) {
+          display: none;
+        }
+        &:nth-of-type(3) {
+          transform: rotate(45deg) translateX(-1px);
+        }
+      }
+    }
+  }
+}
+
+.header__container {
+  margin: 0 auto;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  align-items: center;
+  background: #ffffff;
+
+  &.open {
+    justify-content: center;
+    width: 100px;
+
+    .logoContainer {
+      position: fixed;
+      top: 2.725rem;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    width: auto;
+  }
+}
+
+.logoContainer {
+  z-index: 2;
+  a {
+    height: 30px;
+    display: block;
+
+    @media screen and (min-width: 800px) {
+      height: 44px;
+    }
+  }
+
+  img {
+    height: 100%;
+    // width: 100%;
+  }
+}
+.toggleMenu {
+  width: 41px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: #2a0032 solid 1px;
+  }
+
+  div {
+    border: 1px solid #ef0633;
+    display: block;
+    width: 48%;
+
+    &:nth-of-type(2) {
+      margin: 4px 0;
+    }
+  }
+}
+
+.header__list li {
+  display: inline;
+  font-weight: 500;
+  font-size: 17px;
+  text-align: center;
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: #ef0633;
+  font-weight: bold;
+  transition: color 0.3s ease-out;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.link__wrapper {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+
+  li {
+    margin: 0 1.09375em;
+    list-style: none;
+  }
+
+  &.link_sticky {
+    li {
+      .link {
+        color: #ef0633;
+        font-weight: bold;
+        transition: color 0.1s ease-out;
+      }
+    }
+  }
+}

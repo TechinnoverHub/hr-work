@@ -2,7 +2,6 @@ import React from 'react';
 import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
-import PackagesLink from 'Components/PackagesLink';
 import Hero from 'Components/Hero';
 import packageImg from 'Assets/images/packages-header-image.png';
 import BreadCrumbs from 'Pages/BreadCumbs';

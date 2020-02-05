@@ -6,7 +6,7 @@ import PackagesLink from 'Components/PackagesLink';
 import Newsletter from 'Components/Newsletter';
 import Hero from 'Components/Hero';
 import packageImg from 'Assets/images/packages-header-image.png';
-import { useRouteMatch, Link, useHistory } from 'react-router-dom';
+import { useRouteMatch, useHistory } from 'react-router-dom';
 import dummyData from './dummydata';
 import PackageItem from 'Components/PackageItem';
 

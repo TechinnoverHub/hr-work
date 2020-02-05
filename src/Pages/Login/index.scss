@@ -4,8 +4,15 @@
   min-height: 1000px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   flex-direction: column;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  @media screen and (min-width: 800px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
 }
 
 .login-section {
@@ -13,7 +20,7 @@
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
 
   @media screen and (min-width: 800px) {
-    width: 50%;
+    width: 60%;
     padding: 20px 0px;
   }
 }
@@ -34,60 +41,75 @@
 }
 
 .media-login-wrapper {
-  height: 65px;
-  margin: 30px 50px 50px;
+  @media screen and (min-width: 800px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.media-login-wrapper-container {
+  margin: 50px auto;
+  width: 80%;
 
   @media screen and (min-width: 800px) {
-    justify-content: space-around;
-    height: 65px;
-    margin: 50px;
+    width: 65%;
     display: flex;
+    justify-content: space-between;
   }
 }
 
 .facebook-login,
 .google-login {
+  height: 65px;
   margin-bottom: 20px;
-  padding: 5.2px 30px;
   display: flex;
   border-radius: 6px;
-  flex-basis: 40.5%;
-  background: #ffffff;
+  flex-basis: 46%;
   border: 1px solid #ef0633;
-  box-sizing: border-box;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   @media screen and (min-width: 800px) {
     margin-bottom: 0px;
-    justify-content: space-around;
+    justify-content: initial;
   }
 }
 
-.facebook-login-text {
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 23px;
-  color: #3c5a99;
+.google-login {
+  margin-bottom: 0;
 }
 
-.facebook-login-icon {
-  background-image: url(../../Assets/images/facebook-login.png);
-  width: 29px;
-  height: 30px;
-}
-
+.facebook-login-text,
 .google-login-text {
   font-weight: 600;
   font-size: 15px;
   line-height: 23px;
+  color: #3c5a99;
+  margin-right: 7px;
+
+  @media screen and (min-width: 800px) {
+    margin-left: auto;
+  }
+}
+
+.google-login-text {
   color: #4285f4;
 }
 
+.facebook-login-icon,
 .google-login-icon {
-  background-image: url(../../Assets/images/google-login.png);
-  width: 29px;
-  height: 30px;
+  width: 30px;
+  display: flex;
+
+  @media screen and (min-width: 800px) {
+    margin-left: 10%;
+    margin-right: 13%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .login-form-section {
@@ -101,8 +123,8 @@
 
 .login-form input {
   width: 100%;
-  height: 50px;
-  margin: 20px 0;
+  height: 65px;
+  margin: 13px 0 34px;
   border: 0.5px solid #888888;
   border-radius: 6px;
 }
@@ -125,7 +147,7 @@
 }
 
 .login-button {
-  margin: 30px auto;
+  margin: 14px auto 30px;
 }
 
 .login-button button {
@@ -137,6 +159,7 @@
   border: none;
   font-size: 17px;
   width: 100%;
+  height: 65px;
 }
 
 .login-bottom-section {
@@ -166,6 +189,7 @@
   width: 100%;
   font-weight: bold;
   font-size: 14px;
+  height: 65px;
 
   @media screen and (min-width: 800px) {
     font-size: 17px;
