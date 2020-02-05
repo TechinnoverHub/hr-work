@@ -3,18 +3,28 @@ import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import PackagesLink from 'Components/PackagesLink';
+import Hero from 'Components/Hero';
+import packageImg from 'Assets/images/packages-header-image.png';
+import BreadCrumbs from 'Pages/BreadCumbs';
+import { useHistory } from 'react-router-dom';
 
 function SinglePackage() {
+  const history = useHistory();
+
   return (
     <div>
       <Header />
-      <div className="packages-header-image">
-        <div className="packages-header-text-wrapper">
-          <h3>Our Packages</h3>
-        </div>
-      </div>
+      <Hero imgUrl={packageImg} heroTitle="Our Packages" />
       <div className="single-package-section">
-        <PackagesLink />
+        {/* <div>
+          <PackagesLink />
+        </div> */}
+        <div className="single-package-breadcrumbs-container">
+          <BreadCrumbs
+            category="retainership"
+            categoryItem="HR Remote Manager"
+          />
+        </div>
         <div className="hr-remote-manager-section">
           <div className="hr-remote-manager-wrapper">
             <div className="hr-remote-manager-image"></div>
@@ -163,7 +173,10 @@ function SinglePackage() {
           {/* Stop here */}
 
           <div className="show-more-wrapper">
-            <button className="show-more-btn">
+            <button
+              className="show-more-btn"
+              onClick={() => history.push('/packages')}
+            >
               <span>Show More</span>
               <i className="fa fa-play"></i>
             </button>

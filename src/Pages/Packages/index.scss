@@ -7,174 +7,15 @@
   }
 }
 
-.packages-grid {
-  padding-top: 50px;
-}
-
-.package-page-grid-box {
-  display: block;
-  padding: 0 7%;
+.packages-page-grid {
+  padding: 30px 7% 0;
 
   @media screen and (min-width: 800px) {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px 0 0;
+    padding: 50px 0 0;
   }
-}
-
-.package-page-grid-box > div {
-  width: 100%;
-  margin-bottom: 36px;
-  border-radius: 14px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 6px 15px rgba(136, 136, 136, 0.25);
-  height: 80vh;
-
-  @media screen and (min-width: 800px) {
-    width: 30%;
-    margin-bottom: 50px;
-    height: 555px;
-  }
-}
-
-.package-page-grid-box div .package-image {
-  height: 50%;
-  width: 100%;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-  background-size: cover;
-  background-position: 90% 0vw;
-  background-repeat: no-repeat;
-  background-image: url(../../Assets/images/packages-image.png);
-
-  @media screen and (min-width: 800px) {
-    background-position: initial;
-  }
-}
-
-.package-image-label-blue {
-  border-radius: 0px 17.5px 17.5px 0px;
-  background-color: #0057da;
-  margin-top: 33px;
-  display: inline-block;
-  padding: 6px 10px;
-
-  @media screen and (min-width: 420px) {
-    padding: 6px 20px;
-  }
-
-  span {
-    color: #ffffff;
-    line-height: 23px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-
-    @media screen and (min-width: 420px) {
-      font-size: 14px;
-    }
-  }
-}
-
-.package-image-label-red {
-  border-radius: 0px 17.5px 17.5px 0px;
-  background-color: #ef0633;
-  margin-top: 33px;
-  padding: 6px 20px;
-  display: inline-block;
-  padding: 6px 10px;
-
-  @media screen and (min-width: 420px) {
-    padding: 6px 20px;
-  }
-
-  span {
-    color: #ffffff;
-    line-height: 23px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-
-    @media screen and (min-width: 420px) {
-      font-size: 14px;
-    }
-  }
-}
-
-.package-image-label-green {
-  border-radius: 0px 17.5px 17.5px 0px;
-  background-color: #00ba34;
-  margin-top: 33px;
-  display: inline-block;
-  padding: 6px 10px;
-
-  @media screen and (min-width: 420px) {
-    padding: 6px 20px;
-  }
-
-  span {
-    color: #ffffff;
-    line-height: 23px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-
-    @media screen and (min-width: 420px) {
-      font-size: 14px;
-    }
-  }
-}
-
-.package-page-grid-box div .package-body {
-  padding-top: 3.125rem;
-  padding-bottom: 2.375rem;
-  padding-left: 10%;
-  padding-right: 10%;
-  text-align: center;
-  color: #565656;
-}
-
-.package-body h3 {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-  text-align: center;
-  color: #565656;
-}
-
-.package-body-category {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 23px;
-  text-align: center;
-  color: #888888;
-  margin: 10px 0 21px;
-}
-
-.package-page-grid-button {
-  border-radius: 50px;
-  background-color: transparent;
-  border: 1.5px solid #565656;
-  color: #565656;
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 15px;
-  width: 90%;
-  padding: 10px;
-
-  @media screen and (min-width: 800px) {
-    padding: 15px 40px;
-  }
-}
-
-.package-body .price {
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 23px;
-  text-align: center;
-  color: #ef0633;
-  margin: 10px 0px 22px;
 }
 
 // Show more Button
@@ -188,7 +29,7 @@
   background-color: #ef0633;
   border-radius: 6px;
   color: white;
-  margin-top: 90px;
+  margin-top: 70px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;

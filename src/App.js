@@ -29,10 +29,10 @@ export default function App() {
         <Route path="/blog">
           <Blog />
         </Route>
-        <Route path="/packages">
+        <Route path={['/packages/:id', '/packages']}>
           <Packages />
         </Route>
-        <Route path="/singlepackage">
+        <Route path="/package/:slug">
           <SinglePackage />
         </Route>
       </Switch>
