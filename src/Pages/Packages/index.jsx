@@ -6,190 +6,39 @@ import PackagesLink from 'Components/PackagesLink';
 import Newsletter from 'Components/Newsletter';
 import Hero from 'Components/Hero';
 import packageImg from 'Assets/images/packages-header-image.png';
+import { useRouteMatch, Link, useHistory } from 'react-router-dom';
+import dummyData from './dummydata';
+import PackageItem from 'Components/PackageItem';
 
 function Packages() {
+  const { params } = useRouteMatch();
+  const history = useHistory();
+
+  const filterItems = (paramsData, dataItems) => {
+    if (paramsData.id) {
+      return dataItems.filter(item => item.categoryKey === paramsData.id);
+    } else {
+      return dataItems;
+    }
+  };
+
   return (
     <div>
       <Header />
       <Hero imgUrl={packageImg} heroTitle="Our Packages" />
       <div className="package-page-section">
         <PackagesLink />
-        <div className="packages-grid">
-          <div className="package-page-grid-box">
-            <div className="box-image1">
-              <div className="package-image">
-                <div className="package-image-label-blue">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="box-image2">
-              <div className="package-image">
-                <div className="package-image-label-red">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="box-image3">
-              <div className="package-image">
-                <div className="package-image-label-green">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="package-page-grid-box">
-            <div className="box-image1">
-              <div className="package-image">
-                <div className="package-image-label-blue">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="box-image2">
-              <div className="package-image">
-                <div className="package-image-label-red">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="box-image3">
-              <div className="package-image">
-                <div className="package-image-label-green">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="package-page-grid-box">
-            <div className="box-image1">
-              <div className="package-image">
-                <div className="package-image-label-blue">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="box-image2">
-              <div className="package-image">
-                <div className="package-image-label-red">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="box-image3">
-              <div className="package-image">
-                <div className="package-image-label-green">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="package-page-grid-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="show-more-wrapper">
-            <button className="show-more-btn">
-              <span>Show More</span>
-              <i className="fa fa-play"></i>
-            </button>
-          </div>
+        <div className="packages-page-grid">
+          {filterItems(params, dummyData).map(item => (
+            <PackageItem item={item} />
+          ))}
         </div>
+        {/* <div className="show-more-wrapper">
+          <button className="show-more-btn">
+            <span>Show More</span>
+            <i className="fa fa-play"></i>
+          </button>
+        </div> */}
       </div>
 
       <div className="services-section-wrapper">
@@ -203,7 +52,7 @@ function Packages() {
               Customised solutions to meet all your HR needs.
             </p>
             <div className="service-btn">
-              <button>
+              <button onClick={() => history.push('/contact')}>
                 Contact Us <i className="fa fa-play"></i>
               </button>
             </div>

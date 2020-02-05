@@ -16,7 +16,7 @@ export default () => {
         </NavLink>
         <NavLink
           exact
-          to="/"
+          to="/packages/retainership"
           className="list-item"
           activeClassName="list-item-active"
         >
@@ -24,7 +24,7 @@ export default () => {
         </NavLink>
         <NavLink
           exact
-          to="/"
+          to="/packages/off-shelf"
           className="list-item"
           activeClassName="list-item-active"
         >
@@ -32,7 +32,7 @@ export default () => {
         </NavLink>
         <NavLink
           exact
-          to="/"
+          to="/packages/professionals"
           className="list-item"
           activeClassName="list-item-active"
         >

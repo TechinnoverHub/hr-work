@@ -29,35 +29,33 @@ const heroStyles = imgUrl => {
   `;
 };
 
+const textWrapperStyle = css`
+  margin: 0 auto;
+  width: 80%;
+
+  @media screen and (min-width: 50rem) {
+    width: auto;
+    max-width: 1100px;
+  }
+`;
+
+const textStyle = css`
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  font-size: 35px;
+  line-height: 1;
+
+  @media screen and (min-width: 50rem) {
+    font-size: 50px;
+  }
+`;
+
 export default ({ imgUrl, heroTitle }) => {
   return (
     <div css={heroStyles(imgUrl)}>
-      <div
-        css={css`
-          margin: 0 auto;
-          width: 80%;
-
-          @media screen and (min-width: 50rem) {
-            width: auto;
-            max-width: 1100px;
-          }
-        `}
-      >
-        <h3
-          css={css`
-            font-weight: bold;
-            text-align: center;
-            color: #ffffff;
-            font-size: 35px;
-            line-height: 1;
-
-            @media screen and (min-width: 50rem) {
-              font-size: 50px;
-            }
-          `}
-        >
-          {heroTitle}
-        </h3>
+      <div css={textWrapperStyle}>
+        <h3 css={textStyle}>{heroTitle}</h3>
       </div>
     </div>
   );

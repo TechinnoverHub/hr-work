@@ -4,8 +4,11 @@ import Header from 'Components/Header';
 import homepageImage from 'Assets/images/homepage-side-image.png';
 import Footer from 'Components/Footer';
 import LatestBlog from 'Components/LatestBlog';
+import { useHistory } from 'react-router-dom';
 
 function Home() {
+  const history = useHistory();
+
   return (
     <div className="App">
       <Header />
@@ -119,7 +122,10 @@ function Home() {
         </div>
 
         <div className="packages-btn-container">
-          <button className="packages-btn">
+          <button
+            className="packages-btn"
+            onClick={() => history.push('/packages')}
+          >
             <span>View more packages</span>
             <i className="fa fa-play"></i>
           </button>
