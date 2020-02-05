@@ -4,8 +4,11 @@ import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
 import facebookIcon from 'Assets/svg/facebook.svg';
 import googleIcon from 'Assets/svg/google.png';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
+  const history = useHistory();
+
   return (
     <div>
       <AltHeader />
@@ -55,7 +58,12 @@ function Login() {
           <div className="login-bottom-section">
             <span className="login-bottom-text">Don’t have an Account?</span>
             <div className="create-account-button">
-              <button type="button">Create an Account</button>
+              <button
+                type="button"
+                onClick={() => history.push('/create-account')}
+              >
+                Create an Account
+              </button>
             </div>
           </div>
         </div>

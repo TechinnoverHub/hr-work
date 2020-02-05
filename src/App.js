@@ -37,10 +37,10 @@ export default function App() {
         <Route path="/package/:slug">
           <SinglePackage />
         </Route>
-        <Route path="/account">
+        <Route path="/login">
           <Login />
         </Route>
-        <Route path="/signup">
+        <Route path="/create-account">
           <CreateAccount />
         </Route>
       </Switch>

@@ -1,12 +1,15 @@
 import React from 'react';
 import './index.scss';
-import Header from 'Components/Header';
+import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
+import { useHistory } from 'react-router-dom';
 
 function CreateAccount() {
+  const history = useHistory();
+
   return (
     <div>
-      <Header />
+      <AltHeader />
       <div className="create-account-wrapper">
         <div className="create-account-section">
           <div className="create-account-text">Create An Account</div>
@@ -38,7 +41,7 @@ function CreateAccount() {
             </div>
 
             <div className="create-account-login-btn">
-              <button type="button">Login</button>
+              <button type="button">Create your account</button>
             </div>
 
             <div className="create-account-login-text">
@@ -53,7 +56,9 @@ function CreateAccount() {
               Already have an Account?
             </div>
             <div className="create-account-login-btn-bottom">
-              <button type="button">Login</button>
+              <button type="button" onClick={() => history.push('/login')}>
+                Login
+              </button>
             </div>
           </div>
         </div>
