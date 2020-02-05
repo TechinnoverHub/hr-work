@@ -113,7 +113,7 @@ export default () => {
             </li>
 
             <li>
-              <Link className={Styles.link} to="/account">
+              <Link className={Styles.link} to="/login">
                 Account
               </Link>
             </li>

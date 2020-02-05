@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import logoDark from 'Assets/svg/DarkLogo.svg';
 import Styles from './index.module.scss';
 import noScroll from 'no-scroll';
 
 export default () => {
-  const [isSticky, setSticky] = useState(false);
+  const [isSticky] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const history = useHistory();
 
@@ -112,7 +112,7 @@ export default () => {
             </li>
 
             <li>
-              <Link className={Styles.link} to="/account">
+              <Link className={Styles.link} to="/login">
                 Account
               </Link>
             </li>
