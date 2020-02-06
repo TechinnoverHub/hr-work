@@ -77,7 +77,7 @@ function SinglePackage() {
             </div>
           </div>
         </div>
-        <div className="overview-wrapper">
+        {/* <div className="overview-wrapper">
           <div className="overview">
             <h3>Overview</h3>
             <p className="first-para">
@@ -108,6 +108,120 @@ function SinglePackage() {
               problems with hiring, setting and measuring performance, policies
               for direction among others become more evitable.
             </p>
+          </div>
+        </div> */}
+        <div className="plan-table-wrapper">
+          <div className="plan-table-basic">
+            <div className="plan-table-basic-text">
+              <h3>Basic</h3>
+              <div className="plan-table-basic-line"></div>
+              <ul className="plan-basic-list-item">
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- assist with advert templates and provide CVs only
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Development and monthly implementation of Performance
+                  management framework
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Monthly Employee Engagement initiatives and implementation
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Daily enforcement of HR policies
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>HR advisory as required
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>Quarterly training
+                </li>
+              </ul>
+              <div class="plan-table-basic-price">
+                <span className="basic-dollar-sign">$</span>
+                <span className="basic-price">50</span>
+                <span className="basic-year">/Year</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="plan-table-silver">
+            <div className="plan-table-silver-text">
+              <h3>Silver</h3>
+              <div className="plan-table-silver-line"></div>
+              <ul className="plan-silver-list-item">
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- JDs, Cv shortlist, interview
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Development and enforcement of HR procedures
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Monthly Rewards management
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Employee reference management-as required
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Dismissals-as required
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Monthly training
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Presence during statutory audits
+                </li>
+              </ul>
+              <div class="plan-table-silver-price">
+                <span className="silver-dollar-sign">$</span>
+                <span className="silver-price">150</span>
+                <span className="silver-year">Year</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="plan-table-gold">
+            <div className="plan-table-gold-text">
+              <h3>Gold</h3>
+              <div className="plan-table-gold-line"></div>
+              <ul className="plan-gold-list-item">
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- JDs, Cv shortlist, interview
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"> </i>
+                  Development and enforcement of HR procedures
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Monthly Rewards management
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Employee reference management-as required
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Dismissals-as required
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Monthly training
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Presence during statutory audits
+                </li>
+              </ul>
+              <div class="plan-table-gold-price">
+                <span className="gold-dollar-sign">$</span>
+                <span className="gold-price">500</span>
+                <span className="gold-year">Year</span>
+              </div>
+            </div>
           </div>
         </div>
 
