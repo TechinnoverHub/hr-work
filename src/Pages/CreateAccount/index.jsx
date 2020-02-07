@@ -41,7 +41,9 @@ function CreateAccount() {
             </div>
 
             <div className="create-account-login-btn">
-              <button type="button">Create your account</button>
+              <button type="button" onClick={() => history.push('/account')}>
+                Create your account
+              </button>
             </div>
 
             <div className="create-account-login-text">
