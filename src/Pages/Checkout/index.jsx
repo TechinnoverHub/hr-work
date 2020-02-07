@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import Header from 'Components/Header';
+import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
 import { Link } from 'react-router-dom';
 import arrowUpIcon from 'Assets/svg/arrowup.svg';
@@ -13,7 +13,7 @@ import deliveryImage from 'Assets/images/delivery-option-image.png';
 function Checkout() {
   return (
     <div>
-      <Header />
+      <AltHeader />
       <div className="checkout-text">
         <h3>Checkout</h3>
       </div>
