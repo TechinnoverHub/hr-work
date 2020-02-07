@@ -310,7 +310,7 @@
 .plan-table-basic {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
   margin-bottom: 70px;
-  flex-basis: 30.5%;
+  flex-basis: 23.5%;
 
   @media screen and (min-width: 800px) {
     margin-bottom: 0px;
@@ -319,7 +319,8 @@
 
 .plan-table-basic-text,
 .plan-table-silver-text,
-.plan-table-gold-text {
+.plan-table-gold-text,
+.plan-table-platinum-text {
   margin: 0 auto;
   padding: 20px 3.5%;
   width: 80%;
@@ -335,20 +336,23 @@
 
 .plan-table-basic-line,
 .plan-table-silver-line,
-.plan-table-gold-line {
+.plan-table-gold-line,
+.plan-table-platinum-line {
   border: 0.5px solid rgba(189, 188, 188, 0.5);
   margin: 20px 0px;
 }
 
 .plan-basic-list-item,
 .plan-silver-list-item,
-.plan-gold-list-item {
+.plan-gold-list-item,
+.plan-platinum-list-item {
   list-style: none;
 }
 
 .plan-basic-each-list,
 .plan-silver-each-list,
-.plan-gold-each-list {
+.plan-gold-each-list,
+.plan-platinum-each-list {
   font-weight: 600;
   font-size: 15px;
   line-height: 23px;
@@ -363,7 +367,8 @@
 
 .plan-table-basic-price,
 .plan-table-silver-price,
-.plan-table-gold-price {
+.plan-table-gold-price,
+.plan-table-platinum-price {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -371,14 +376,16 @@
 
   .basic-dollar-sign,
   .silver-dollar-sign,
-  .gold-dollar-sign {
+  .gold-dollar-sign,
+  .platinum-dollar-sign {
     color: #f37a92;
     margin-top: -35px;
   }
 
   .basic-price,
   .silver-price,
-  .gold-price {
+  .gold-price,
+  .platinum-price {
     font-size: 50px;
     font-weight: bold;
     color: #999999;
@@ -386,14 +393,15 @@
 
   .basic-year,
   .silver-year,
-  .gold-year {
+  .gold-year,
+  .platinum-year {
     color: #999999;
     margin-bottom: -20px;
   }
 }
 
 .plan-table-silver {
-  flex-basis: 30.5%;
+  flex-basis: 23.5%;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
   margin-bottom: 70px;
 
@@ -403,7 +411,17 @@
 }
 
 .plan-table-gold {
-  flex-basis: 30.5%;
+  flex-basis: 23.5%;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+  margin-bottom: 70px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0px;
+  }
+}
+
+.plan-table-platinum {
+  flex-basis: 23.5%;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
 }
 

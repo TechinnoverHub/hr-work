@@ -181,7 +181,7 @@ function SinglePackage() {
               <div class="plan-table-silver-price">
                 <span className="silver-dollar-sign">$</span>
                 <span className="silver-price">150</span>
-                <span className="silver-year">Year</span>
+                <span className="silver-year">/Year</span>
               </div>
             </div>
           </div>
@@ -219,7 +219,45 @@ function SinglePackage() {
               <div class="plan-table-gold-price">
                 <span className="gold-dollar-sign">$</span>
                 <span className="gold-price">500</span>
-                <span className="gold-year">Year</span>
+                <span className="gold-year">/Year</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="plan-table-platinum">
+            <div className="plan-table-platinum-text">
+              <h3>Platinum</h3>
+              <div className="plan-table-platinum-line"></div>
+              <ul className="plan-platinum-list-item">
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- JDs, Cv shortlist, interview
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"> </i>
+                  Development and enforcement of HR procedures
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Monthly Rewards management
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Employee reference management-as required
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Dismissals-as required
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Monthly training
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Presence during statutory audits
+                </li>
+              </ul>
+              <div class="plan-table-platinum-price">
+                <span className="platinum-dollar-sign">$</span>
+                <span className="platinum-price">500</span>
+                <span className="platinum-year">/Year</span>
               </div>
             </div>
           </div>
