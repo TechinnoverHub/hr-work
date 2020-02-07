@@ -1,0 +1,528 @@
+.checkout-text {
+  padding: 150px 0px 50px;
+  background-color: #efefef;
+
+  h3 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 34px;
+    text-align: center;
+    color: #ef0633;
+  }
+
+  @media screen and (min-width: 800px) {
+    background-color: #ffffff;
+  }
+}
+
+.checkout-page-wrapper {
+  padding-bottom: 150px;
+  background-color: #efefef;
+
+  @media screen and (min-width: 800px) {
+  }
+}
+
+.checkout-delivery-detail-wrapper {
+  padding: 50px;
+  background-color: #ffffff;
+
+  @media screen and (min-width: 800px) {
+    background-color: #efefef;
+  }
+}
+
+.checkout-delivery-detail {
+  max-width: 1100px;
+  margin: 0px auto;
+  padding: 58px;
+  background-color: #ffffff;
+
+  h3 {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 23px;
+    color: #4a4a4a;
+  }
+}
+
+.delivery-detail-form-section {
+  width: 100%;
+  margin: 0px auto;
+}
+
+.delivery-detail-form {
+  margin-top: 30px;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(86, 86, 86, 0.5);
+  padding: 25px 10px;
+  font-size: 12px;
+
+  @media screen and (min-width: 800px) {
+    font-size: 15px;
+  }
+}
+
+.delivery-name-row,
+.delivery-phonenumber-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+
+  @media screen and (max-width: 800px) {
+    display: inline;
+  }
+
+  label {
+    flex-basis: 47.5%;
+    display: flex;
+    flex-direction: column;
+    color: #565656;
+    font-size: 1rem;
+    line-height: calc(25 / 16);
+
+    @media screen and (max-width: 800px) {
+      margin-top: 30px;
+    }
+  }
+
+  input {
+    margin-top: 18px;
+    border: 0.5px solid #888888;
+    height: 65.01px;
+    padding: 0.8rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+}
+
+.state-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+
+  @media screen and (max-width: 800px) {
+    display: inline;
+  }
+
+  label {
+    flex-basis: 30.5%;
+    display: flex;
+    flex-direction: column;
+    color: #565656;
+    font-size: 1rem;
+    line-height: calc(25 / 16);
+
+    @media screen and (max-width: 800px) {
+      margin-top: 30px;
+    }
+  }
+
+  input {
+    margin-top: 18px;
+    border: 0.5px solid #888888;
+    height: 65.01px;
+    padding: 0.8rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+}
+
+.delivery-save-button {
+  margin: 65px auto 0px;
+  text-align: center;
+  display: block;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.delivery-save-btn button {
+  padding: 15px 50px;
+  background-color: #ef0633;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 17px;
+  height: 65px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 800px) {
+    width: 450px;
+  }
+}
+
+.delivery-cancel-btn button {
+  padding: 15px 50px;
+  border-radius: 6px;
+  color: #ef0633;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #ef0633;
+  font-size: 17px;
+  width: 100%;
+  height: 65px;
+
+  @media screen and (min-width: 800px) {
+    width: 450px;
+  }
+}
+
+//
+// THE REVIEW ORDER SECTION
+.review-order-super-wrapper {
+  background-color: #efefef;
+}
+
+.review-order-wrapper {
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 90px auto;
+  display: block;
+  background-color: #efefef;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+}
+
+.review-order-section {
+  flex-basis: 65.5%;
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  background-color: #fff;
+  height: 1000px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0px;
+    height: 600px;
+  }
+}
+
+.review-order-text {
+  background-color: #fff;
+
+  h3 {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 23px;
+    color: #4a4a4a;
+    padding: 22px 34px;
+  }
+}
+
+.review-order-header {
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  background: #c4c4c4;
+  font-size: 16px;
+  color: #4a4a4a;
+  font-weight: bold;
+  height: 58px;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+}
+
+#order-itemDelivered {
+  flex-basis: 20%;
+}
+
+#order-itemQuantity {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 20%;
+    display: inline;
+    text-align: right;
+  }
+}
+
+#order-itemPrice {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 15%;
+    display: inline;
+    text-align: right;
+  }
+}
+
+#order-itemAction {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    display: inline;
+  }
+}
+
+.order-each-items {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  width: 100%;
+  padding: 20px;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
+}
+
+.order-image-text-wrapper {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 104px;
+    height: 104px;
+  }
+  .order-each-item-text {
+    font-weight: 600;
+    font-size: 18px;
+    color: #565656;
+    padding-left: 20px;
+
+    p {
+      font-size: 10px;
+      color: #888888;
+    }
+  }
+}
+
+.order-item-quantity-wrapper {
+  display: flex;
+  padding: 30px 0px;
+
+  @media screen and (min-width: 800px) {
+    align-items: center;
+  }
+
+  .order-quantity-counter {
+    width: 104px;
+    margin-left: 5px;
+
+    span {
+      border: 0.5px solid #c4c4c4;
+      padding: 8px 14px;
+    }
+
+    @media screen and (min-width: 800px) {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .order-price-items {
+    font-weight: bold;
+    font-size: 26px;
+    color: #ef0633;
+    padding-left: 20px;
+
+    span {
+      font-size: 14px;
+      color: rgba(239, 6, 51, 0.5);
+    }
+  }
+}
+
+.order-action-links {
+  font-size: 14px;
+  line-height: 23px;
+  padding: 30px 0px;
+  display: flex;
+
+  @media screen and (min-width: 800px) {
+    display: inline;
+  }
+
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: #888888;
+    background: #ffffff;
+    border: 1px solid #ef0633;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-right: 20px;
+    padding: 10px;
+
+    @media screen and (min-width: 800px) {
+      padding: 9px 30px;
+      border: none;
+      margin-right: 0px;
+    }
+  }
+}
+
+//
+// The Delivery Payment Option Area
+.payment-option {
+  flex-basis: 30.5%;
+  background-color: #fff;
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  h3 {
+    font-weight: bold;
+    font-size: 22px;
+    color: #4a4a4a;
+    padding: 20px 30px;
+  }
+}
+
+.payment-option-horizontal-line {
+  border: 0.5px solid rgba(189, 189, 189, 0.5);
+}
+
+.add-voucher {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #565656;
+}
+
+.apply-gift-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+  input {
+    border: 0.5px solid #888888;
+    height: 40.04px;
+    padding: 0px 0.7rem;
+    border-radius: 6px;
+    width: 60%;
+
+    @media screen and (min-width: 800px) {
+      font-size: 12px;
+      width: 65%;
+    }
+  }
+
+  button {
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: #ef0633;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #ef0633;
+    font-size: 17px;
+    width: 30%;
+
+    @media screen and (min-width: 800px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.paynow,
+.pay-on-delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 13px;
+  border: 0.5px solid #888888;
+  border-radius: 6px;
+  margin: 20px 30px;
+
+  div {
+    font-weight: bold;
+    font-size: 22px;
+    color: #565656;
+  }
+}
+
+.delivery-subtotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+  .delivery-subtotal-text {
+    font-weight: 600;
+    font-size: 15px;
+    color: #565656;
+  }
+
+  .delivery-subtotal-amount {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+    color: #565656;
+  }
+}
+
+.delivery-charges {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+  .delivery-charges-text {
+    font-weight: 600;
+    font-size: 15px;
+    color: #565656;
+  }
+
+  .delivery-charge-amount {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+    color: #565656;
+  }
+}
+
+.delivery-total {
+  padding: 20px 30px;
+}
+
+.delivery-total > div {
+  display: flex;
+  justify-content: space-between;
+
+  .delivery-total-text {
+    font-weight: bold;
+    font-size: 22px;
+    color: #565656;
+  }
+
+  .delivery-total-amount {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: right;
+    color: #ef0633;
+  }
+}
+.delivery-total button {
+  padding: 15px 50px;
+  background-color: #ef0633;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 17px;
+  width: 100%;
+  margin: 47px 0px;
+}
+
+.delivery-total-icon {
+  display: flex;
+  align-items: center;
+}
+
+.delivery-total-icon-text {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 15px;
+  color: #888888;
+}

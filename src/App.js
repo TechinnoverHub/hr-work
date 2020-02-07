@@ -13,6 +13,7 @@ import Login from 'Pages/Login';
 import CreateAccount from 'Pages/CreateAccount';
 import MyAccount from 'Pages/MyAccount';
 import ShoppingCart from 'Pages/ShoppingCart';
+import Checkout from 'Pages/Checkout';
 
 export default function App() {
   return (
@@ -50,6 +51,9 @@ export default function App() {
         </Route>
         <Route path="/cart">
           <ShoppingCart />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
         </Route>
       </Switch>
       <ScrollToTop />
