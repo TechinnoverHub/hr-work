@@ -50,7 +50,9 @@ function Login() {
               </div>
 
               <div className="login-button">
-                <button type="button">Login</button>
+                <button type="button" onClick={() => history.push('/account')}>
+                  Login
+                </button>
               </div>
             </form>
           </div>

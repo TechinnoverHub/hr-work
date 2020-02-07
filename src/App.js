@@ -8,13 +8,10 @@ import Contact from 'Pages/Contact';
 import Blog from 'Pages/Blog';
 import Packages from 'Pages/Packages';
 import ScrollToTop from 'Components/ScrollToTop';
-<<<<<<< HEAD
 import SinglePackage from 'Pages/SinglePackage';
 import Login from 'Pages/Login';
 import CreateAccount from 'Pages/CreateAccount';
-=======
 import MyAccount from 'Pages/MyAccount';
->>>>>>> myaccount-page done
 
 export default function App() {
   return (
@@ -47,7 +44,7 @@ export default function App() {
         <Route path="/create-account">
           <CreateAccount />
         </Route>
-        <Route path="/myaccount">
+        <Route path="/account">
           <MyAccount />
         </Route>
       </Switch>
