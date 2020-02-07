@@ -12,7 +12,6 @@ import SinglePackage from 'Pages/SinglePackage';
 import Login from 'Pages/Login';
 import CreateAccount from 'Pages/CreateAccount';
 import MyAccount from 'Pages/MyAccount';
-import OrderDetail from 'Pages/OrderDetail';
 
 export default function App() {
   return (
@@ -47,9 +46,6 @@ export default function App() {
         </Route>
         <Route path="/account">
           <MyAccount />
-        </Route>
-        <Route path="/orders">
-          <OrderDetail />
         </Route>
       </Switch>
       <ScrollToTop />

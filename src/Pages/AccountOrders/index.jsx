@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { Link } from 'react-router-dom';
 
 const AccountOrders = () => {
   return (
@@ -26,16 +27,18 @@ const AccountOrders = () => {
             </td>
             <td>
               Jan 14, 2020 <br />
-              <span className="account-orders-mobile-only account-red-text">
+              <Link className="account-orders-mobile-only account-red-text">
                 View
-              </span>
+              </Link>
             </td>
             <td className="account-orders-desktop-only">Cancelled</td>
             <td>
               ₦28,000.00
               <span className="account-orders-item-quantity"> for 1 item</span>
             </td>
-            <td className="account-orders-desktop-only">View</td>
+            <td className="account-orders-desktop-only">
+              <Link to={`/account/orders/${1}`}>View</Link>
+            </td>
           </tr>
 
           <tr>
@@ -45,16 +48,21 @@ const AccountOrders = () => {
             </td>
             <td>
               Jan 14, 2020 <br />
-              <span className="account-orders-mobile-only account-red-text">
+              <Link
+                className="account-orders-mobile-only account-red-text"
+                to={`/account/orders/${1}`}
+              >
                 View
-              </span>
+              </Link>
             </td>
             <td className="account-orders-desktop-only">Cancelled</td>
             <td>
               ₦28,000.00
               <span className="account-orders-item-quantity"> for 1 item</span>
             </td>
-            <td className="account-orders-desktop-only">View</td>
+            <td className="account-orders-desktop-only">
+              <Link to={`/account/orders/${1}`}>View</Link>
+            </td>
           </tr>
         </tbody>
       </table>
