@@ -3,7 +3,8 @@ import './index.scss';
 import Footer from 'Components/Footer';
 import { NavLink, Switch, Route, useRouteMatch } from 'react-router-dom';
 import AltHeader from 'Components/AltHeader';
-import AccountOrders from 'Components/AccountOrders';
+import AccountOrders from 'Pages/AccountOrders';
+import OrderDetail from 'Pages/OrderDetail';
 
 const MyAccount = () => {
   const { path } = useRouteMatch();
@@ -30,7 +31,6 @@ const MyAccount = () => {
                 <div className="myAccount-horizontal-line"></div>
                 <li>
                   <NavLink
-                    exact
                     className="myAccount-list"
                     to="/account/orders"
                     activeClassName="myAccount-list-active"
@@ -61,6 +61,9 @@ const MyAccount = () => {
             <Switch>
               <Route exact path={path}>
                 <AccountOrders />
+              </Route>
+              <Route path={`${path}/orders/:id`}>
+                <OrderDetail />
               </Route>
               <Route path={`${path}/orders`}>
                 <AccountOrders />

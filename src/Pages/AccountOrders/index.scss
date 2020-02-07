@@ -18,7 +18,7 @@
   }
 
   .account-red-text {
-    color: red;
+    color: #ef0633;
   }
 
   table {
@@ -41,7 +41,7 @@
         line-height: 23px;
 
         &:not(:first-of-type) {
-          color: red;
+          color: #ef0633;
         }
 
         @media screen and (min-width: 800px) {
@@ -74,6 +74,11 @@
             @media screen and (min-width: 800px) {
               display: none;
             }
+          }
+
+          a {
+            text-decoration: none;
+            color: #ef0633;
           }
 
           @media screen and (min-width: 800px) {
