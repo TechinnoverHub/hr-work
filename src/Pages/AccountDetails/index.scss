@@ -1,76 +1,7 @@
-.account-wrapper {
-  min-height: 2000px;
-  max-width: 1100px;
-  margin: 0px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (min-width: 800px) {
-    min-height: 1400px;
-  }
-}
-
-.account-section {
-  display: block;
-  width: 80%;
-
-  @media screen and (min-width: 800px) {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.account-left-box-wrapper {
-  flex-basis: 30.5%;
-}
-
-.account-left-box-text {
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 34px;
-  color: #ef0633;
-  margin: 30px 0px;
-}
-
-.account-left-box {
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-
-  ul {
-    list-style: none;
-  }
-  li {
-    height: 40px;
-    padding: 40px;
-  }
-  .account-left-list {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 23px;
-    color: #565656;
-  }
-
-  li:hover {
-    background-color: #ef0633;
-  }
-
-  li:hover a {
-    color: #fff;
-  }
-}
-
-.account-left-horizontal-line {
-  border: 0.5px solid rgba(158, 158, 158, 0.5);
-}
-
 .account-right-box-wrapper {
-  flex-basis: 65.5%;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-  margin: 100px 0px;
+  border-radius: 6px;
+  // margin: 100px 0px;
   padding: 20px 0px;
 }
 
@@ -83,7 +14,7 @@
   max-width: 1100px;
   padding: 0px 9%;
 
-  ::-webkit-input-placeholder {
+  ::placeholder {
     color: rgba(86, 86, 86, 0.5);
   }
 
@@ -93,7 +24,7 @@
     margin: 35px 0px;
 
     @media screen and (max-width: 800px) {
-      display: inline;
+      display: block;
     }
 
     label {
@@ -120,7 +51,7 @@
   }
 }
 
-.field-row {
+.account-field-row {
   label {
     display: flex;
     flex-direction: column;
@@ -163,7 +94,7 @@
 .account-save-button button {
   padding: 15px 20px;
   background-color: #ef0633;
-  border-radius: 9px;
+  border-radius: 6px;
   color: white;
   cursor: pointer;
   font-size: 17px;
