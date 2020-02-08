@@ -3,6 +3,11 @@ import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import { Link } from 'react-router-dom';
+import paystack from 'Assets/svg/paystack.svg';
+import mastercard from 'Assets/svg/mastercard.svg';
+import visa from 'Assets/svg/visa.svg';
+import verve from 'Assets/svg/verve.svg';
+import eachItemImage from 'Assets/images/each-item-image.png';
 
 class ShoppingCart extends React.Component {
   render() {
@@ -29,7 +34,7 @@ class ShoppingCart extends React.Component {
 
           <div className="shopping-cart-details-wrapper">
             <div className="shopping-cart-details-contents">
-              <button>
+              <button className="continue-shopping">
                 <i className="fa fa-play"></i>Continue Shopping
               </button>
 
@@ -42,8 +47,8 @@ class ShoppingCart extends React.Component {
                     <div id="itemAction">Action </div>
                   </div>
                   <div className="each-items">
-                    <div id="itemDetails" className="each-item-image-wrapper">
-                      <div className="each-item-image"></div>
+                    <div className="each-item-image-wrapper">
+                      <img src={eachItemImage} alt="each-item" />
                       <div className="each-item-text">
                         HR Remote Manager
                         <p>Basic, Bronze, Foundation</p>
@@ -52,9 +57,9 @@ class ShoppingCart extends React.Component {
 
                     <div className="item-quantity-wrapper">
                       <div className="quantity-counter">
-                        <span>-</span>
+                        <button>-</button>
                         <span>1</span>
-                        <span>+</span>
+                        <button>+</button>
                       </div>
                       <div className="price-items">
                         ₦3,480
@@ -63,9 +68,7 @@ class ShoppingCart extends React.Component {
                       </div>
                     </div>
 
-                    {/* </div> */}
-
-                    <div id="itemAction" className="action-links">
+                    <div className="action-links">
                       <Link>Remove item</Link>
                       <br />
                       <Link>Save for Later</Link>
@@ -74,18 +77,19 @@ class ShoppingCart extends React.Component {
                   <div className="item-details-horizontal-line"></div>
 
                   <div className="each-items">
-                    <div id="itemDetails" className="each-item-image-wrapper">
-                      <div className="each-item-image"></div>
+                    <div className="each-item-image-wrapper">
+                      <img src={eachItemImage} alt="each-item" />
                       <div className="each-item-text">
                         HR Remote Manager
                         <p>Basic, Bronze, Foundation</p>
                       </div>
                     </div>
+
                     <div className="item-quantity-wrapper">
                       <div className="quantity-counter">
-                        <span>-</span>
+                        <button>-</button>
                         <span>1</span>
-                        <span>+</span>
+                        <button>+</button>
                       </div>
                       <div className="price-items">
                         ₦3,480
@@ -93,27 +97,28 @@ class ShoppingCart extends React.Component {
                         <span>₦3,480 x 1 item</span>
                       </div>
                     </div>
-                    <div id="itemAction" className="action-links">
+
+                    <div className="action-links">
                       <Link>Remove item</Link>
                       <br />
                       <Link>Save for Later</Link>
                     </div>
                   </div>
                   <div className="item-details-horizontal-line"></div>
-
                   <div className="each-items">
-                    <div id="itemDetails" className="each-item-image-wrapper">
-                      <div className="each-item-image"></div>
+                    <div className="each-item-image-wrapper">
+                      <img src={eachItemImage} alt="each-item" />
                       <div className="each-item-text">
                         HR Remote Manager
                         <p>Basic, Bronze, Foundation</p>
                       </div>
                     </div>
+
                     <div className="item-quantity-wrapper">
                       <div className="quantity-counter">
-                        <span>-</span>
+                        <button>-</button>
                         <span>1</span>
-                        <span>+</span>
+                        <button>+</button>
                       </div>
                       <div className="price-items">
                         ₦3,480
@@ -121,7 +126,8 @@ class ShoppingCart extends React.Component {
                         <span>₦3,480 x 1 item</span>
                       </div>
                     </div>
-                    <div id="itemAction" className="action-links">
+
+                    <div className="action-links">
                       <Link>Remove item</Link>
                       <br />
                       <Link>Save for Later</Link>
@@ -153,15 +159,17 @@ class ShoppingCart extends React.Component {
                     <div className="total-figure">₦3,480</div>
                   </div>
                   <div className="checkout-button">
-                    <button>Continue to Checkout</button>
+                    <button className="order-checkout-button">
+                      Continue to Checkout
+                    </button>
                   </div>
                   <div className="order-summary-horizontal-line"></div>
                   <div className="we-accept">
                     <div className="we-accept-text">we accept:</div>
-                    <div className="paystack-image"></div>
-                    <div className="mastercard-image"></div>
-                    <div className="visa-image"></div>
-                    <div className="verve-image"></div>
+                    <img src={paystack} alt="paystack" />
+                    <img src={mastercard} alt="mastercard" />
+                    <img src={visa} alt="visa" />
+                    <img src={verve} alt="verve" />
                   </div>
                 </div>
               </div>

@@ -42,9 +42,6 @@
   }
 }
 
-// .shopping-cart-header {
-// }
-
 .shopping-cart-header h3 {
   font-weight: bold;
   font-size: 40px;
@@ -64,20 +61,22 @@
   width: 80vw;
 }
 
-.shopping-cart-details-contents button {
-  padding: 0.8125rem 1.5rem;
-  background-color: #ef0633;
-  border-radius: 6px;
-  color: white;
-  margin-top: 40px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
+.shopping-cart-details-contents {
+  .continue-shopping {
+    padding: 0.8125rem 1.5rem;
+    background-color: #ef0633;
+    border-radius: 6px;
+    color: white;
+    margin-top: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
 
-  i {
-    padding-left: 10px;
-    transform: scaleX(-1);
+    i {
+      padding-left: 10px;
+      transform: scaleX(-1);
+    }
   }
 }
 
@@ -94,125 +93,130 @@
 .item-details {
   flex-basis: 65.5%;
   background-color: #fff;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0px;
+  }
 }
 
 .item-details-header {
-  display: none;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 30px;
   background: #c4c4c4;
   font-size: 16px;
-  line-height: 23px;
   color: #4a4a4a;
   font-weight: bold;
+  height: 58px;
 
   @media screen and (min-width: 800px) {
     display: flex;
   }
 }
 
-.each-items {
-  display: flex;
-}
-
 #itemDetails {
-  width: 100%;
-
-  @media screen and (min-width: 800px) {
-    width: 60%;
-  }
+  flex-basis: 20%;
 }
 
 #itemQuantity {
-  width: 20%;
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 20%;
+    display: block;
+    text-align: right;
+  }
 }
 
 #itemPrice {
-  width: 30%;
-}
-
-.item-quantity-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: none;
 
   @media screen and (min-width: 800px) {
-    width: 50%;
+    flex-basis: 15%;
+    display: block;
+    text-align: right;
   }
 }
 
 #itemAction {
-  text-align: right;
-  width: 100%;
+  display: none;
 
   @media screen and (min-width: 800px) {
-    width: 20%;
+    display: block;
   }
 }
-
 .each-items {
-  margin: 30px;
-  display: block;
-  //   flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  width: 100%;
+  padding: 20px;
 
   @media screen and (min-width: 800px) {
-    margin: 30px;
-    display: flex;
     flex-direction: row;
   }
 }
 
 .each-item-image-wrapper {
   display: flex;
+  align-items: center;
 
-  @media screen and (min-width: 800px) {
+  img {
+    width: 104px;
+    height: 104px;
+  }
+  .each-item-text {
+    font-weight: 600;
+    font-size: 18px;
+    color: #565656;
+    padding-left: 20px;
+
+    p {
+      font-size: 10px;
+      color: #888888;
+    }
   }
 }
 
-.each-item-image {
-  background-image: url(../../Assets/images/each-item-image.png);
-  width: 214px;
-  height: 123px;
-  background-repeat: no-repeat;
-  margin-top: 30px;
-  flex-basis: 70%;
-
-  @media screen and (min-width: 800px) {
-    padding: 0px;
-  }
-}
-
-.each-item-text {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-  color: #565656;
+.item-quantity-wrapper {
+  display: flex;
   padding: 30px 0px;
 
-  p {
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 23px;
-    color: #888888;
+  @media screen and (min-width: 800px) {
+    align-items: center;
+    margin-left: 13px;
+  }
+
+  .price-items {
+    font-weight: bold;
+    font-size: 26px;
+    color: #ef0633;
+    padding-left: 20px;
+
+    span {
+      font-size: 14px;
+      color: rgba(239, 6, 51, 0.5);
+    }
   }
 }
 
 .quantity-counter {
-  padding: 30px;
-}
-
-.price-items {
-  padding: 30px 0px;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 23px;
-  color: #ef0633;
+  display: flex;
+  height: 34px;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
 
   span {
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 23px;
-    color: rgba(239, 6, 51, 0.5);
+    padding: 10px 14px;
+    border-left: 0.5px solid #c4c4c4;
+    border-right: 0.5px solid #c4c4c4;
+  }
+
+  button {
+    background-color: #fff;
+    padding: 6px 14px;
+    border: 0;
   }
 }
 
@@ -221,10 +225,9 @@
   line-height: 23px;
   padding: 30px 0px;
   display: flex;
-  justify-content: space-between;
 
   @media screen and (min-width: 800px) {
-    display: inline;
+    display: block;
   }
 
   a {
@@ -235,23 +238,26 @@
     border: 1px solid #ef0633;
     box-sizing: border-box;
     border-radius: 6px;
-    padding: 9px 30px;
+    margin-right: 20px;
+    padding: 10px;
 
     @media screen and (min-width: 800px) {
+      padding: 9px 30px;
       border: none;
+      margin-right: 0px;
     }
   }
 }
 
 .item-details-horizontal-line {
   border: 0.5px solid rgba(136, 136, 136, 0.5);
-  margin: 0px 30px;
+  margin: 0px 20px;
 }
 
 .order-summary {
   flex-basis: 30.5%;
   background-color: #fff;
-  height: 590px;
+  height: 530px;
 }
 
 .order-summary > div {
@@ -317,19 +323,23 @@
   margin: 0 auto 30px;
 }
 
-.checkout-button button {
-  background-color: #ef0633;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  border: none;
-  font-size: 17px;
-  width: 100%;
+.checkout-button {
+  .order-checkout-button {
+    background-color: #ef0633;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 17px;
+    width: 100%;
+    padding: 0.8125rem 1.5rem;
+  }
 }
 
 .we-accept {
   display: flex;
   padding: 20px;
+  align-items: center;
 }
 
 .we-accept-text {
@@ -337,32 +347,4 @@
   font-size: 10px;
   line-height: 15px;
   color: #888888;
-}
-
-.paystack-image {
-  background-image: url(../../Assets/images/paystack-image.png);
-  width: 43px;
-  height: 43px;
-  background-repeat: no-repeat;
-}
-
-.mastercard-image {
-  background-image: url(../../Assets/images/mastercard-image.png);
-  width: 43px;
-  height: 43px;
-  background-repeat: no-repeat;
-}
-
-.visa-image {
-  background-image: url(../../Assets/images/visa-image.png);
-  width: 51px;
-  height: 45px;
-  background-repeat: no-repeat;
-}
-
-.verve-image {
-  background-image: url(../../Assets/images/verve-image.png);
-  width: 43px;
-  height: 43px;
-  background-repeat: no-repeat;
 }
