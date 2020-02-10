@@ -6,6 +6,7 @@ import AltHeader from 'Components/AltHeader';
 import AccountOrders from 'Pages/AccountOrders';
 import OrderDetail from 'Pages/OrderDetail';
 import AccountDetails from 'Pages/AccountDetails';
+import Dashboard from 'Pages/Dashboard';
 
 const MyAccount = () => {
   const { path } = useRouteMatch();
@@ -23,7 +24,7 @@ const MyAccount = () => {
                   <NavLink
                     exact
                     className="myAccount-list"
-                    to="/account"
+                    to="/account/dashboard"
                     activeClassName="myAccount-list-active"
                   >
                     Dashboard
@@ -71,6 +72,9 @@ const MyAccount = () => {
               </Route>
               <Route path={`${path}/details`}>
                 <AccountDetails />
+              </Route>
+              <Route path={`${path}/dashboard`}>
+                <Dashboard />
               </Route>
             </Switch>
           </div>
