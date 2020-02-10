@@ -18,7 +18,7 @@ function Checkout() {
         <h3>Checkout</h3>
       </div>
       <div className="checkout-page-wrapper">
-        <div className="checkout-delivery-detail-wrapper">
+        {/* <div className="checkout-delivery-detail-wrapper">
           <div className="checkout-delivery-detail">
             <h3>Delivery Details</h3>
             <div className="delivery-detail-form-section">
@@ -73,7 +73,7 @@ function Checkout() {
               </form>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="review-order-super-wrapper">
           <div className="review-order-wrapper">
@@ -82,7 +82,7 @@ function Checkout() {
                 <h3>Review Order</h3>
               </div>
               <div className="review-order-header">
-                <div id="order-itemDelivered">Delivery 1 of 2</div>
+                <div id="order-itemDelivered">Items Details</div>
                 <div id="order-itemQuantity">Quantity</div>
                 <div id="order-itemPrice">Items Price</div>
                 <div id="order-itemAction">Action </div>
@@ -99,9 +99,9 @@ function Checkout() {
 
                 <div className="order-item-quantity-wrapper">
                   <div className="order-quantity-counter">
-                    <span>-</span>
+                    <button>-</button>
                     <span>1</span>
-                    <span>+</span>
+                    <button>+</button>
                   </div>
                   <div className="order-price-items">
                     ₦3,480
@@ -116,14 +116,7 @@ function Checkout() {
                   <Link>Save for Later</Link>
                 </div>
               </div>
-              <div className="item-details-horizontal-line"></div>
-              <div className="review-order-header">
-                <div id="order-itemDelivered">Delivery 2 of 2</div>
-                <div id="order-itemQuantity">Quantity</div>
-                <div id="order-itemPrice">Items Price</div>
-                <div id="order-itemAction">Action </div>
-              </div>
-
+              <div className="order-item-details-horizontal-line"></div>
               <div className="order-each-items">
                 <div className="order-image-text-wrapper">
                   <img src={deliveryImage} alt="item" />
@@ -135,9 +128,9 @@ function Checkout() {
 
                 <div className="order-item-quantity-wrapper">
                   <div className="order-quantity-counter">
-                    <span>-</span>
+                    <button>-</button>
                     <span>1</span>
-                    <span>+</span>
+                    <button>+</button>
                   </div>
                   <div className="order-price-items">
                     ₦3,480
@@ -171,11 +164,11 @@ function Checkout() {
                 <div>Pay Now</div>
                 <input type="radio" />
               </div>
-              <div className="payment-option-horizontal-line"></div>
-              <div className="pay-on-delivery">
+              {/* <div className="payment-option-horizontal-line"></div> */}
+              {/* <div className="pay-on-delivery">
                 <div>Pay on Delivery</div>
                 <input type="radio" />
-              </div>
+              </div> */}
               <div className="payment-option-horizontal-line"></div>
               <div className="delivery-subtotal">
                 <div className="delivery-subtotal-text">Subtotal:</div>
