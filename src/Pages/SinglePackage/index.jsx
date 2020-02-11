@@ -29,7 +29,31 @@ function SinglePackage() {
             <div className="hr-remote-manager-image"></div>
             <div className="hr-remote-manager-text">
               <h3>HR Remote Manager</h3>
-              <span className="small-text">Basic, Bronze, Foundation</span>
+              {/* <span className="small-text">Basic, Bronze, Foundation</span> */}
+              <span className="hr-work-plan-text">
+                <div>Select Your Plan</div>
+                <ul>
+                  <li>
+                    <input type="radio" />
+                    Basic
+                  </li>
+                  <li>
+                    <input type="radio" />
+                    Bronze
+                  </li>
+                  <li>
+                    <input type="radio" />
+                    Foundation
+                  </li>
+                </ul>
+
+                <div className="compare-plan">
+                  <a href="ff">Compare Plans</a>
+                </div>
+              </span>
+
+              <hr />
+
               <div className="review-column">
                 <div className="review">
                   <span className="review-icon">
@@ -59,9 +83,9 @@ function SinglePackage() {
               <div className="quantity">
                 <div className="quantity-text">Quantity:</div>
                 <div className="counter">
-                  <div className="minus">-</div>
+                  <button>-</button>
                   <span>1</span>
-                  <div className="plus">+</div>
+                  <button>+</button>
                 </div>
                 <div>
                   <p className="bulk-purchase">
@@ -141,8 +165,8 @@ function SinglePackage() {
                 </li>
               </ul>
               <div class="plan-table-basic-price">
-                <span className="basic-dollar-sign">$</span>
-                <span className="basic-price">50</span>
+                <span className="basic-dollar-sign">₦</span>
+                <span className="basic-price">5,000</span>
                 <span className="basic-year">/Year</span>
               </div>
             </div>
@@ -179,8 +203,8 @@ function SinglePackage() {
                 </li>
               </ul>
               <div class="plan-table-silver-price">
-                <span className="silver-dollar-sign">$</span>
-                <span className="silver-price">150</span>
+                <span className="silver-dollar-sign">₦</span>
+                <span className="silver-price">15,000</span>
                 <span className="silver-year">/Year</span>
               </div>
             </div>
@@ -217,8 +241,8 @@ function SinglePackage() {
                 </li>
               </ul>
               <div class="plan-table-gold-price">
-                <span className="gold-dollar-sign">$</span>
-                <span className="gold-price">500</span>
+                <span className="gold-dollar-sign">₦</span>
+                <span className="gold-price">30,000</span>
                 <span className="gold-year">/Year</span>
               </div>
             </div>
@@ -255,8 +279,8 @@ function SinglePackage() {
                 </li>
               </ul>
               <div class="plan-table-platinum-price">
-                <span className="platinum-dollar-sign">$</span>
-                <span className="platinum-price">500</span>
+                <span className="platinum-dollar-sign">₦</span>
+                <span className="platinum-price">50,000</span>
                 <span className="platinum-year">/Year</span>
               </div>
             </div>
