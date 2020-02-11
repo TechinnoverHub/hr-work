@@ -3,7 +3,10 @@ import Header from 'Components/Header';
 import './index.scss';
 import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
-import careerHeroImg from 'Assets/images/career-image.png';
+// import careerHeroImg from 'Assets/images/career-image.png';
+
+const careerHeroImg =
+  'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899356/career-image_vmgskx.png';
 
 function Career() {
   return (

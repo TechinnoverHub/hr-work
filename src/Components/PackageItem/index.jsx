@@ -2,7 +2,7 @@
 import React from 'react';
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import itemImg from 'Assets/images/packages-image.png';
+// import itemImg from 'Assets/images/packages-image.png';
 import { Link } from 'react-router-dom';
 
 const categoryColor = {
@@ -123,6 +123,9 @@ const packageButtonStyle = css`
     padding: 15px 40px;
   }
 `;
+
+const itemImg =
+  'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899349/packages-image_b2ow2y.png';
 
 const PackageItem = ({ item: { id, categoryKey, name, price, category } }) => {
   return (

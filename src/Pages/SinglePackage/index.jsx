@@ -3,9 +3,12 @@ import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
-import packageImg from 'Assets/images/packages-header-image.png';
+// import packageImg from 'Assets/images/packages-header-image.png';
 import BreadCrumbs from 'Pages/BreadCumbs';
 import { useHistory } from 'react-router-dom';
+
+const packageImg =
+  'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
 
 function SinglePackage() {
   const history = useHistory();
@@ -15,9 +18,6 @@ function SinglePackage() {
       <Header />
       <Hero imgUrl={packageImg} heroTitle="Our Packages" />
       <div className="single-package-section">
-        {/* <div>
-          <PackagesLink />
-        </div> */}
         <div className="single-package-breadcrumbs-container">
           <BreadCrumbs
             category="retainership"

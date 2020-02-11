@@ -7,7 +7,7 @@
       rgba(0, 0, 0, 0) 15.36%,
       rgba(0, 0, 0, 0.688) 90.13%
     ),
-    url(../../Assets/images/homepage-header.jpg);
+    url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899359/homepage-header_sqmbbs.png');
   background-size: cover;
   position: relative;
   display: flex;
@@ -23,18 +23,6 @@
     background-position: initial;
   }
 }
-
-// .no-webp .homepage-image {
-//   // background: red;
-//   background-image: url('../../Assets/images/heroImage.png');
-//   height: 110vh;
-// }
-
-// .webp .homepage-image {
-//   height: 110vh;
-//   // background: blue;
-//   background-image: url('../../Assets/images/heroImage.png');
-// }
 
 .heading-text {
   color: white;
@@ -306,7 +294,7 @@
   background-size: cover;
   background-position: 90% 0vw;
   background-repeat: no-repeat;
-  background-image: url(../../Assets/images/packages-image.png);
+  background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899349/packages-image_b2ow2y.png');
 
   @media screen and (min-width: 800px) {
     background-position: initial;
@@ -482,7 +470,7 @@
       rgba(0, 33, 71, 0.5),
       rgba(0, 33, 71, 0.5)
     ),
-    url(../../Assets/images/why-bg-image.png);
+    url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899359/why-bg-image_oj61jm.png');
   background-size: cover;
   background-position: center;
 
