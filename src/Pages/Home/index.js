@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.scss';
 import Header from 'Components/Header';
-import homepageImage from 'Assets/images/homepage-side-image.png';
 import Footer from 'Components/Footer';
 import LatestBlog from 'Components/LatestBlog';
 import { useHistory } from 'react-router-dom';
+import { SIDE_IMAGE } from './imageLinks';
 
 function Home() {
   const history = useHistory();
@@ -65,7 +65,7 @@ function Home() {
             </div>
           </div>
           <div className="col2">
-            <img src={homepageImage} alt="side-bar" />
+            <img src={SIDE_IMAGE} alt="side-bar" />
           </div>
         </div>
         <button className="discover-btn">

@@ -5,10 +5,12 @@ import Footer from 'Components/Footer';
 import PackagesLink from 'Components/PackagesLink';
 import Newsletter from 'Components/Newsletter';
 import Hero from 'Components/Hero';
-import packageImg from 'Assets/images/packages-header-image.png';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import dummyData from './dummydata';
 import PackageItem from 'Components/PackageItem';
+
+const packageImg =
+  'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
 
 function Packages() {
   const { params } = useRouteMatch();

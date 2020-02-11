@@ -3,7 +3,10 @@ import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
-import heroImage from 'Assets/images/blog-header-image.png';
+// import heroImage from 'Assets/images/blog-header-image.png';
+
+const heroImage =
+  'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899348/blog-header-image_woqsfl.png';
 
 function Blog() {
   return (

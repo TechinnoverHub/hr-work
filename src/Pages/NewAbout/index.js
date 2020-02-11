@@ -3,16 +3,17 @@ import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import './index.scss';
 import NewsLetter from 'Components/Newsletter';
+import Hero from 'Components/Hero';
+
+const aboutImg =
+  'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899341/about-header-image_byjwqa.png';
 
 function About() {
   return (
     <div>
       <Header />
-      <div className="about-image">
-        <div className="about-image-wrapper">
-          <h3 className="about-text">About Us</h3>
-        </div>
-      </div>
+      <Hero imgUrl={aboutImg} heroTitle="About Us" />
+
       <div className="section-who-we-are">
         <div className="section-text">Who we are</div>
         <div className="red-line"></div>

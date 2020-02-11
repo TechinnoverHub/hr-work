@@ -1,4 +1,0 @@
-{
-  "options": ["setClasses"],
-  "feature-detects": ["css/webp"]
-}

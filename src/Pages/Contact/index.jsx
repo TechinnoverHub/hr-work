@@ -5,7 +5,10 @@ import Footer from 'Components/Footer';
 import NewsLetter from 'Components/Newsletter';
 import CustomMap from 'Components/CustomMap';
 import Hero from 'Components/Hero';
-import contactImg from 'Assets/images/contactPGIMG.png';
+// import contactImg from 'Assets/images/contactPGIMG.png';
+
+const contactImg =
+  'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto:best/v1580899334/contactPGIMG_nsqly2.png';
 
 function Contact() {
   return (
