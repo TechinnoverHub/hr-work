@@ -257,7 +257,7 @@
 .order-summary {
   flex-basis: 30.5%;
   background-color: #fff;
-  height: 530px;
+  height: 410px;
 }
 
 .order-summary > div {
@@ -283,23 +283,6 @@
   line-height: 23px;
   color: #565656;
   padding: 30px 30px;
-}
-
-.delivery-charges-box {
-  padding: 30px 30px;
-  .delivery-charges {
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 23px;
-    color: #565656;
-  }
-
-  .delivery-charge-text {
-    font-size: 12px;
-    line-height: 20px;
-    text-align: right;
-    color: #888888;
-  }
 }
 
 .total-box {

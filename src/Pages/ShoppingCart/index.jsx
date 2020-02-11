@@ -145,15 +145,14 @@ class ShoppingCart extends React.Component {
                     <div className="subtotal-figure">₦3,480 </div>
                   </div>
                   <div className="order-summary-horizontal-line"></div>
-                  <div className="delivery-charges-box">
+                  {/* <div className="delivery-charges-box">
                     <div className="delivery-charges">Delivery Charges:</div>
                     <div className="delivery-charge-text">
                       Delivery Charges <br />
                       will be added
                       <br /> during checkout
                     </div>
-                  </div>
-                  <div className="order-summary-horizontal-line"></div>
+                  </div> */}
                   <div className="total-box">
                     <div className="total">Total</div>
                     <div className="total-figure">₦3,480</div>
