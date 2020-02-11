@@ -175,10 +175,10 @@ function Checkout() {
                 <div className="delivery-subtotal-amount">₦3,480</div>
               </div>
               <div className="payment-option-horizontal-line"></div>
-              <div className="delivery-charges">
+              {/* <div className="delivery-charges">
                 <div className="delivery-charges-text">Delivery Charges:</div>
                 <div className="delivery-charge-amount">₦3,480</div>
-              </div>
+              </div> */}
               <div className="payment-option-horizontal-line"></div>
               <div className="delivery-total">
                 <div>
