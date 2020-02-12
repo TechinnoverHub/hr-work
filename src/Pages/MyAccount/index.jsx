@@ -6,6 +6,7 @@ import AltHeader from 'Components/AltHeader';
 import AccountOrders from 'Pages/AccountOrders';
 import OrderDetail from 'Pages/OrderDetail';
 import AccountDetails from 'Pages/AccountDetails';
+import Dashboard from 'Pages/Dashboard';
 
 const MyAccount = () => {
   const { path } = useRouteMatch();
@@ -61,7 +62,7 @@ const MyAccount = () => {
           <div className="myAccount-right-box-wrapper">
             <Switch>
               <Route exact path={path}>
-                <AccountOrders />
+                <Dashboard />
               </Route>
               <Route path={`${path}/orders/:id`}>
                 <OrderDetail />
