@@ -24,7 +24,7 @@ const MyAccount = () => {
                   <NavLink
                     exact
                     className="myAccount-list"
-                    to="/account/dashboard"
+                    to="/account"
                     activeClassName="myAccount-list-active"
                   >
                     Dashboard
@@ -62,7 +62,7 @@ const MyAccount = () => {
           <div className="myAccount-right-box-wrapper">
             <Switch>
               <Route exact path={path}>
-                <AccountOrders />
+                <Dashboard />
               </Route>
               <Route path={`${path}/orders/:id`}>
                 <OrderDetail />
@@ -72,9 +72,6 @@ const MyAccount = () => {
               </Route>
               <Route path={`${path}/details`}>
                 <AccountDetails />
-              </Route>
-              <Route path={`${path}/dashboard`}>
-                <Dashboard />
               </Route>
             </Switch>
           </div>
