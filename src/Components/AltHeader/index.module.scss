@@ -171,6 +171,38 @@ nav {
   li {
     margin: 0 1.09375em;
     list-style: none;
+
+    .cart__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .cart__icon {
+        position: relative;
+        margin-right: 8px;
+
+        img {
+          width: 20px;
+          height: 100%;
+        }
+      }
+
+      .cart__counter {
+        position: absolute;
+        right: -5px;
+        top: -4px;
+        background: #ef0633;
+        border-radius: 50%;
+        height: 13px;
+        width: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 9px;
+        font-weight: 700;
+      }
+    }
   }
 
   &.link_sticky {

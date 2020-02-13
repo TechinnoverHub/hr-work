@@ -1,6 +1,6 @@
 // NavBAr styling
 .header {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   width: 100%;
   padding-top: 2.625rem;
@@ -18,10 +18,12 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   animation: slideleft 0.5s ease-in forwards;
+  transition: padding 0.2s ease-in;
 }
 
 .stickOut {
   animation: slideOut 0.5s ease-in forwards;
+  // transition: padding 0.1s;
 }
 
 @keyframes slideleft {
@@ -68,6 +70,13 @@ nav {
       padding: 5% 0;
       a {
         color: #ef0633;
+      }
+
+      .cart__link {
+        .cart__counter {
+          background: #ef0633;
+          color: #ffffff;
+        }
       }
     }
 
@@ -198,6 +207,38 @@ nav {
   li {
     margin: 0 1.09375em;
     list-style: none;
+
+    .cart__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .cart__icon {
+        position: relative;
+        margin-right: 8px;
+
+        img {
+          width: 20px;
+          height: 100%;
+        }
+      }
+
+      .cart__counter {
+        position: absolute;
+        right: -5px;
+        top: -4px;
+        background: #ffffff;
+        border-radius: 50%;
+        height: 13px;
+        width: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ef0633;
+        font-size: 9px;
+        font-weight: 700;
+      }
+    }
   }
 
   &.link_sticky {
@@ -206,6 +247,11 @@ nav {
         color: #ef0633;
         font-weight: bold;
         transition: color 0.1s ease-out;
+      }
+
+      .cart__counter {
+        background: #ef0633;
+        color: #ffffff;
       }
     }
   }
