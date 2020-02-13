@@ -4,6 +4,8 @@ import logo from 'Assets/svg/logo.svg';
 import logoDark from 'Assets/svg/DarkLogo.svg';
 import Styles from './index.module.scss';
 import noScroll from 'no-scroll';
+import cartIconWhite from 'Assets/svg/shopping-cart-white.svg';
+import cartIconRed from 'Assets/svg/shopping-cart-red.svg';
 
 export default () => {
   const [isSticky, setSticky] = useState(false);
@@ -115,6 +117,22 @@ export default () => {
             <li>
               <Link className={Styles.link} to="/login">
                 Account
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/cart"
+                className={`${Styles.link} ${Styles.cart__link}`}
+              >
+                <span className={Styles.cart__icon}>
+                  <img
+                    src={isSticky || navOpen ? cartIconRed : cartIconWhite}
+                    alt="cart"
+                  />
+                  <span className={Styles.cart__counter}>{2}</span>
+                </span>
+                <span>Cart</span>
               </Link>
             </li>
           </ul>

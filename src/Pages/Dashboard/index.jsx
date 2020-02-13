@@ -9,8 +9,10 @@ const Dashboard = () => {
         Welcome to your dashboard
         <div className="dashboard-para">
           From your account dashboard you can view your
-          <Link to="account/orders"> recent orders</Link>, manage your shipping
-          and billing addresses, and edit your password and account details.
+          <Link to="account/orders"> recent orders</Link> and{' '}
+          <Link to="account/details">
+            edit your password and account details.
+          </Link>
         </div>
       </p>
     </div>
