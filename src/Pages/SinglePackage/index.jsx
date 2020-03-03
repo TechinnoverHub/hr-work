@@ -5,13 +5,19 @@ import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
 // import packageImg from 'Assets/images/packages-header-image.png';
 import BreadCrumbs from 'Pages/BreadCumbs';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
+// import { Link } from 'react-router-hash-link';
+
+import { Link } from 'react-scroll';
 
 const packageImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
 
 function SinglePackage() {
   const history = useHistory();
+  const path = useRouteMatch();
+
+  console.log(path.url, '++  path ++');
 
   return (
     <div>
@@ -29,7 +35,54 @@ function SinglePackage() {
             <div className="hr-remote-manager-image"></div>
             <div className="hr-remote-manager-text">
               <h3>HR Remote Manager</h3>
-              <span className="small-text">Basic, Bronze, Foundation</span>
+              {/* <span className="small-text">Basic, Bronze, Foundation</span> */}
+              <div className="hr-work-plan-text">
+                <p className="hr-work-plan-text-action">Select Your Plan</p>
+                <div className="hr-work-plan-radio">
+                  <div className="hr-work-radio-group">
+                    <label htmlFor="basic-plan">
+                      <input type="radio" name="package-plan" id="basic-plan" />{' '}
+                      Basic
+                    </label>
+                  </div>
+
+                  <div className="hr-work-radio-group">
+                    <label htmlFor="bronze-plan">
+                      <input
+                        type="radio"
+                        name="package-plan"
+                        id="bronze-plan"
+                      />{' '}
+                      Bronze
+                    </label>
+                  </div>
+
+                  <div className="hr-work-radio-group">
+                    <label htmlFor="foundation-plan">
+                      <input
+                        type="radio"
+                        name="package-plan"
+                        id="foundation-plan"
+                      />{' '}
+                      Foundation
+                    </label>
+                  </div>
+                </div>
+
+                <div className="compare-plan">
+                  <Link
+                    to="plans"
+                    smooth={true}
+                    duration={500}
+                    isDynamic={true}
+                  >
+                    Compare Plans
+                  </Link>
+                </div>
+              </div>
+
+              <hr />
+
               <div className="review-column">
                 <div className="review">
                   <span className="review-icon">
@@ -56,16 +109,18 @@ function SinglePackage() {
 
               <hr />
 
-              <div className="quantity">
-                <div className="quantity-text">Quantity:</div>
-                <div className="counter">
-                  <div className="minus">-</div>
-                  <span>1</span>
-                  <div className="plus">+</div>
+              <div className="single-package-quantity">
+                <div className="single-package-quantity-container">
+                  <div className="single-package-quantity-text">Quantity:</div>
+                  <div className="single-package-quantity-counter">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                  </div>
                 </div>
                 <div>
-                  <p className="bulk-purchase">
-                    Call us for bulk purchases:
+                  <p className="single-package-bulk-purchase">
+                    <span>Call us for bulk purchases:</span>
                     <br /> Click here to show phone number
                   </p>
                 </div>
@@ -77,7 +132,7 @@ function SinglePackage() {
             </div>
           </div>
         </div>
-        <div className="overview-wrapper">
+        {/* <div className="overview-wrapper">
           <div className="overview">
             <h3>Overview</h3>
             <p className="first-para">
@@ -109,7 +164,159 @@ function SinglePackage() {
               for direction among others become more evitable.
             </p>
           </div>
-        </div>
+        </div> */}
+        <section className="plan-table-wrapper" id="plans">
+          <div className="plan-table-basic">
+            <div className="plan-table-basic-text">
+              <h3>Basic</h3>
+              <div className="plan-table-basic-line"></div>
+              <ul className="plan-basic-list-item">
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- assist with advert templates and provide CVs only
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Development and monthly implementation of Performance
+                  management framework
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Monthly Employee Engagement initiatives and implementation
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Daily enforcement of HR policies
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>HR advisory as required
+                </li>
+                <li className="plan-basic-each-list">
+                  <i className="fa fa-bolt"></i>Quarterly training
+                </li>
+              </ul>
+              <div className="plan-table-basic-price">
+                <span className="basic-dollar-sign">₦</span>
+                <span className="basic-price">5,000</span>
+                <span className="basic-year">/Year</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="plan-table-silver">
+            <div className="plan-table-silver-text">
+              <h3>Silver</h3>
+              <div className="plan-table-silver-line"></div>
+              <ul className="plan-silver-list-item">
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- JDs, Cv shortlist, interview
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Development and enforcement of HR procedures
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Monthly Rewards management
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Employee reference management-as required
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Dismissals-as required
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Monthly training
+                </li>
+                <li className="plan-silver-each-list">
+                  <i className="fa fa-bolt"></i>Presence during statutory audits
+                </li>
+              </ul>
+              <div className="plan-table-silver-price">
+                <span className="silver-dollar-sign">₦</span>
+                <span className="silver-price">15,000</span>
+                <span className="silver-year">/Year</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="plan-table-gold">
+            <div className="plan-table-gold-text">
+              <h3>Gold</h3>
+              <div className="plan-table-gold-line"></div>
+              <ul className="plan-gold-list-item">
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- JDs, Cv shortlist, interview
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"> </i>
+                  Development and enforcement of HR procedures
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Monthly Rewards management
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Employee reference management-as required
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Dismissals-as required
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Monthly training
+                </li>
+                <li className="plan-gold-each-list">
+                  <i className="fa fa-bolt"></i>Presence during statutory audits
+                </li>
+              </ul>
+              <div className="plan-table-gold-price">
+                <span className="gold-dollar-sign">₦</span>
+                <span className="gold-price">30,000</span>
+                <span className="gold-year">/Year</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="plan-table-platinum">
+            <div className="plan-table-platinum-text">
+              <h3>Platinum</h3>
+              <div className="plan-table-platinum-line"></div>
+              <ul className="plan-platinum-list-item">
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Recruitment- JDs, Cv shortlist, interview
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"> </i>
+                  Development and enforcement of HR procedures
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Monthly Rewards management
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>
+                  Employee reference management-as required
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Dismissals-as required
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Monthly training
+                </li>
+                <li className="plan-platinum-each-list">
+                  <i className="fa fa-bolt"></i>Presence during statutory audits
+                </li>
+              </ul>
+              <div className="plan-table-platinum-price">
+                <span className="platinum-dollar-sign">₦</span>
+                <span className="platinum-price">50,000</span>
+                <span className="platinum-year">/Year</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div className="product-you-like-wrapper">
           <h3 className="product-you-like-text">You might also like</h3>
@@ -171,7 +378,7 @@ function SinglePackage() {
 
           {/* Stop here */}
 
-          <div className="show-more-wrapper">
+          <div className="show-more-wrapper hr-work-show-more">
             <button
               className="show-more-btn"
               onClick={() => history.push('/packages')}
@@ -182,7 +389,7 @@ function SinglePackage() {
           </div>
         </div>
 
-        <div className="recently-viewed">
+        {/* <div className="recently-viewed">
           <h3 className="recently-viewed-text">Recently viewed</h3>
           <div className="recently-viewed-box">
             <div className="box-image1">
@@ -222,6 +429,7 @@ function SinglePackage() {
             </div>
           </div>
         </div>
+       */}
       </div>
       <Footer />
     </div>
