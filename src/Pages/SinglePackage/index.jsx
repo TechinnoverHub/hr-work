@@ -109,16 +109,18 @@ function SinglePackage() {
 
               <hr />
 
-              <div className="quantity">
-                <div className="quantity-text">Quantity:</div>
-                <div className="counter">
-                  <button>-</button>
-                  <span>1</span>
-                  <button>+</button>
+              <div className="single-package-quantity">
+                <div className="single-package-quantity-container">
+                  <div className="single-package-quantity-text">Quantity:</div>
+                  <div className="single-package-quantity-counter">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                  </div>
                 </div>
                 <div>
-                  <p className="bulk-purchase">
-                    Call us for bulk purchases:
+                  <p className="single-package-bulk-purchase">
+                    <span>Call us for bulk purchases:</span>
                     <br /> Click here to show phone number
                   </p>
                 </div>
