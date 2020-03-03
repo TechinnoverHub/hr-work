@@ -5,13 +5,19 @@ import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
 // import packageImg from 'Assets/images/packages-header-image.png';
 import BreadCrumbs from 'Pages/BreadCumbs';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
+// import { Link } from 'react-router-hash-link';
+
+import { Link } from 'react-scroll';
 
 const packageImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
 
 function SinglePackage() {
   const history = useHistory();
+  const path = useRouteMatch();
+
+  console.log(path.url, '++  path ++');
 
   return (
     <div>
@@ -30,27 +36,50 @@ function SinglePackage() {
             <div className="hr-remote-manager-text">
               <h3>HR Remote Manager</h3>
               {/* <span className="small-text">Basic, Bronze, Foundation</span> */}
-              <span className="hr-work-plan-text">
-                <div>Select Your Plan</div>
-                <ul>
-                  <li>
-                    <input type="radio" />
-                    Basic
-                  </li>
-                  <li>
-                    <input type="radio" />
-                    Bronze
-                  </li>
-                  <li>
-                    <input type="radio" />
-                    Foundation
-                  </li>
-                </ul>
+              <div className="hr-work-plan-text">
+                <p className="hr-work-plan-text-action">Select Your Plan</p>
+                <div className="hr-work-plan-radio">
+                  <div className="hr-work-radio-group">
+                    <label htmlFor="basic-plan">
+                      <input type="radio" name="package-plan" id="basic-plan" />{' '}
+                      Basic
+                    </label>
+                  </div>
+
+                  <div className="hr-work-radio-group">
+                    <label htmlFor="bronze-plan">
+                      <input
+                        type="radio"
+                        name="package-plan"
+                        id="bronze-plan"
+                      />{' '}
+                      Bronze
+                    </label>
+                  </div>
+
+                  <div className="hr-work-radio-group">
+                    <label htmlFor="foundation-plan">
+                      <input
+                        type="radio"
+                        name="package-plan"
+                        id="foundation-plan"
+                      />{' '}
+                      Foundation
+                    </label>
+                  </div>
+                </div>
 
                 <div className="compare-plan">
-                  <a href="ff">Compare Plans</a>
+                  <Link
+                    to="plans"
+                    smooth={true}
+                    duration={500}
+                    isDynamic={true}
+                  >
+                    Compare Plans
+                  </Link>
                 </div>
-              </span>
+              </div>
 
               <hr />
 
@@ -134,7 +163,7 @@ function SinglePackage() {
             </p>
           </div>
         </div> */}
-        <div className="plan-table-wrapper">
+        <section className="plan-table-wrapper" id="plans">
           <div className="plan-table-basic">
             <div className="plan-table-basic-text">
               <h3>Basic</h3>
@@ -164,7 +193,7 @@ function SinglePackage() {
                   <i className="fa fa-bolt"></i>Quarterly training
                 </li>
               </ul>
-              <div class="plan-table-basic-price">
+              <div className="plan-table-basic-price">
                 <span className="basic-dollar-sign">₦</span>
                 <span className="basic-price">5,000</span>
                 <span className="basic-year">/Year</span>
@@ -202,7 +231,7 @@ function SinglePackage() {
                   <i className="fa fa-bolt"></i>Presence during statutory audits
                 </li>
               </ul>
-              <div class="plan-table-silver-price">
+              <div className="plan-table-silver-price">
                 <span className="silver-dollar-sign">₦</span>
                 <span className="silver-price">15,000</span>
                 <span className="silver-year">/Year</span>
@@ -240,7 +269,7 @@ function SinglePackage() {
                   <i className="fa fa-bolt"></i>Presence during statutory audits
                 </li>
               </ul>
-              <div class="plan-table-gold-price">
+              <div className="plan-table-gold-price">
                 <span className="gold-dollar-sign">₦</span>
                 <span className="gold-price">30,000</span>
                 <span className="gold-year">/Year</span>
@@ -278,14 +307,14 @@ function SinglePackage() {
                   <i className="fa fa-bolt"></i>Presence during statutory audits
                 </li>
               </ul>
-              <div class="plan-table-platinum-price">
+              <div className="plan-table-platinum-price">
                 <span className="platinum-dollar-sign">₦</span>
                 <span className="platinum-price">50,000</span>
                 <span className="platinum-year">/Year</span>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <div className="product-you-like-wrapper">
           <h3 className="product-you-like-text">You might also like</h3>
@@ -347,7 +376,7 @@ function SinglePackage() {
 
           {/* Stop here */}
 
-          <div className="show-more-wrapper">
+          <div className="show-more-wrapper hr-work-show-more">
             <button
               className="show-more-btn"
               onClick={() => history.push('/packages')}
@@ -358,7 +387,7 @@ function SinglePackage() {
           </div>
         </div>
 
-        <div className="recently-viewed">
+        {/* <div className="recently-viewed">
           <h3 className="recently-viewed-text">Recently viewed</h3>
           <div className="recently-viewed-box">
             <div className="box-image1">
@@ -398,6 +427,7 @@ function SinglePackage() {
             </div>
           </div>
         </div>
+       */}
       </div>
       <Footer />
     </div>
