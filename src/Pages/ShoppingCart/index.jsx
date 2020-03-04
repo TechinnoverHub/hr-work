@@ -1,50 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './index.scss';
 import Header from 'Components/AltHeader';
 import Footer from 'Components/Footer';
-import { Link } from 'react-router-dom';
+import CartItem from 'Components/CartItem';
+
 import paystack from 'Assets/svg/paystack.svg';
 import mastercard from 'Assets/svg/mastercard.svg';
 import visa from 'Assets/svg/visa.svg';
 import verve from 'Assets/svg/verve.svg';
-import eachItemImage from 'Assets/images/each-item-image.png';
-
-const CartItem = () => {
-  return (
-    <div className="each-items">
-      <div className="each-items--container">
-        <div className="each-item-image-wrapper">
-          <div className="cart-item-image-wrapper">
-            <img src={eachItemImage} alt="cart item" />
-          </div>
-          <div className="each-item-text">
-            <p>HR Remote Manager</p>
-            <p>Basic, Bronze, Foundation</p>
-          </div>
-        </div>
-
-        <div className="item-quantity-wrapper">
-          <div className="quantity-counter">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-          </div>
-          <div className="price-items">
-            <p>
-              ₦3,480
-              <span>₦3,480 x 1 item</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="action-links">
-          <button>Remove item</button>
-          <button>Save for Later</button>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const ShoppingCart = () => {
   return (
