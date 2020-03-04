@@ -1,0 +1,349 @@
+.checkout-text {
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #efefef;
+
+  @media screen and (min-width: 800px) {
+    background: transparent;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 34px;
+    text-align: center;
+    color: #ef0633;
+  }
+}
+
+// THE REVIEW ORDER SECTION
+.review-order-super-wrapper {
+  background-color: #efefef;
+  padding-bottom: 70px;
+
+  @media screen and (min-width: 800px) {
+    padding: 70px 0;
+  }
+}
+
+.review-order-wrapper {
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: block;
+
+  @media screen and (min-width: 800px) {
+    padding-top: 30px;
+    display: flex;
+  }
+}
+
+.review-order-section {
+  flex-basis: 65.5%;
+  height: 100%;
+  width: 85vw;
+  margin: 0 auto 30px;
+  background-color: #fff;
+  // height: 1000px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0px;
+    width: auto;
+    // height: 600px;
+  }
+}
+
+.review-order-text {
+  background-color: #fff;
+
+  h3 {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 23px;
+    color: #4a4a4a;
+    padding: 22px 34px;
+  }
+}
+
+.review-order-header {
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  background: #c4c4c4;
+  font-size: 16px;
+  color: #4a4a4a;
+  font-weight: bold;
+  height: 58px;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+}
+
+#order-itemDelivered {
+  flex-basis: 20%;
+}
+
+#order-itemQuantity {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 20%;
+    display: inline;
+    text-align: right;
+  }
+}
+
+#order-itemPrice {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    flex-basis: 15%;
+    display: inline;
+    text-align: right;
+  }
+}
+
+#order-itemAction {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    display: inline;
+  }
+}
+
+.order-each-items {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  width: 100%;
+  padding: 20px;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
+}
+
+.order-image-text-wrapper {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 104px;
+    height: 104px;
+  }
+  .order-each-item-text {
+    font-weight: 600;
+    font-size: 18px;
+    color: #565656;
+    padding-left: 20px;
+
+    p {
+      font-size: 10px;
+      color: #888888;
+    }
+  }
+}
+
+.order-action-links {
+  font-size: 14px;
+  line-height: 23px;
+  padding: 30px 0px;
+  display: flex;
+
+  @media screen and (min-width: 800px) {
+    display: inline;
+  }
+
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: #888888;
+    background: #ffffff;
+    border: 1px solid #ef0633;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-right: 20px;
+    padding: 10px;
+
+    @media screen and (min-width: 800px) {
+      padding: 9px 30px;
+      border: none;
+      margin-right: 0px;
+    }
+  }
+}
+
+.order-item-details-horizontal-line {
+  border: 0.5px solid rgba(136, 136, 136, 0.5);
+  margin: 0px 20px;
+}
+
+//
+// The Delivery Payment Option Area
+.payment-option {
+  flex-basis: 30.5%;
+  background-color: #fff;
+  width: 85vw;
+  margin: 0 auto;
+  height: 100%;
+
+  @media screen and (min-width: 800px) {
+    width: auto;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 22px;
+    color: #4a4a4a;
+    padding: 20px 30px;
+  }
+}
+
+.payment-option-horizontal-line {
+  border: 0.5px solid rgba(189, 189, 189, 0.5);
+}
+
+.add-voucher {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #565656;
+}
+
+.apply-gift-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+  input {
+    border: 0.5px solid #888888;
+    height: 40.04px;
+    padding: 0px 0.7rem;
+    border-radius: 6px;
+    width: 60%;
+
+    @media screen and (min-width: 800px) {
+      font-size: 12px;
+      width: 65%;
+    }
+  }
+
+  button {
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: #ef0633;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #ef0633;
+    font-size: 17px;
+    width: 30%;
+
+    @media screen and (min-width: 800px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.paynow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 13px;
+  border: 0.5px solid #888888;
+  border-radius: 6px;
+  margin: 20px 30px;
+
+  div {
+    font-weight: bold;
+    font-size: 22px;
+    color: #565656;
+  }
+}
+
+.delivery-subtotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+
+  .delivery-subtotal-text {
+    font-weight: 600;
+    font-size: 15px;
+    color: #565656;
+  }
+
+  .delivery-subtotal-amount {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+    color: #565656;
+  }
+}
+
+// .delivery-charges {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 20px 30px;
+
+//   .delivery-charges-text {
+//     font-weight: 600;
+//     font-size: 15px;
+//     color: #565656;
+//   }
+
+//   .delivery-charge-amount {
+//     font-weight: bold;
+//     font-size: 14px;
+//     text-align: right;
+//     color: #565656;
+//   }
+// }
+
+.delivery-total {
+  padding: 20px 30px;
+}
+
+.delivery-total > div {
+  display: flex;
+  justify-content: space-between;
+
+  .delivery-total-text {
+    font-weight: bold;
+    font-size: 22px;
+    color: #565656;
+  }
+
+  .delivery-total-amount {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: right;
+    color: #ef0633;
+  }
+}
+.delivery-total button {
+  padding: 15px 20px;
+  background-color: #ef0633;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 17px;
+  width: 100%;
+  margin: 47px 0px;
+}
+
+.delivery-total-icon {
+  display: flex;
+  align-items: center;
+}
+
+.delivery-total-icon-text {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 15px;
+  color: #888888;
+}
