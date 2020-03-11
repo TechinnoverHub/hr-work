@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import LatestBlog from 'Components/LatestBlog';
 import { useHistory } from 'react-router-dom';
 import { SIDE_IMAGE } from './imageLinks';
+import { getAllPackages } from 'Services/Package.service';
+import PackageItem from 'Components/PackageItem';
 
+// import
 function Home() {
   const history = useHistory();
+  const [packages, setPackages] = useState([]);
+  const [packagesLoading, setPackagesLoading] = useState(false);
+
+  const getPackages = async () => {
+    try {
+      setPackagesLoading(true);
+      const { data: response } = await getAllPackages({ limit: 3 });
+      // console.log(response);
+      if (response.status === 'success') {
+        setPackages(response.data.packages);
+        setPackagesLoading(false);
+      }
+    } catch (error) {
+      setPackagesLoading(false);
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPackages();
+  }, []);
 
   return (
     <div className="App">
@@ -79,7 +103,13 @@ function Home() {
         <h2>Packages</h2>
         <hr />
         <div className="package-box">
-          <div className="box-image1">
+          {packages.map(item => (
+            <PackageItem key={item._id} item={item} />
+          ))}
+          {/* <PackageItem />
+          <PackageItem />
+          <PackageItem /> */}
+          {/* <div className="box-image1">
             <div className="package-image">
               <div className="package-image-label-blue">
                 <span>Retainership Category</span>
@@ -119,6 +149,7 @@ function Home() {
               <button className="package-box-button">Add to Cart</button>
             </div>
           </div>
+      */}
         </div>
 
         <div className="packages-btn-container">

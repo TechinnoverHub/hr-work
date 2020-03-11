@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import './index.scss';
 import Header from 'Components/AltHeader';
@@ -10,8 +10,15 @@ import paystack from 'Assets/svg/paystack.svg';
 import mastercard from 'Assets/svg/mastercard.svg';
 import visa from 'Assets/svg/visa.svg';
 import verve from 'Assets/svg/verve.svg';
+import { useCartState } from 'Context/cart.context';
+import { getCartLength } from 'Utils/cartHelpers';
+import EmptyCart from 'Components/EmptyCart';
 
 const ShoppingCart = () => {
+  const cart = useCartState();
+  const history = useHistory();
+  const { total: totalQty, price: totalPrice } = getCartLength(cart);
+
   return (
     <div>
       <Header />
@@ -25,11 +32,7 @@ const ShoppingCart = () => {
                 </Link>
               </li>
               <span>></span>
-              <li>
-                {/* <Link className="shopping-navigation-list"> */}
-                Shopping Cart
-                {/* </Link> */}
-              </li>
+              <li>Shopping Cart</li>
             </ul>
           </div>
           <h3>Shopping Cart</h3>
@@ -37,9 +40,9 @@ const ShoppingCart = () => {
 
         <div className="shopping-cart-details-wrapper">
           <div className="shopping-cart-details-contents">
-            <button className="continue-shopping">
+            <Link className="continue-shopping" to="/packages">
               <i className="fa fa-play"></i>Continue Shopping
-            </button>
+            </Link>
 
             <div className="two-boxes-wrapper">
               <div className="item-details">
@@ -51,30 +54,44 @@ const ShoppingCart = () => {
                 </div>
 
                 <div>
-                  <CartItem />
-                  <CartItem />
-                  <CartItem />
+                  {totalQty > 0 ? (
+                    Object.entries(cart).map(itemData => (
+                      <CartItem item={itemData[1]} />
+                    ))
+                  ) : (
+                    <EmptyCart />
+                  )}
                 </div>
               </div>
 
               <div className="order-summary">
                 <div className="order-head">
                   <div className="order">Order Summary</div>
-                  <div className="number-items">3 items</div>
+                  <div className="number-items">{`${totalQty} ${
+                    totalQty === 1 ? 'item' : 'items'
+                  }`}</div>
                 </div>
                 <div className="order-summary-horizontal-line"></div>
                 <div className="order-subtotal">
                   <div className="subtotal">Subtotal:</div>
-                  <div className="subtotal-figure">₦3,480 </div>
+                  <div className="subtotal-figure">
+                    ₦{totalPrice && totalPrice.toLocaleString()}{' '}
+                  </div>
                 </div>
                 <div className="order-summary-horizontal-line"></div>
 
                 <div className="total-box">
                   <div className="total">Total</div>
-                  <div className="total-figure">₦3,480</div>
+                  <div className="total-figure">
+                    ₦{totalPrice && totalPrice.toLocaleString()}
+                  </div>
                 </div>
                 <div className="checkout-button">
-                  <button className="order-checkout-button">
+                  <button
+                    className="order-checkout-button"
+                    disabled={totalQty < 1}
+                    onClick={() => history.push('/checkout')}
+                  >
                     Continue to Checkout
                   </button>
                 </div>

@@ -3,13 +3,17 @@ import { Link, useHistory } from 'react-router-dom';
 import logoDark from 'Assets/svg/DarkLogo.svg';
 import Styles from './index.module.scss';
 import noScroll from 'no-scroll';
+import { useCartState } from 'Context/cart.context';
 
 import cartIconRed from 'Assets/svg/shopping-cart-red.svg';
+import { getCartLength } from 'Utils/cartHelpers';
 
 export default () => {
   const [isSticky] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const history = useHistory();
+  const cart = useCartState();
+  const { total: cartLength } = getCartLength(cart);
 
   const keyPressHandler = e => {
     if (e.keycode === 13) {
@@ -114,7 +118,7 @@ export default () => {
             </li>
 
             <li>
-              <Link className={Styles.link} to="/login">
+              <Link className={Styles.link} to="/account">
                 Account
               </Link>
             </li>
@@ -126,7 +130,9 @@ export default () => {
               >
                 <span className={Styles.cart__icon}>
                   <img src={cartIconRed} alt="cart" />
-                  <span className={Styles.cart__counter}>{2}</span>
+                  {cartLength > 0 ? (
+                    <span className={Styles.cart__counter}>{cartLength}</span>
+                  ) : null}
                 </span>
                 Cart
               </Link>

@@ -14,49 +14,59 @@ import CreateAccount from 'Pages/CreateAccount';
 import MyAccount from 'Pages/MyAccount';
 import ShoppingCart from 'Pages/ShoppingCart';
 import Checkout from 'Pages/Checkout';
+import { CartProvider } from 'Context/cart.context';
+import PrivateRoute from 'Components/PrivateRoute';
+import { UserProvider } from 'Context/user.context';
 
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/careers">
-          <Career />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/blog">
-          <Blog />
-        </Route>
-        <Route path={['/packages/:id', '/packages']}>
-          <Packages />
-        </Route>
-        <Route path="/package/:slug">
-          <SinglePackage />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/create-account">
-          <CreateAccount />
-        </Route>
-        <Route path="/account">
-          <MyAccount />
-        </Route>
-        <Route path="/cart">
-          <ShoppingCart />
-        </Route>
-        <Route path="/checkout">
-          <Checkout />
-        </Route>
-      </Switch>
-      <ScrollToTop />
-    </Router>
+    <UserProvider>
+      <CartProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/careers">
+              <Career />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/blog">
+              <Blog />
+            </Route>
+            <Route path={['/packages/:id', '/packages']}>
+              <Packages />
+            </Route>
+            <Route path="/package/:slug">
+              <SinglePackage />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/create-account">
+              <CreateAccount />
+            </Route>
+
+            <PrivateRoute path="/account">
+              <MyAccount />
+            </PrivateRoute>
+
+            <Route path="/cart">
+              <ShoppingCart />
+            </Route>
+
+            <PrivateRoute path="/checkout">
+              <Checkout />
+            </PrivateRoute>
+          </Switch>
+          <ScrollToTop />
+        </Router>
+      </CartProvider>
+    </UserProvider>
   );
 }
