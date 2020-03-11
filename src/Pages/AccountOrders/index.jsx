@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 
-const AccountOrders = () => {
+const AccountOrders = ({ orders }) => {
   return (
     <div className="account-orders-container">
       <table>
@@ -27,7 +27,10 @@ const AccountOrders = () => {
             </td>
             <td>
               Jan 14, 2020 <br />
-              <Link className="account-orders-mobile-only account-red-text">
+              <Link
+                className="account-orders-mobile-only account-red-text"
+                to={`/account/orders/${1}`}
+              >
                 View
               </Link>
             </td>

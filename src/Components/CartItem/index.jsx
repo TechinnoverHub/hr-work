@@ -2,8 +2,14 @@ import React from 'react';
 import './index.scss';
 
 import eachItemImage from 'Assets/images/each-item-image.png';
+import { useCartDispatch } from 'Context/cart.context';
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
+  const dispatch = useCartDispatch();
+  const itemTotal = item && Number(item.price) * Number(item.qty);
+
+  if (!item) return null;
+
   return (
     <div className="each-items">
       <div className="each-items--container">
@@ -12,28 +18,46 @@ const CartItem = () => {
             <img src={eachItemImage} alt="cart item" />
           </div>
           <div className="each-item-text">
-            <p>HR Remote Manager</p>
-            <p>Basic, Bronze, Foundation</p>
+            <p>{item.name}</p>
+            <p>{item.category}</p>
           </div>
         </div>
 
         <div className="item-quantity-wrapper">
           <div className="quantity-counter">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button
+              onClick={() =>
+                dispatch({ type: 'DECREASE_ITEM_QTY', payload: item })
+              }
+            >
+              -
+            </button>
+            <span>{item.qty}</span>
+            <button
+              onClick={() =>
+                dispatch({ type: 'INCREASE_ITEM_QTY', payload: item })
+              }
+            >
+              +
+            </button>
           </div>
           <div className="price-items">
             <p>
-              ₦3,480
-              <span>₦3,480 x 1 item</span>
+              ₦{itemTotal && itemTotal.toLocaleString()}
+              <span>
+                ₦{item.price && item.price.toLocaleString()} x {item.qty}{' '}
+                {item.qty === 1 ? 'item' : 'items'}
+              </span>
             </p>
           </div>
         </div>
 
         <div className="action-links">
-          <button>Remove item</button>
-          <button>Save for Later</button>
+          <button
+            onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item })}
+          >
+            Remove item
+          </button>
         </div>
       </div>
     </div>

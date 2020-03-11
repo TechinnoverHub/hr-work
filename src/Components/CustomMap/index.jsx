@@ -1,7 +1,16 @@
 import React from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
-const API_KEY = 'AIzaSyAkVGfejx5-N6Z5DdCO0uXI1kY-F0JVvls';
+function getApiKey() {
+  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_KEY;
+  if (apiKey) {
+    return apiKey;
+  } else {
+    throw new Error('GOOGLE MAPS API KEY IS MISSING !!');
+  }
+}
+const API_KEY = getApiKey();
+
 const mapStyles = {
   width: '100%',
   height: '327px'

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.scss';
+import { useEffect } from 'react';
 
-const AccountDetails = () => {
+const AccountDetails = ({ user }) => {
   return (
     <div className="account-right-box-wrapper">
       <div className="account-form">
@@ -9,19 +10,34 @@ const AccountDetails = () => {
           <div className="name-row">
             <label>
               First Name
-              <input type="text" placeholder="Enter First Name" />
+              <input
+                type="text"
+                placeholder="Enter First Name"
+                name="firstname"
+                value={user.firstname}
+              />
             </label>
 
             <label>
               Last Name
-              <input type="text" placeholder="Enter Last Name" />
+              <input
+                type="text"
+                placeholder="Enter Last Name"
+                name="lastname"
+                value={user.lastname}
+              />
             </label>
           </div>
 
           <div className="account-field-row">
             <label>
               Email account
-              <input type="email" placeholder="Enter Email account" />
+              <input
+                type="email"
+                placeholder="Enter Email account"
+                name="email"
+                value={user.email}
+              />
             </label>
           </div>
           <div className="change-password-text">Password change</div>

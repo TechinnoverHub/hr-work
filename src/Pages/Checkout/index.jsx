@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './index.scss';
 import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
@@ -8,10 +8,55 @@ import paystack from 'Assets/svg/paystack.svg';
 import mastercard from 'Assets/svg/mastercard.svg';
 import visa from 'Assets/svg/visa.svg';
 import verve from 'Assets/svg/verve.svg';
-// import deliveryImage from 'Assets/images/delivery-option-image.png';
 import CartItem from 'Components/CartItem';
+import { useCartState } from 'Context/cart.context';
+import { getCartLength } from 'Utils/cartHelpers';
+import EmptyCart from 'Components/EmptyCart';
+import { useState } from 'react';
+import PaystackButton from 'react-paystack';
+import paystackSecure from 'Assets/images/secured-by-paystack.png';
+
+function getPayStackKey() {
+  const paystack_key = process.env.REACT_APP_PAYSTACK_KEY;
+  if (paystack_key) {
+    return paystack_key;
+  } else {
+    throw new Error('PAYSTACK KEY IS MISSING!!!');
+  }
+}
 
 function Checkout() {
+  const cart = useCartState();
+  const API_KEY = getPayStackKey();
+  const [paymentInfo, setPaymentInfo] = useState({
+    email: 'tom@gmail.com'
+  });
+  const { total: totalQty, price: totalPrice } = getCartLength(cart);
+
+  useEffect(() => {
+    setPaymentInfo(state => ({ ...state, amount: totalPrice * 100 }));
+  }, [totalPrice]);
+
+  const callback = response => {
+    alert('success. transaction ref is ' + response.reference);
+  };
+
+  const close = () => {
+    console.log('Payment closed');
+  };
+
+  const getReference = () => {
+    let text = '';
+    let possible =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=';
+
+    for (let i = 0; i < 15; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
+  };
+
   return (
     <div>
       <AltHeader />
@@ -35,6 +80,14 @@ function Checkout() {
               <CartItem />
               <CartItem />
               <CartItem />
+
+              {totalQty > 0 ? (
+                Object.entries(cart).map(itemData => (
+                  <CartItem item={itemData[1]} />
+                ))
+              ) : (
+                <EmptyCart />
+              )}
             </div>
           </div>
 
@@ -53,25 +106,47 @@ function Checkout() {
             <div className="payment-option-horizontal-line"></div>
             <div className="delivery-subtotal">
               <div className="delivery-subtotal-text">Subtotal:</div>
-              <div className="delivery-subtotal-amount">₦3,480</div>
+              <div className="delivery-subtotal-amount">
+                {' '}
+                ₦{totalPrice && totalPrice.toLocaleString()}{' '}
+              </div>
             </div>
             <div className="payment-option-horizontal-line"></div>
             <div className="payment-option-horizontal-line"></div>
             <div className="delivery-total">
               <div>
                 <div className="delivery-total-text">Total</div>
-                <div className="delivery-total-amount">₦3,480</div>
+                <div className="delivery-total-amount">
+                  ₦{totalPrice && totalPrice.toLocaleString()}
+                </div>
               </div>
-              <button type="button">Continue to Payment</button>
-              <div className="payment-option-horizontal-line"></div>
+              {/* <button type="button" disabled={totalQty < 1}>
+                Continue to Payment
+              </button> */}
+              <PaystackButton
+                text="Make Payment"
+                callback={callback}
+                close={close}
+                disabled={totalQty < 1}
+                embed={false}
+                reference={getReference()}
+                email={paymentInfo.email}
+                amount={paymentInfo.amount}
+                paystackkey={API_KEY}
+                tag="button"
+              />
+              {/* <div className="payment-option-horizontal-line"></div> */}
 
-              <div className="delivery-total-icon">
+              <div className="paystack-secure">
+                <img src={paystackSecure} alt="secured-by-paystack" />
+              </div>
+              {/* <div className="delivery-total-icon">
                 <div className="delivery-total-icon-text">we accept:</div>
                 <img src={paystack} alt="paystack" />
                 <img src={mastercard} alt="mastercard" />
                 <img src={visa} alt="visa" />
                 <img src={verve} alt="verve" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

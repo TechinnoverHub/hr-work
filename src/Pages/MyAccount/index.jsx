@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.scss';
 import Footer from 'Components/Footer';
 import { NavLink, Switch, Route, useRouteMatch } from 'react-router-dom';
@@ -7,9 +7,32 @@ import AccountOrders from 'Pages/AccountOrders';
 import OrderDetail from 'Pages/OrderDetail';
 import AccountDetails from 'Pages/AccountDetails';
 import Dashboard from 'Pages/Dashboard';
+import { useUserDispatch } from 'Context/user.context';
+import { getUserProfile } from 'Services/Auth.service';
 
 const MyAccount = () => {
   const { path } = useRouteMatch();
+  const dispatch = useUserDispatch();
+  const [userRequest, setUserRequest] = useState('');
+  const [userDetails, setUserDetails] = useState({});
+
+  const fetchUser = async () => {
+    try {
+      const { data: response } = await getUserProfile();
+
+      const {
+        data: { user }
+      } = response;
+      setUserDetails(user);
+      console.log(response);
+    } catch (error) {
+      console.log(error, 'main dash error');
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <div>
@@ -54,7 +77,12 @@ const MyAccount = () => {
                 <div className="myAccount-horizontal-line"></div>
 
                 <li>
-                  <button className="myAccount-list-button">Logout</button>
+                  <button
+                    className="myAccount-list-button"
+                    onClick={() => dispatch({ type: 'LOG_OUT_USER' })}
+                  >
+                    Logout
+                  </button>
                 </li>
               </ul>
             </div>
@@ -68,10 +96,10 @@ const MyAccount = () => {
                 <OrderDetail />
               </Route>
               <Route path={`${path}/orders`}>
-                <AccountOrders />
+                <AccountOrders orders={userDetails.orders} />
               </Route>
               <Route path={`${path}/details`}>
-                <AccountDetails />
+                <AccountDetails user={userDetails} />
               </Route>
             </Switch>
           </div>

@@ -81,9 +81,32 @@
   font-size: 17px;
   width: 100%;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.7;
+  }
 
   @media screen and (min-width: 800px) {
     height: 65.01px;
+  }
+}
+
+.create-account-btn-spinner {
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  animation: rotate-login-loader 1s linear infinite;
+}
+
+@keyframes rotate-login-loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

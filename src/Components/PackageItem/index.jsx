@@ -4,6 +4,7 @@ import React from 'react';
 import { jsx, css } from '@emotion/core';
 // import itemImg from 'Assets/images/packages-image.png';
 import { Link } from 'react-router-dom';
+import { useCartDispatch } from 'Context/cart.context';
 
 const categoryColor = {
   retainership: '#0057da',
@@ -65,6 +66,7 @@ const categorySpan = categoryKey => css`
     text-align: center;
     font-weight: bold;
     font-size: 12px;
+    text-transform: capitalize;
 
     @media screen and (min-width: 420px) {
       font-size: 14px;
@@ -127,25 +129,59 @@ const packageButtonStyle = css`
 const itemImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899349/packages-image_b2ow2y.png';
 
-const PackageItem = ({ item: { id, categoryKey, name, price, category } }) => {
+const PackageItem = ({ item: { _id, productType, price, title, plans } }) => {
+  const dispatch = useCartDispatch();
+  const planPrice = price || plans[0].price;
+
   return (
     <div css={cardWrapperStyle}>
-      <Link css={imgStyleWrapper} to={`/package/${id}`}>
+      <Link css={imgStyleWrapper} to={`/package/${_id}`}>
         <img src={itemImg} alt="item" />
-        <div css={categorySpan(categoryKey)}>
-          <span>{category} Category</span>
+        <div css={categorySpan(productType.toLowerCase())}>
+          <span>{productType.toLowerCase()} Category</span>
         </div>
       </Link>
       <div css={packageBodyStyle}>
-        <Link to={`/package/${id}`} css={packageHeadingStyle}>
-          HR Remote Manager
+        <Link to={`/package/${_id}`} css={packageHeadingStyle}>
+          {title}
         </Link>
-        <p css={packagePriceStyle}>₦3,480</p>
-        <p css={packageCategoryStyle}>Basic, Bronze, Foundation</p>
-        <button css={packageButtonStyle}>Add to Cart</button>
+        <p css={packagePriceStyle}>₦{planPrice.toLocaleString()}</p>
+        <p css={packageCategoryStyle}>
+          {plans && plans.length > 0
+            ? plans.map((plan, index) => (
+                <span key={index}>
+                  {plan.name}
+                  {index === plans.length - 1 ? null : ', '}
+                </span>
+              ))
+            : null}
+        </p>
+        <button
+          css={packageButtonStyle}
+          onClick={() =>
+            dispatch({
+              type: 'ADD_ITEM',
+              payload: {
+                name: title,
+                id: _id,
+                category: productType.toLowerCase(),
+                price: planPrice,
+                plans: plans || []
+              }
+            })
+          }
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );
 };
+
+// "title": "HR Remote Manager",
+// "productType": "RETAINERSHIP",
+// "price": null,
+// "productCode": "c4238c51-0d82-4cea-967a-e041c7f95643",
+// "slug": "hr-remote-manager",
 
 export default PackageItem;
