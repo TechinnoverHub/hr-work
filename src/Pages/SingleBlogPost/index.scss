@@ -1,0 +1,39 @@
+.SinglePost-wrapper {
+  margin: 0 auto;
+
+  @media screen and (min-width: 800px) {
+    max-width: 1100px;
+  }
+}
+
+.SinglePost {
+  padding: 90px 0px 5px;
+  text-align: center;
+
+  .Title {
+    font-weight: 600;
+    line-height: 25px;
+    color: #565656;
+    font-size: 30px;
+    width: 80%;
+    margin: 0 auto;
+
+    @media screen and (min-width: 800px) {
+      font-size: 50px;
+    }
+  }
+
+  .Post-body {
+    font-size: 20px;
+    line-height: 25px;
+    color: rgba(20, 20, 20, 0.5);
+    margin: 30px auto 0px;
+    width: 80%;
+    text-align: left;
+  }
+
+  .blogImage {
+    width: 80%;
+    margin: 40px 0px 20px;
+  }
+}

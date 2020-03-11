@@ -19,6 +19,7 @@ import { CartProvider } from 'Context/cart.context';
 import PrivateRoute from 'Components/PrivateRoute';
 import { UserProvider } from 'Context/user.context';
 import PaymentSuccess from 'Pages/PaymentSuccess';
+import SingleBlog from 'Pages/SingleBlogPost';
 
 export default function App() {
   return (
@@ -57,6 +58,9 @@ export default function App() {
             <PrivateRoute path="/account">
               <MyAccount />
             </PrivateRoute>
+            <Route path="/articles/:id">
+              <SingleBlog />
+            </Route>
 
             <Route path="/cart">
               <ShoppingCart />

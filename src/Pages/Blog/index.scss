@@ -50,10 +50,11 @@
 }
 
 .single-post-image {
-  background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899336/blog-content-image_rgvmeu.png');
+  // background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899336/blog-content-image_rgvmeu.png');
   height: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 
   @media screen and (min-width: 800px) {
     background-size: auto;
@@ -177,4 +178,10 @@
 
 .gallery-btn i {
   margin-left: 30px;
+}
+
+.slug-link {
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }
