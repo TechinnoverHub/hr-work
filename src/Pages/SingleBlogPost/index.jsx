@@ -8,6 +8,7 @@ import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
 import LatestBlog from 'Components/LatestBlog';
 import { withRouter } from 'react-router';
+import Skeleton from 'react-loading-skeleton';
 
 class SingleBlog extends Component {
   constructor(props) {
@@ -32,7 +33,16 @@ class SingleBlog extends Component {
   // }
   render() {
     if (!this.state.article) {
-      return <h1>Loading......</h1>;
+      return (
+        <div className="skeleton" style={{ fontSize: 20, lineHeight: 2 }}>
+          <h1>
+            <Skeleton height={100} width={500} />
+          </h1>
+          <p>
+            <Skeleton count={20} />
+          </p>
+        </div>
+      );
     }
     return (
       <div>
