@@ -18,7 +18,7 @@ class SingleBlog extends Component {
   componentDidMount() {
     console.log(this.props, '+++ props +++');
     const { match } = this.props;
-    if (match.params && match.params) {
+    if (match.params && match.params.id) {
       client.getEntry(match.params.id).then(response => {
         console.log('SINGLE ARTICLE', response);
         this.setState({ article: response });
