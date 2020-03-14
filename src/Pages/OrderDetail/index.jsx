@@ -26,6 +26,18 @@ class OrderDetail extends React.Component {
                 </td>
                 <td>₦28,000.00</td>
               </tr>
+              <tr>
+                <td>
+                  HR Remote Manager <span> x 1</span>
+                </td>
+                <td>₦28,000.00</td>
+              </tr>
+              <tr>
+                <td>
+                  HR Remote Manager <span> x 1</span>
+                </td>
+                <td>₦28,000.00</td>
+              </tr>
 
               <tr>
                 <td>Sub Total</td>
@@ -34,12 +46,12 @@ class OrderDetail extends React.Component {
                 </td>
               </tr>
 
-              <tr>
+              {/* <tr>
                 <td>Shipping</td>
                 <td>
                   ₦1,000.00 <span>via flat rate</span>
                 </td>
-              </tr>
+              </tr> */}
 
               <tr>
                 <td>Payment Method</td>
@@ -54,7 +66,7 @@ class OrderDetail extends React.Component {
           </table>
         </div>
 
-        <div className="order-detail-smallbox-wrapper">
+        {/* <div className="order-detail-smallbox-wrapper">
           <div className="order-detail-smallbox1">
             <div className="order-detail-smallbox1-header">
               <p>Billing Address</p>
@@ -83,7 +95,7 @@ class OrderDetail extends React.Component {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

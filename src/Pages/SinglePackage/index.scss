@@ -12,7 +12,7 @@
 
 .single-package-breadcrumbs-container {
   @media screen and (min-width: 800px) {
-    width: 44%;
+    width: 50%;
     margin-top: 60px;
   }
 }
@@ -37,6 +37,7 @@
   flex-basis: 50.5%;
   height: 563px;
   background-repeat: no-repeat;
+  background-position: center;
 
   @media screen and (max-width: 600px) {
     height: 370px;
@@ -50,7 +51,7 @@
   h3 {
     font-weight: 600;
     font-size: 30px;
-    line-height: 23px;
+    line-height: 1.4;
     color: #565656;
     margin-bottom: 20px;
 
@@ -58,13 +59,6 @@
       font-size: 25px;
     }
   }
-
-  // .small-text {
-  //   font-weight: 600;
-  //   font-size: 16px;
-  //   line-height: 23px;
-  //   color: #888888;
-  // }
 }
 
 .hr-work-plan-text {
@@ -152,40 +146,42 @@
   }
 }
 
-.hr-remote-manager-text hr {
-  margin: 30px 0px;
-  background-color: #ccc;
+// .hr-remote-manager-text hr {
+//   margin: 20px 0px;
+//   background-color: #ccc;
+// }
+
+.billable-text {
+  padding-top: 8px;
+  color: #888888;
+  font-weight: 500;
 }
 
-.amount {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-
-  @media screen and (max-width: 600px) {
-    display: inline;
-  }
+.single-package-amount {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  margin: 20px 0px 40px;
+  padding: 15px 0;
 
   .big-amount {
-    font-size: 26px;
     line-height: 23px;
     color: #ef0633;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 20px;
 
-    @media screen and (max-width: 600px) {
-      font-size: 20px;
-      padding-right: 10px;
+    @media screen and (min-width: 800px) {
+      font-size: 26px;
     }
   }
 
   .stroke-amount {
-    font-size: 14px;
     line-height: 23px;
-    color: rgba(136, 136, 136, 0.5);
-    text-decoration: line-through;
+    color: #ef0633;
+    font-size: 16px;
+    font-weight: 400;
 
-    @media screen and (max-width: 600px) {
-      padding-right: 10px;
+    @media screen and (min-width: 800px) {
+      font-size: 20px;
     }
   }
 
@@ -301,6 +297,36 @@
     background-color: #fff;
     padding: 6px 14px;
     border: 0;
+  }
+}
+
+.single-package-link-button {
+  padding: 0.9232rem 2rem;
+  background-color: #ef0633;
+  box-shadow: 0px 6px 15px rgba(233, 40, 45, 0.25);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.single-package-cart-button {
+  button,
+  a {
+    padding: 0.9232rem 2rem;
+    background-color: #ef0633;
+    box-shadow: 0px 6px 15px rgba(233, 40, 45, 0.25);
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    text-decoration: none;
   }
 }
 
@@ -573,6 +599,7 @@
 
   @media screen and (min-width: 800px) {
     background-position: initial;
+    background-position: center;
   }
 }
 

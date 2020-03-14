@@ -14,9 +14,11 @@ import CreateAccount from 'Pages/CreateAccount';
 import MyAccount from 'Pages/MyAccount';
 import ShoppingCart from 'Pages/ShoppingCart';
 import Checkout from 'Pages/Checkout';
+import ExpressCheckout from 'Pages/ExpressCheckout';
 import { CartProvider } from 'Context/cart.context';
 import PrivateRoute from 'Components/PrivateRoute';
 import { UserProvider } from 'Context/user.context';
+import PaymentSuccess from 'Pages/PaymentSuccess';
 
 export default function App() {
   return (
@@ -60,9 +62,16 @@ export default function App() {
               <ShoppingCart />
             </Route>
 
-            <PrivateRoute path="/checkout">
+            <PrivateRoute path="/checkout/regular">
               <Checkout />
             </PrivateRoute>
+            <PrivateRoute path="/checkout/express">
+              <ExpressCheckout />
+            </PrivateRoute>
+
+            <Route path="/payment-success">
+              <PaymentSuccess />
+            </Route>
           </Switch>
           <ScrollToTop />
         </Router>

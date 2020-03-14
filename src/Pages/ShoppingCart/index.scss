@@ -178,7 +178,7 @@
 .order-summary {
   flex-basis: 30.5%;
   background-color: #fff;
-  height: 410px;
+  min-height: 410px;
 }
 
 .order-summary > div {
@@ -256,4 +256,10 @@
   font-size: 10px;
   line-height: 15px;
   color: #888888;
+}
+
+.checkout-payment-secure {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 30px;
 }

@@ -19,7 +19,6 @@ const StyleSheet = css`
   }
 
   a {
-    // text-decoration: none;
     font-size: 14px;
     color: #888888;
   }

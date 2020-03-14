@@ -8,8 +8,8 @@ import { useCartDispatch } from 'Context/cart.context';
 
 const categoryColor = {
   retainership: '#0057da',
-  professionals: '#ef0633',
-  'off-shelf': '#00ba34'
+  professional: '#ef0633',
+  'off-the-shelf': '#00ba34'
 };
 
 const cardWrapperStyle = css`
@@ -19,12 +19,12 @@ const cardWrapperStyle = css`
   display: flex;
   flex-direction: column;
   box-shadow: 0px 6px 15px rgba(136, 136, 136, 0.25);
-  height: 80vh;
+  height: 65vh;
 
   @media screen and (min-width: 800px) {
-    flex-basis: 30%;
+    /* flex-basis: 30%; */
     margin-bottom: 50px;
-    height: 555px;
+    height: 450px;
   }
 `;
 
@@ -40,6 +40,8 @@ const imgStyleWrapper = css`
     width: 100%;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
+    object-fit: cover;
+    object-position: center;
   }
 
   @media screen and (min-width: 800px) {
@@ -75,12 +77,15 @@ const categorySpan = categoryKey => css`
 `;
 
 const packageBodyStyle = css`
-  padding-top: 3.125rem;
-  padding-bottom: 2.375rem;
+  padding-top: 2.3rem;
+  padding-bottom: 2rem;
   padding-left: 10%;
   padding-right: 10%;
   text-align: center;
   color: #565656;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 const packageHeadingStyle = css`
@@ -98,81 +103,81 @@ const packagePriceStyle = css`
   line-height: 23px;
   text-align: center;
   color: #ef0633;
-  margin: 10px 0px 22px;
+  padding: 22px 0px;
 `;
 
-const packageCategoryStyle = css`
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-  text-align: center;
-  color: #565656;
-  text-decoration: none;
-`;
+// const packageCategoryStyle = css`
+//   font-weight: 600;
+//   font-size: 18px;
+//   line-height: 23px;
+//   text-align: center;
+//   color: #565656;
+//   text-decoration: none;
+// `;
 
-const packageButtonStyle = css`
+// const packageButtonStyle = css`
+//   border-radius: 50px;
+//   background-color: transparent;
+//   border: 1.5px solid #565656;
+//   color: #565656;
+//   font-size: 18px;
+//   font-weight: bold;
+//   margin-top: 15px;
+//   width: 90%;
+//   padding: 10px;
+
+//   @media screen and (min-width: 800px) {
+//     padding: 15px 40px;
+//   }
+// `;
+
+const packageLinkStyle = css`
   border-radius: 50px;
   background-color: transparent;
   border: 1.5px solid #565656;
   color: #565656;
   font-size: 18px;
   font-weight: bold;
-  margin-top: 15px;
-  width: 90%;
+  /* margin-top: 15px; */
+  /* margin: 15px auto 0; */
+  margin: auto;
+  margin-bottom: 0;
+  width: 70%;
   padding: 10px;
+  display: block;
+  text-decoration: none;
 
   @media screen and (min-width: 800px) {
-    padding: 15px 40px;
+    padding: 10px 20px;
   }
 `;
 
 const itemImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899349/packages-image_b2ow2y.png';
 
-const PackageItem = ({ item: { _id, productType, price, title, plans } }) => {
+const PackageItem = ({
+  item: { _id, productType, price, title, plans, slug, productCode }
+}) => {
   const dispatch = useCartDispatch();
   const planPrice = price || plans[0].price;
+  const slugCode = `${slug}_${productCode}`;
 
   return (
-    <div css={cardWrapperStyle}>
-      <Link css={imgStyleWrapper} to={`/package/${_id}`}>
+    <div css={cardWrapperStyle} className="package-item-flex">
+      <Link css={imgStyleWrapper} to={`/package/${slugCode}`}>
         <img src={itemImg} alt="item" />
         <div css={categorySpan(productType.toLowerCase())}>
           <span>{productType.toLowerCase()} Category</span>
         </div>
       </Link>
       <div css={packageBodyStyle}>
-        <Link to={`/package/${_id}`} css={packageHeadingStyle}>
+        <Link to={`/package/${slugCode}`} css={packageHeadingStyle}>
           {title}
         </Link>
         <p css={packagePriceStyle}>₦{planPrice.toLocaleString()}</p>
-        <p css={packageCategoryStyle}>
-          {plans && plans.length > 0
-            ? plans.map((plan, index) => (
-                <span key={index}>
-                  {plan.name}
-                  {index === plans.length - 1 ? null : ', '}
-                </span>
-              ))
-            : null}
-        </p>
-        <button
-          css={packageButtonStyle}
-          onClick={() =>
-            dispatch({
-              type: 'ADD_ITEM',
-              payload: {
-                name: title,
-                id: _id,
-                category: productType.toLowerCase(),
-                price: planPrice,
-                plans: plans || []
-              }
-            })
-          }
-        >
-          Add to Cart
-        </button>
+        <Link css={packageLinkStyle} to={`/package/${slugCode}`}>
+          View Package
+        </Link>
       </div>
     </div>
   );

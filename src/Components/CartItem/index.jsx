@@ -18,8 +18,8 @@ const CartItem = ({ item }) => {
             <img src={eachItemImage} alt="cart item" />
           </div>
           <div className="each-item-text">
-            <p>{item.name}</p>
-            <p>{item.category}</p>
+            <p>{item.title}</p>
+            <p>{item.productType}</p>
           </div>
         </div>
 

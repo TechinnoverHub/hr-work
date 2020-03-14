@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.scss';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 const AccountDetails = ({ user }) => {
   return (
