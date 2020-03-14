@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
@@ -8,6 +8,7 @@ import Hero from 'Components/Hero';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import dummyData from './dummydata';
 import PackageItem from 'Components/PackageItem';
+import { getAllPackages } from 'Services/Package.service';
 
 const packageImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
@@ -15,14 +16,56 @@ const packageImg =
 function Packages() {
   const { params } = useRouteMatch();
   const history = useHistory();
+  const [packages, setPackages] = useState([]);
+  const [filteredPackages, setFilteredPackages] = useState([]);
+  const [reqStatus, setReqStatus] = useState([]);
 
   const filterItems = (paramsData, dataItems) => {
     if (paramsData.id) {
-      return dataItems.filter(item => item.categoryKey === paramsData.id);
+      return dataItems.filter(
+        item => item.productType.toLocaleLowerCase() === paramsData.id
+      );
     } else {
       return dataItems;
     }
   };
+
+  const getPackages = async ({ limit }) => {
+    try {
+      setReqStatus('FETCHING');
+      const { data: response } = await getAllPackages({
+        limit: null,
+        page: null
+      });
+      if (response.status === 'success') {
+        setPackages(response.data.packages);
+        const packageList = filterItems(params, response.data.packages);
+        setFilteredPackages(packageList);
+        setReqStatus('SUCCESS');
+      }
+    } catch (error) {
+      setReqStatus('ERROR');
+    }
+  };
+
+  const NoPackages = () => {
+    return (
+      <div className="no-packages-data">
+        <h2>There are currently no packages in this category.</h2>
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    getPackages({ limit: 9 });
+  }, []);
+
+  useEffect(() => {
+    if (packages.length > 0) {
+      const packageList = filterItems(params, packages);
+      setFilteredPackages(packageList);
+    }
+  }, [params]);
 
   return (
     <div>
@@ -31,10 +74,18 @@ function Packages() {
       <div className="package-page-section">
         <PackagesLink />
         <div className="packages-page-grid">
-          {filterItems(params, dummyData).map(item => (
+          {/* {filterItems(params, dummyData).map(item => (
             <PackageItem item={item} />
+          ))} */}
+
+          {filteredPackages.map(item => (
+            <PackageItem key={item._id} item={item} />
           ))}
         </div>
+
+        {filteredPackages.length < 1 && reqStatus === 'SUCCESS' ? (
+          <NoPackages />
+        ) : null}
         {/* <div className="show-more-wrapper">
           <button className="show-more-btn">
             <span>Show More</span>

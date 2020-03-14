@@ -5,14 +5,10 @@ import './index.scss';
 import Header from 'Components/AltHeader';
 import Footer from 'Components/Footer';
 import CartItem from 'Components/CartItem';
-
-import paystack from 'Assets/svg/paystack.svg';
-import mastercard from 'Assets/svg/mastercard.svg';
-import visa from 'Assets/svg/visa.svg';
-import verve from 'Assets/svg/verve.svg';
 import { useCartState } from 'Context/cart.context';
 import { getCartLength } from 'Utils/cartHelpers';
 import EmptyCart from 'Components/EmptyCart';
+import PaymentSecure from 'Components/PaymentSecure';
 
 const ShoppingCart = () => {
   const cart = useCartState();
@@ -56,7 +52,7 @@ const ShoppingCart = () => {
                 <div>
                   {totalQty > 0 ? (
                     Object.entries(cart).map(itemData => (
-                      <CartItem item={itemData[1]} />
+                      <CartItem item={itemData[1]} key={itemData[1].id} />
                     ))
                   ) : (
                     <EmptyCart />
@@ -90,18 +86,13 @@ const ShoppingCart = () => {
                   <button
                     className="order-checkout-button"
                     disabled={totalQty < 1}
-                    onClick={() => history.push('/checkout')}
+                    onClick={() => history.push('/checkout/regular')}
                   >
                     Continue to Checkout
                   </button>
                 </div>
-                <div className="order-summary-horizontal-line"></div>
-                <div className="we-accept">
-                  <p className="we-accept-text">We accept:</p>
-                  <img src={paystack} alt="paystack" />
-                  <img src={mastercard} alt="mastercard" />
-                  <img src={visa} alt="visa" />
-                  <img src={verve} alt="verve" />
+                <div className="checkout-payment-secure">
+                  <PaymentSecure />
                 </div>
               </div>
             </div>

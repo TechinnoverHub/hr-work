@@ -102,54 +102,10 @@ function Home() {
       <div className="section-packages">
         <h2>Packages</h2>
         <hr />
-        <div className="package-box">
+        <div className="home-package-box">
           {packages.map(item => (
             <PackageItem key={item._id} item={item} />
           ))}
-          {/* <PackageItem />
-          <PackageItem />
-          <PackageItem /> */}
-          {/* <div className="box-image1">
-            <div className="package-image">
-              <div className="package-image-label-blue">
-                <span>Retainership Category</span>
-              </div>
-            </div>
-            <div className="package-body">
-              <h3>HR Remote Manager</h3>
-              <p className="price">₦3,480</p>
-              <p className="package-body-category">Basic, Bronze, Foundation</p>
-              <button className="package-box-button">Add to Cart</button>
-            </div>
-          </div>
-
-          <div className="box-image2">
-            <div className="package-image">
-              <div className="package-image-label-red">
-                <span>Retainership Category</span>
-              </div>
-            </div>
-            <div className="package-body">
-              <h3>HR Remote Manager</h3>
-              <p className="price">₦3,480</p>
-              <p className="package-body-category">Basic, Bronze, Foundation</p>
-              <button className="package-box-button">Add to Cart</button>
-            </div>
-          </div>
-          <div className="box-image3">
-            <div className="package-image">
-              <div className="package-image-label-green">
-                <span>Retainership Category</span>
-              </div>
-            </div>
-            <div className="package-body">
-              <h3>HR Remote Manager</h3>
-              <p className="price">₦3,480</p>
-              <p className="package-body-category">Basic, Bronze, Foundation</p>
-              <button className="package-box-button">Add to Cart</button>
-            </div>
-          </div>
-      */}
         </div>
 
         <div className="packages-btn-container">

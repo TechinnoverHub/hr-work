@@ -259,45 +259,15 @@
   }
 }
 
-.package-box {
+.home-package-box {
   display: block;
   padding: 0 7%;
 
   @media screen and (min-width: 800px) {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 3.33%;
     padding: 10px 0 0;
-  }
-}
-
-.package-box > div {
-  width: 100%;
-  margin-bottom: 36px;
-  border-radius: 14px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 6px 15px rgba(136, 136, 136, 0.25);
-  height: 80vh;
-
-  @media screen and (min-width: 800px) {
-    width: 30%;
-    margin-bottom: 0;
-    height: 555px;
-  }
-}
-
-.package-box div .package-image {
-  height: 50%;
-  width: 100%;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-  background-size: cover;
-  background-position: 90% 0vw;
-  background-repeat: no-repeat;
-  background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899349/packages-image_b2ow2y.png');
-
-  @media screen and (min-width: 800px) {
-    background-position: initial;
   }
 }
 

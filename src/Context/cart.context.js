@@ -6,7 +6,8 @@ import {
   updateItem,
   deleteItem,
   retrieveCart,
-  storeCart
+  storeCart,
+  clearCartStore
 } from 'Utils/cartHelpers';
 
 const CartStateContext = createContext();
@@ -38,6 +39,11 @@ function cartReducer(state, action) {
       const cartData = { ...deleteItem(action.payload, state) };
       storeCart(cartData);
       return cartData;
+    }
+
+    case 'CLEAR_CART': {
+      clearCartStore();
+      return {};
     }
 
     case 'INIT_CART': {

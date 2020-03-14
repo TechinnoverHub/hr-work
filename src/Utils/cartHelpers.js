@@ -1,5 +1,4 @@
 function getCartLength(cart) {
-  console.log(cart);
   return Object.values(cart).reduce(
     (acc, curr) => {
       acc.total += Number(curr.qty);
@@ -64,6 +63,42 @@ function clearCartStore() {
   localStorage.removeItem('hr_work_cart');
 }
 
+function getCartTotal(cart) {
+  return cart.reduce(
+    (acc, curr) => {
+      const qty = curr.qty || 1;
+      acc.total += Number(qty);
+      acc.price += Number(qty) * Number(curr.price);
+      return acc;
+    },
+    { total: 0, price: 0 }
+  );
+}
+
+function formatOrderObject({ productId, planId, ref }) {
+  return {
+    package: productId, // product id
+    plan: planId, // variant id
+    ref // pa
+  };
+}
+
+function getReference() {
+  let text = '';
+  let possible =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=';
+
+  for (let i = 0; i < 15; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return text;
+}
+
+function formatSuccessObject(cart) {
+  return Object.values(cart);
+}
+
 export {
   deleteItem,
   updateItem,
@@ -71,5 +106,9 @@ export {
   getCartLength,
   storeCart,
   retrieveCart,
-  clearCartStore
+  clearCartStore,
+  getCartTotal,
+  formatOrderObject,
+  getReference,
+  formatSuccessObject
 };

@@ -37,7 +37,8 @@ const styles = css`
     font-size: 14px;
     color: #565656;
     font-weight: 600;
-    margin: 0 5px;
+    padding: 0 10px;
+    /* margin: 0 5px; */
 
     @media screen and (min-width: 800px) {
       font-size: 16px;
