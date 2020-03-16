@@ -92,7 +92,7 @@ function Home() {
             <img src={SIDE_IMAGE} alt="side-bar" />
           </div>
         </div>
-        <button className="discover-btn">
+        <button className="discover-btn" onClick={() => history.push('/about')}>
           <span>Discover more</span>
           <i className="fa fa-play"></i>
         </button>

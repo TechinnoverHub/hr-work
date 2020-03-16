@@ -11,6 +11,7 @@ import { useHistory, useParams, Link as LinkTo } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { getPackage } from 'Services/Package.service';
 import { useCartDispatch } from 'Context/cart.context';
+import Spinner from 'Components/Spinner';
 
 const packageImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
@@ -124,7 +125,7 @@ function SinglePackage() {
   // console.log(path.url, '++  path ++');
 
   if (reqStatus === 'FETCHING') {
-    return <h2>Loading !!</h2>;
+    return <Spinner />;
   }
 
   return (
@@ -281,164 +282,6 @@ function SinglePackage() {
             {planData.plans.map(plan => (
               <PlanItem item={plan} />
             ))}
-          </section>
-
-          <section className="plan-table-wrapper" id="plans">
-            {/* <div className="plan-table-basic">
-              <div className="plan-table-basic-text">
-                <h3>Basic</h3>
-                <div className="plan-table-basic-line"></div>
-                <ul className="plan-basic-list-item">
-                  <li className="plan-basic-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Recruitment- assist with advert templates and provide CVs
-                    only
-                  </li>
-                  <li className="plan-basic-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Development and monthly implementation of Performance
-                    management framework
-                  </li>
-                  <li className="plan-basic-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Monthly Employee Engagement initiatives and implementation
-                  </li>
-                  <li className="plan-basic-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Daily enforcement of HR policies
-                  </li>
-                  <li className="plan-basic-each-list">
-                    <i className="fa fa-bolt"></i>HR advisory as required
-                  </li>
-                  <li className="plan-basic-each-list">
-                    <i className="fa fa-bolt"></i>Quarterly training
-                  </li>
-                </ul>
-                <div className="plan-table-basic-price">
-                  <span className="basic-dollar-sign">₦</span>
-                  <span className="basic-price">5,000</span>
-                  <span className="basic-year">/Year</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="plan-table-silver">
-              <div className="plan-table-silver-text">
-                <h3>Silver</h3>
-                <div className="plan-table-silver-line"></div>
-                <ul className="plan-silver-list-item">
-                  <li className="plan-silver-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Recruitment- JDs, Cv shortlist, interview
-                  </li>
-                  <li className="plan-silver-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Development and enforcement of HR procedures
-                  </li>
-                  <li className="plan-silver-each-list">
-                    <i className="fa fa-bolt"></i>Monthly Rewards management
-                  </li>
-                  <li className="plan-silver-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Employee reference management-as required
-                  </li>
-                  <li className="plan-silver-each-list">
-                    <i className="fa fa-bolt"></i>Dismissals-as required
-                  </li>
-                  <li className="plan-silver-each-list">
-                    <i className="fa fa-bolt"></i>Monthly training
-                  </li>
-                  <li className="plan-silver-each-list">
-                    <i className="fa fa-bolt"></i>Presence during statutory
-                    audits
-                  </li>
-                </ul>
-                <div className="plan-table-silver-price">
-                  <span className="silver-dollar-sign">₦</span>
-                  <span className="silver-price">15,000</span>
-                  <span className="silver-year">/Year</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="plan-table-gold">
-              <div className="plan-table-gold-text">
-                <h3>Gold</h3>
-                <div className="plan-table-gold-line"></div>
-                <ul className="plan-gold-list-item">
-                  <li className="plan-gold-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Recruitment- JDs, Cv shortlist, interview
-                  </li>
-                  <li className="plan-gold-each-list">
-                    <i className="fa fa-bolt"> </i>
-                    Development and enforcement of HR procedures
-                  </li>
-                  <li className="plan-gold-each-list">
-                    <i className="fa fa-bolt"></i>Monthly Rewards management
-                  </li>
-                  <li className="plan-gold-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Employee reference management-as required
-                  </li>
-                  <li className="plan-gold-each-list">
-                    <i className="fa fa-bolt"></i>Dismissals-as required
-                  </li>
-                  <li className="plan-gold-each-list">
-                    <i className="fa fa-bolt"></i>Monthly training
-                  </li>
-                  <li className="plan-gold-each-list">
-                    <i className="fa fa-bolt"></i>Presence during statutory
-                    audits
-                  </li>
-                </ul>
-                <div className="plan-table-gold-price">
-                  <span className="gold-dollar-sign">₦</span>
-                  <span className="gold-price">30,000</span>
-                  <span className="gold-year">/Year</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="plan-table-platinum">
-              <div className="plan-table-platinum-text">
-                <h3>Platinum</h3>
-                <div className="plan-table-platinum-line"></div>
-                <ul className="plan-platinum-list-item">
-                  <li className="plan-platinum-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Recruitment- JDs, Cv shortlist, interview
-                  </li>
-                  <li className="plan-platinum-each-list">
-                    <i className="fa fa-bolt"> </i>
-                    Development and enforcement of HR procedures
-                  </li>
-                  <li className="plan-platinum-each-list">
-                    <i className="fa fa-bolt"></i>Monthly Rewards management
-                  </li>
-                  <li className="plan-platinum-each-list">
-                    <i className="fa fa-bolt"></i>
-                    Employee reference management-as required
-                  </li>
-                  <li className="plan-platinum-each-list">
-                    <i className="fa fa-bolt"></i>Dismissals-as required
-                  </li>
-                  <li className="plan-platinum-each-list">
-                    <i className="fa fa-bolt"></i>Monthly training
-                  </li>
-                  <li className="plan-platinum-each-list">
-                    <i className="fa fa-bolt"></i>Presence during statutory
-                    audits
-                  </li>
-                </ul>
-                <div className="plan-table-platinum-price">
-                  <span className="platinum-dollar-sign">₦</span>
-                  <span className="platinum-price">50,000</span>
-                  <span className="platinum-year">/Year</span>
-                </div>
-              </div>
-            </div>
-        */}
           </section>
 
           <div className="product-you-like-wrapper">
