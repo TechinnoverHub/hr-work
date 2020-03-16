@@ -11,6 +11,7 @@ import { useHistory, useParams, Link as LinkTo } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { getPackage } from 'Services/Package.service';
 import { useCartDispatch } from 'Context/cart.context';
+import Spinner from 'Components/Spinner';
 
 const packageImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
@@ -124,7 +125,7 @@ function SinglePackage() {
   // console.log(path.url, '++  path ++');
 
   if (reqStatus === 'FETCHING') {
-    return <h2>Loading !!</h2>;
+    return <Spinner />;
   }
 
   return (
