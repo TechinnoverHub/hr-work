@@ -9,6 +9,8 @@ import Footer from 'Components/Footer';
 import LatestBlog from 'Components/LatestBlog';
 import { withRouter } from 'react-router';
 import Skeleton from 'react-loading-skeleton';
+import MyCommentBox from 'Components/MyComment';
+import * as Markdown from 'react-markdown';
 
 class SingleBlog extends Component {
   constructor(props) {
@@ -51,8 +53,12 @@ class SingleBlog extends Component {
           <div className="SinglePost">
             <h2 className="Title">{this.state.article.fields.title}</h2>
 
-            <p className="Post-body">{this.state.article.fields.content}</p>
+            <p className="Post-body">
+              <Markdown source={this.state.article.fields.content} />
+            </p>
           </div>
+
+          <MyCommentBox />
         </div>
         <LatestBlog />
         <Footer />
