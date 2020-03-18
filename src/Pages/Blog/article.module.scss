@@ -1,0 +1,63 @@
+.single_post__container {
+  background-color: #ffffff;
+  margin-bottom: 2.5rem;
+  height: 513px;
+  padding: 30px;
+}
+
+.articleImg {
+  height: 50%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.slug-link {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.card_text__section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  height: 50%;
+}
+
+.card_text__heading {
+  a {
+    font-size: 16px;
+    line-height: 1.5625;
+    color: #565656;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+.card__metaData {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__metaData__date {
+  font-size: 16px;
+  line-height: 25px;
+  color: rgba(86, 86, 86, 0.5);
+}
+
+.card__learnMore {
+  margin-top: 30px;
+
+  a {
+    color: #ef0633;
+    font-size: 16px;
+    line-height: 25px;
+    text-decoration: none;
+  }
+}

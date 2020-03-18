@@ -20,7 +20,7 @@ export default class Blog extends React.Component {
 
   componentDidMount() {
     client
-      .getEntries()
+      .getEntries({ content_type: 'blogPost' })
       .then(response => {
         console.log('FROM CONTENTFUL', response);
         this.setState({ articles: response.items });
@@ -45,75 +45,12 @@ export default class Blog extends React.Component {
           <span className="News-text">
             <h3>News</h3>
           </span>
-          <div className="News-box">
-            {articles}
-
-            {/* <div className="single-post-content">
-              <div className="single-post-image"></div>
-              <div className="single-post-text-wrapper">
-                <span className="single-post-text">
-                  Africa Prudential Shareholders Get N1 Billion Dividend, Lauds
-                  Digital Technology Initiatives
-                </span>
-                <span className="mini-text">March 26, 2019</span>
-                <span className="mini-text2">Learn more</span>
-              </div>
-            </div>
-  
-            <div className="single-post-content">
-              <div className="single-post-image"></div>
-              <div className="single-post-text-wrapper">
-                <span className="single-post-text">
-                  Africa Prudential Shareholders Get N1 Billion Dividend, Lauds
-                  Digital Technology Initiatives
-                </span>
-                <span className="mini-text">March 26, 2019</span>
-                <span className="mini-text2">Learn more</span>
-              </div>
-            </div>
-  
-            <div className="single-post-content">
-              <div className="single-post-image"></div>
-              <div className="single-post-text-wrapper">
-                <span className="single-post-text">
-                  Africa Prudential Shareholders Get N1 Billion Dividend, Lauds
-                  Digital Technology Initiatives
-                </span>
-                
-                <span className="mini-text">March 26, 2019</span>
-                <span className="mini-text2">Learn more</span>
-              </div>
-            </div>
-  
-            <div className="single-post-content">
-              <div className="single-post-image"></div>
-              <div className="single-post-text-wrapper">
-                <span className="single-post-text">
-                  Africa Prudential Shareholders Get N1 Billion Dividend, Lauds
-                  Digital Technology Initiatives
-                </span>
-                <span className="mini-text">March 26, 2019</span>
-                <span className="mini-text2">Learn more</span>
-              </div>
-            </div>
-  
-            <div className="single-post-content">
-              <div className="single-post-image"></div>
-              <div className="single-post-text-wrapper">
-                <span className="single-post-text">
-                  Africa Prudential Shareholders Get N1 Billion Dividend, Lauds
-                  Digital Technology Initiatives
-                </span>
-                <span className="mini-text">March 26, 2019</span>
-                <span className="mini-text2">Learn more</span>
-              </div>
-            </div> */}
-          </div>
-          <div className="view-news-btn">
+          <div className="News-box">{articles}</div>
+          {/* <div className="view-news-btn">
             <button>
               View news <i className="fa fa-play"></i>
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Gallery not figured out yet */}

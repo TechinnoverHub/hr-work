@@ -33,11 +33,12 @@
 
 .News-box {
   display: block;
+  margin-bottom: 30px;
 
   @media screen and (min-width: 800px) {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 3.33%;
   }
 }
 
@@ -61,18 +62,6 @@
   }
 }
 
-.single-post-text-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-
-  .single-post-text {
-    font-size: 16px;
-    line-height: 25px;
-    color: #565656;
-  }
-}
-
 .mini-text {
   font-size: 16px;
   line-height: 25px;
@@ -88,7 +77,7 @@
 }
 
 .view-news-btn {
-  margin: 0 auto;
+  margin: 30px auto 40px;
   text-align: center;
 }
 
@@ -98,7 +87,6 @@
   background-color: #ef0633;
   border-radius: 6px;
   color: white;
-  margin-top: 30px;
   cursor: pointer;
   font-size: 17px;
 }
@@ -179,9 +167,3 @@
 // .gallery-btn i {
 //   margin-left: 30px;
 // }
-
-.slug-link {
-  list-style: none;
-  text-decoration: none;
-  color: black;
-}
