@@ -127,6 +127,29 @@
   }
 }
 
+.footer__termsAndConditions {
+  display: inline;
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+  }
+
+  .footer__techinnover__link {
+    text-align: center;
+    margin-top: 20px;
+
+    @media screen and (min-width: 800px) {
+      margin-left: 20px;
+      margin-top: 0px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
 .font__awesome__icon {
   order: -1;
   display: flex;
