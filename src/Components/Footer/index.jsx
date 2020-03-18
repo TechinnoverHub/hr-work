@@ -63,6 +63,15 @@ export default () => {
           </div>
           <div className={Styles.footer__termsAndConditions}>
             <p>Terms & Conditions | Privacy Policy</p>
+            <p className={Styles.footer__techinnover__link}>
+              <a
+                href="https://techinnover.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Designed by Techinnover
+              </a>
+            </p>
           </div>
           <div className={Styles.font__awesome__icon}>
             <i className="fa fa-facebook"></i>

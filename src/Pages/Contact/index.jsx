@@ -94,7 +94,7 @@ function Contact() {
           </div>
         </form>
       </div>
-      <div style={{ height: '327px' }}>{/* <CustomMap /> */}</div>
+      {/* <div style={{ height: '327px' }}><CustomMap /></div> */}
       <NewsLetter />
       <Footer />
     </div>
