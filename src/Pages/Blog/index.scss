@@ -33,11 +33,12 @@
 
 .News-box {
   display: block;
+  margin-bottom: 30px;
 
   @media screen and (min-width: 800px) {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 3.33%;
   }
 }
 
@@ -50,25 +51,14 @@
 }
 
 .single-post-image {
-  background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899336/blog-content-image_rgvmeu.png');
+  // background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899336/blog-content-image_rgvmeu.png');
   height: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 
   @media screen and (min-width: 800px) {
     background-size: auto;
-  }
-}
-
-.single-post-text-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-
-  .single-post-text {
-    font-size: 16px;
-    line-height: 25px;
-    color: #565656;
   }
 }
 
@@ -87,7 +77,7 @@
 }
 
 .view-news-btn {
-  margin: 0 auto;
+  margin: 30px auto 40px;
   text-align: center;
 }
 
@@ -97,7 +87,6 @@
   background-color: #ef0633;
   border-radius: 6px;
   color: white;
-  margin-top: 30px;
   cursor: pointer;
   font-size: 17px;
 }
@@ -106,75 +95,75 @@
   margin-left: 15px;
 }
 
-// GALLERY sECTION //
-.gallery-section {
-  width: 80vw;
-  margin: 0 auto;
+// // GALLERY sECTION //
+// .gallery-section {
+//   width: 80vw;
+//   margin: 0 auto;
 
-  @media screen and (min-width: 800px) {
-    max-width: 1100px;
-  }
-}
+//   @media screen and (min-width: 800px) {
+//     max-width: 1100px;
+//   }
+// }
 
-.gallery-text {
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 34px;
-  color: #ef0633;
+// .gallery-text {
+//   text-align: center;
+//   font-weight: bold;
+//   font-size: 40px;
+//   line-height: 34px;
+//   color: #ef0633;
 
-  h3 {
-    padding: 90px 0;
-  }
-}
+//   h3 {
+//     padding: 90px 0;
+//   }
+// }
 
-.gallery-box {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+// .gallery-box {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
 
-  @media screen and (max-width: 600px) {
-    display: inline;
+//   @media screen and (max-width: 600px) {
+//     display: inline;
 
-    :nth-of-type(even) {
-      display: none;
-    }
-  }
-}
+//     :nth-of-type(even) {
+//       display: none;
+//     }
+//   }
+// }
 
-.single-gallery-container {
-  flex-basis: 31%;
-  margin-bottom: 40px;
-}
+// .single-gallery-container {
+//   flex-basis: 31%;
+//   margin-bottom: 40px;
+// }
 
-.single-gallery-image {
-  background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899328/gallery-section_vhiebw.png');
-  height: 302.88px;
-  background-repeat: no-repeat;
-  background-size: cover;
+// .single-gallery-image {
+//   background-image: url('https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899328/gallery-section_vhiebw.png');
+//   height: 302.88px;
+//   background-repeat: no-repeat;
+//   background-size: cover;
 
-  @media screen and (min-width: 800px) {
-    background-size: auto;
-  }
-}
+//   @media screen and (min-width: 800px) {
+//     background-size: auto;
+//   }
+// }
 
-.gallery-btn {
-  margin: 0 auto;
-  text-align: center;
-}
+// .gallery-btn {
+//   margin: 0 auto;
+//   text-align: center;
+// }
 
-.gallery-btn button {
-  padding: 1rem 1.9rem;
-  border: none;
-  background-color: #ef0633;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 17px;
-  margin-top: 50px;
-  margin-bottom: 70px;
-}
+// .gallery-btn button {
+//   padding: 1rem 1.9rem;
+//   border: none;
+//   background-color: #ef0633;
+//   border-radius: 6px;
+//   color: white;
+//   cursor: pointer;
+//   font-size: 17px;
+//   margin-top: 50px;
+//   margin-bottom: 70px;
+// }
 
-.gallery-btn i {
-  margin-left: 30px;
-}
+// .gallery-btn i {
+//   margin-left: 30px;
+// }
