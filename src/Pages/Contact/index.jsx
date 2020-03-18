@@ -3,7 +3,7 @@ import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import NewsLetter from 'Components/Newsletter';
-import CustomMap from 'Components/CustomMap';
+// import CustomMap from 'Components/CustomMap';
 import Hero from 'Components/Hero';
 // import contactImg from 'Assets/images/contactPGIMG.png';
 
@@ -94,9 +94,7 @@ function Contact() {
           </div>
         </form>
       </div>
-      <div style={{ height: '327px' }}>
-        <CustomMap />
-      </div>
+      <div style={{ height: '327px' }}>{/* <CustomMap /> */}</div>
       <NewsLetter />
       <Footer />
     </div>

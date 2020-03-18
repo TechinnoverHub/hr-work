@@ -116,7 +116,9 @@ export default class Blog extends React.Component {
           </div>
         </div>
 
-        <div className="gallery-section">
+        {/* Gallery not figured out yet */}
+
+        {/* <div className="gallery-section">
           <div className="gallery-text">
             <h3>Gallery</h3>
           </div>
@@ -151,7 +153,7 @@ export default class Blog extends React.Component {
               View gallery <i className="fa fa-play"></i>
             </button>
           </div>
-        </div>
+        </div> */}
 
         <Footer />
       </div>
