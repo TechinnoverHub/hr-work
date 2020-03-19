@@ -1,8 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './index.scss';
+import Skeleton from 'react-loading-skeleton';
 
-export default () => {
+export default ({ packageLoading }) => {
+  const isFetching = packageLoading === 'FETCHING';
+
+  if (isFetching) {
+    return (
+      <div className="packages-link-skeleton">
+        <Skeleton height={30} width="100%" />
+      </div>
+    );
+  }
+
   return (
     <div className="packages-link">
       <span className="packages-list">

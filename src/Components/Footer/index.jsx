@@ -62,8 +62,8 @@ export default () => {
             <p>© 2019 HR Work All right reserved</p>
           </div>
           <div className={Styles.footer__termsAndConditions}>
-            <p>Terms & Conditions | Privacy Policy</p>
-            <p className={Styles.footer__techinnover__link}>
+            <p>
+              Terms & Conditions | Privacy Policy |{' '}
               <a
                 href="https://techinnover.com/"
                 target="_blank"

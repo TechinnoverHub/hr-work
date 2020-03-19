@@ -6,7 +6,6 @@ import PackagesLink from 'Components/PackagesLink';
 import Newsletter from 'Components/Newsletter';
 import Hero from 'Components/Hero';
 import { useRouteMatch, useHistory } from 'react-router-dom';
-import dummyData from './dummydata';
 import PackageItem from 'Components/PackageItem';
 import { getAllPackages } from 'Services/Package.service';
 
@@ -17,7 +16,7 @@ function Packages() {
   const { params } = useRouteMatch();
   const history = useHistory();
   const [packages, setPackages] = useState([]);
-  const [filteredPackages, setFilteredPackages] = useState([]);
+  const [filteredPackages, setFilteredPackages] = useState([{}, {}, {}]);
   const [reqStatus, setReqStatus] = useState([]);
 
   const filterItems = (paramsData, dataItems) => {
@@ -30,7 +29,7 @@ function Packages() {
     }
   };
 
-  const getPackages = async ({ limit }) => {
+  const getPackages = async () => {
     try {
       setReqStatus('FETCHING');
       const { data: response } = await getAllPackages({
@@ -45,19 +44,26 @@ function Packages() {
       }
     } catch (error) {
       setReqStatus('ERROR');
+      setFilteredPackages([]);
     }
   };
 
-  const NoPackages = () => {
+  const NoPackages = ({ status }) => {
+    const message = {
+      SUCCESS: 'There are currently no packages in this category.',
+      ERROR: 'There are currently no packages available'
+    };
+
     return (
       <div className="no-packages-data">
-        <h2>There are currently no packages in this category.</h2>
+        <h2>{message[status]}</h2>
       </div>
     );
   };
 
   useEffect(() => {
-    getPackages({ limit: 9 });
+    getPackages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -72,19 +78,22 @@ function Packages() {
       <Header />
       <Hero imgUrl={packageImg} heroTitle="Our Packages" />
       <div className="package-page-section">
-        <PackagesLink />
+        {filteredPackages.length < 1 ? null : (
+          <PackagesLink packageLoading={reqStatus} />
+        )}
         <div className="packages-page-grid">
-          {/* {filterItems(params, dummyData).map(item => (
-            <PackageItem item={item} />
-          ))} */}
-
           {filteredPackages.map(item => (
-            <PackageItem key={item._id} item={item} />
+            <PackageItem
+              key={item._id}
+              item={item}
+              packageLoading={reqStatus}
+            />
           ))}
         </div>
 
-        {filteredPackages.length < 1 && reqStatus === 'SUCCESS' ? (
-          <NoPackages />
+        {(filteredPackages.length < 1 && reqStatus === 'SUCCESS') ||
+        reqStatus === 'ERROR' ? (
+          <NoPackages status={reqStatus} />
         ) : null}
         {/* <div className="show-more-wrapper">
           <button className="show-more-btn">

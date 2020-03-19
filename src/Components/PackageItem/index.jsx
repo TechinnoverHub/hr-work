@@ -5,6 +5,7 @@ import { jsx, css } from '@emotion/core';
 // import itemImg from 'Assets/images/packages-image.png';
 import { Link } from 'react-router-dom';
 import { useCartDispatch } from 'Context/cart.context';
+import Skeleton from 'react-loading-skeleton';
 
 const categoryColor = {
   retainership: '#0057da',
@@ -12,7 +13,7 @@ const categoryColor = {
   'off-the-shelf': '#00ba34'
 };
 
-const cardWrapperStyle = css`
+const cardWrapperStyle = isFetching => css`
   width: 100%;
   margin-bottom: 36px;
   border-radius: 14px;
@@ -20,11 +21,16 @@ const cardWrapperStyle = css`
   flex-direction: column;
   box-shadow: 0px 6px 15px rgba(136, 136, 136, 0.25);
   height: 65vh;
+  overflow: hidden;
 
   @media screen and (min-width: 800px) {
     /* flex-basis: 30%; */
     margin-bottom: 50px;
     height: 450px;
+
+    & > span {
+      flex: ${isFetching && 1};
+    }
   }
 `;
 
@@ -156,25 +162,37 @@ const itemImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899349/packages-image_b2ow2y.png';
 
 const PackageItem = ({
-  item: { _id, productType, price, title, plans, slug, productCode }
+  item: { _id, productType, price, title, plans, slug, productCode },
+  packageLoading
 }) => {
-  const dispatch = useCartDispatch();
-  const planPrice = price || plans[0].price;
+  // const dispatch = useCartDispatch();
+  const planPrice = price || (plans && plans[0] && plans[0].price);
   const slugCode = `${slug}_${productCode}`;
+  const isFetching = packageLoading === 'FETCHING';
+
+  if (isFetching) {
+    return (
+      <div css={cardWrapperStyle(isFetching)}>
+        <Skeleton height="100%" width="100%" />
+      </div>
+    );
+  }
 
   return (
-    <div css={cardWrapperStyle} className="package-item-flex">
+    <div css={cardWrapperStyle}>
       <Link css={imgStyleWrapper} to={`/package/${slugCode}`}>
         <img src={itemImg} alt="item" />
-        <div css={categorySpan(productType.toLowerCase())}>
-          <span>{productType.toLowerCase()} Category</span>
+        <div css={categorySpan(productType && productType.toLowerCase())}>
+          <span>{productType && productType.toLowerCase()} Category</span>
         </div>
       </Link>
       <div css={packageBodyStyle}>
         <Link to={`/package/${slugCode}`} css={packageHeadingStyle}>
           {title}
         </Link>
-        <p css={packagePriceStyle}>₦{planPrice.toLocaleString()}</p>
+        <p css={packagePriceStyle}>
+          ₦{planPrice && planPrice.toLocaleString()}
+        </p>
         <Link css={packageLinkStyle} to={`/package/${slugCode}`}>
           View Package
         </Link>

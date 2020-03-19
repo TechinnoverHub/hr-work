@@ -11,20 +11,21 @@ import PackageItem from 'Components/PackageItem';
 // import
 function Home() {
   const history = useHistory();
-  const [packages, setPackages] = useState([]);
-  const [packagesLoading, setPackagesLoading] = useState(false);
+  const [packages, setPackages] = useState([{}, {}, {}]);
+  const [packagesLoading, setPackagesLoading] = useState('');
 
   const getPackages = async () => {
     try {
-      setPackagesLoading(true);
+      setPackagesLoading('FETCHING');
       const { data: response } = await getAllPackages({ limit: 3 });
       // console.log(response);
       if (response.status === 'success') {
+        setPackagesLoading('SUCCESS');
         setPackages(response.data.packages);
-        setPackagesLoading(false);
       }
     } catch (error) {
-      setPackagesLoading(false);
+      setPackagesLoading('ERROR');
+      setPackages([]);
       console.log(error);
     }
   };
@@ -100,23 +101,31 @@ function Home() {
 
       {/* PACKAGES SECTION */}
       <div className="section-packages">
-        <h2>Packages</h2>
-        <hr />
-        <div className="home-package-box">
-          {packages.map(item => (
-            <PackageItem key={item._id} item={item} />
-          ))}
-        </div>
+        {packagesLoading === 'ERROR' ? null : (
+          <>
+            <h2>Packages</h2>
+            <hr />
+            <div className="home-package-box">
+              {packages.map((item, index) => (
+                <PackageItem
+                  key={item._id || index}
+                  item={item}
+                  packageLoading={packagesLoading}
+                />
+              ))}
+            </div>
 
-        <div className="packages-btn-container">
-          <button
-            className="packages-btn"
-            onClick={() => history.push('/packages')}
-          >
-            <span>View more packages</span>
-            <i className="fa fa-play"></i>
-          </button>
-        </div>
+            <div className="packages-btn-container">
+              <button
+                className="packages-btn"
+                onClick={() => history.push('/packages')}
+              >
+                <span>View more packages</span>
+                <i className="fa fa-play"></i>
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
       <div className="why-hr-work">

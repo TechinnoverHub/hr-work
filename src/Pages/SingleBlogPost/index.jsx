@@ -4,8 +4,8 @@ import client from 'Components/Services/client';
 
 import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
-import LatestBlog from 'Components/LatestBlog';
-import { withRouter, useParams } from 'react-router';
+// import LatestBlog from 'Components/LatestBlog';
+import { useParams } from 'react-router';
 import Skeleton from 'react-loading-skeleton';
 import MyCommentBox from 'Components/MyComment';
 import * as Markdown from 'react-markdown';
@@ -22,11 +22,11 @@ const SingleBlog = () => {
   const [artLoadingStatus, setArtLoadingStatus] = useState('FETCHING');
   const [comLoadingStatus, setComLoadingStatus] = useState('');
   const params = useParams();
-  console.log(params);
+  // console.log(params);
   const getEntries = async () => {
     try {
       const blogEntry = await client.getEntry(params.id);
-      console.log(blogEntry, '+++++ blog');
+      // console.log(blogEntry, '+++++ blog');
       if (!article.sys) {
         setArtLoadingStatus('SUCCESS');
       }
@@ -80,18 +80,16 @@ const SingleBlog = () => {
         });
         updatedItem = await itemToUpdate.update();
       } else {
-        itemToUpdate.fields = {
-          userComments: {
-            'en-US': [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: newComment.sys.id
-                }
+        itemToUpdate.fields['userComments'] = {
+          'en-US': [
+            {
+              sys: {
+                type: 'Link',
+                linkType: 'Entry',
+                id: newComment.sys.id
               }
-            ]
-          }
+            }
+          ]
         };
         updatedItem = await itemToUpdate.update();
       }
@@ -148,7 +146,11 @@ const SingleBlog = () => {
             </div>
           </div>
 
-          <MyCommentBox submitArticle={updateEntry} comments={comments} />
+          <MyCommentBox
+            submitArticle={updateEntry}
+            comments={comments}
+            createStatus={comLoadingStatus}
+          />
         </div>
       )}
       {/* <LatestBlog /> */}
