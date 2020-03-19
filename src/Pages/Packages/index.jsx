@@ -82,9 +82,9 @@ function Packages() {
           <PackagesLink packageLoading={reqStatus} />
         )}
         <div className="packages-page-grid">
-          {filteredPackages.map(item => (
+          {filteredPackages.map((item, indexKey) => (
             <PackageItem
-              key={item._id}
+              key={item._id || indexKey}
               item={item}
               packageLoading={reqStatus}
             />

@@ -18,6 +18,7 @@ import {
   formatOrderObject,
   formatSuccessObject
 } from 'Utils/cartHelpers';
+import Spinner from 'Components/Spinner';
 import { saveOrder } from 'Utils/checkoutHelpers';
 
 function getPayStackKey() {
@@ -35,7 +36,7 @@ function Checkout() {
   const userData = useUserState();
 
   const [paymentInfo, setPaymentInfo] = useState({
-    email: 'tomiadebanjo@gmail.com',
+    email: '',
     amount: 0
   });
 
@@ -70,7 +71,7 @@ function Checkout() {
   }
 
   if (userData.reqStatus === 'FETCHING') {
-    return <h1>LOADING!!!</h1>;
+    return <Spinner />;
   }
 
   if (userData.reqStatus === 'ERROR') {

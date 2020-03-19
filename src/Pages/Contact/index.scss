@@ -28,7 +28,10 @@
   width: 200px;
   align-items: center;
   font-size: 30px;
-  color: #1a1919;
+
+  i {
+    color: #1a1919;
+  }
 }
 
 .send-message {
@@ -53,7 +56,6 @@
   margin: 0 auto;
   max-width: 1100px;
   padding: 90px 9%;
-  box-shadow: 0px 6px 15px rgba(136, 136, 136, 0.25);
 
   ::-webkit-input-placeholder {
     color: rgba(86, 86, 86, 0.5);

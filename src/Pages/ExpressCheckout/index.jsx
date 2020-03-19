@@ -10,6 +10,7 @@ import { useUserState } from 'Context/user.context';
 import { getReference, formatOrderObject } from 'Utils/cartHelpers';
 import { saveOrder } from 'Utils/checkoutHelpers';
 import { toast } from 'react-toastify';
+import Spinner from 'Components/Spinner';
 
 function getPayStackKey() {
   const paystack_key = process.env.REACT_APP_PAYSTACK_KEY;
@@ -68,7 +69,7 @@ function ExpressCheckout() {
   }
 
   if (state && userData.reqStatus === 'FETCHING') {
-    return <h1>LOADING!!!</h1>;
+    return <Spinner />;
   }
 
   if (state && userData.reqStatus === 'ERROR') {
@@ -76,10 +77,6 @@ function ExpressCheckout() {
     // console.log('judeeeeee');
     return <Redirect to="/" />;
   }
-
-  // if (userData.reqStatus === 'SUCCESS' && userData.user.email.length < 1) {
-  //   toast.error('User not found');
-  // }
 
   return (
     <div>
