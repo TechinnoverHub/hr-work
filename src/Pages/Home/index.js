@@ -40,7 +40,13 @@ function Home() {
       <div className="homepage-image">
         <div className="social-icons">
           <i className="fa fa-facebook"></i>
-          <i className="fa fa-instagram"></i>
+          <a
+            href="https://www.instagram.com/hrworkng/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa fa-instagram"></i>
+          </a>
           <i className="fa fa-twitter"></i>
           <i className="fa fa-linkedin"></i>
         </div>

@@ -59,7 +59,7 @@ export default () => {
 
         <div className={Styles.footer__second__layer}>
           <div className={Styles.footer__copyright}>
-            <p>© 2019 HR Work All right reserved</p>
+            <p>© 2020 HR Work All right reserved</p>
           </div>
           <div className={Styles.footer__termsAndConditions}>
             <p>
@@ -75,7 +75,14 @@ export default () => {
           </div>
           <div className={Styles.font__awesome__icon}>
             <i className="fa fa-facebook"></i>
-            <i className="fa fa-instagram"></i>
+
+            <a
+              href="https://www.instagram.com/hrworkng/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa fa-instagram"></i>
+            </a>
             <i className="fa fa-twitter"></i>
             <i className="fa fa-linkedin"></i>
           </div>
