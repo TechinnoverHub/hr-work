@@ -39,7 +39,13 @@
     max-width: 169px;
     flex-basis: 169px;
     height: auto;
+  }
+
+  img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -66,17 +72,19 @@
     flex-direction: row;
     height: 156px;
     flex-basis: 47.5%;
+    max-width: 47.5;
+
+    &.flex {
+      > span {
+        flex: 1;
+      }
+    }
   }
 }
 
 .latest_blog__textWrapper {
   flex: 1;
   padding: 2.5rem 10%;
-  order: 2;
-
-  @media screen and (min-width: 800px) {
-    order: 0;
-  }
 
   p {
     color: #888888;
@@ -87,12 +95,15 @@
 }
 
 .latest_blog__text {
-  color: #ef0633;
-  font-weight: bold;
-  font-size: 1.125rem;
-  line-height: calc(26 / 18);
+  a {
+    color: #ef0633;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: calc(26 / 18);
+    text-decoration: none;
 
-  @media screen and (max-width: 600px) {
-    font-size: 16px;
+    @media screen and (max-width: 600px) {
+      font-size: 16px;
+    }
   }
 }

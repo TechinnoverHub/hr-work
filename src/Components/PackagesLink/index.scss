@@ -3,6 +3,14 @@
   margin: 0 auto;
 }
 
+.packages-link-skeleton {
+  margin: 0 auto;
+
+  @media screen and (min-width: 800px) {
+    width: 60%;
+  }
+}
+
 .packages-list {
   display: flex;
   justify-content: center;

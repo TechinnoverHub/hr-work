@@ -10,6 +10,7 @@ import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
 import ErrorField from 'Components/ErrorField';
 import { ReactComponent as Spinner } from 'Assets/svg/spinner.svg';
+import { toast } from 'react-toastify';
 
 function Login() {
   const [reqLoading, setReqLoading] = useState(false);
@@ -26,9 +27,7 @@ function Login() {
       email: Yup.string()
         .email('Invalid email')
         .required('email is Required'),
-      password: Yup.string()
-        .min(7, 'Password must contain at least 7 characters')
-        .required('password is Required')
+      password: Yup.string().required('password is Required')
     }),
     onSubmit: values => {
       handleLogin(values);
@@ -51,6 +50,18 @@ function Login() {
     } catch (error) {
       console.log(error, 'login error');
       setReqLoading(false);
+      if (error.response) {
+        const message =
+          (error.response.data && error.response.data.message) ||
+          'Login failed';
+        toast.error(message, {
+          position: toast.POSITION.TOP_CENTER
+        });
+      } else {
+        toast.error('Something went wrong, Try again.', {
+          position: toast.POSITION.TOP_CENTER
+        });
+      }
     }
   };
 

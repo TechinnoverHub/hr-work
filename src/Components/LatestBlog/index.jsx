@@ -1,86 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styles from './index.module.scss';
 import LatestBlogItem from './LatestBlogItem';
 import client from 'Components/Services/client';
 
-export default class LatestBlog extends React.Component {
-  constructor() {
-    super();
-    this.state = { articles: [] };
-  }
+const LatestBlog = () => {
+  const [articles, setArticles] = useState([{}, {}, {}, {}]);
+  const [contentStatus, setContentStatus] = useState('');
 
-  componentDidMount() {
+  const fetchArticles = () => {
+    setContentStatus('FETCHING');
     client
-      .getEntries()
+      .getEntries({ content_type: 'blogPost', limit: 4 })
       .then(response => {
-        this.setState({ articles: response.items });
+        setContentStatus('SUCCESS');
+        setArticles(response.items);
       })
       .catch(err => {
+        setContentStatus('ERROR');
         console.log('ERROR FROM CONTENTFUL', err);
       });
-  }
+  };
 
-  render() {
-    const articles = this.state.articles.map((article, i) => (
-      <LatestBlogItem id={i} key={i} article={article} />
-    ));
-    return (
-      <div className={Styles.latest_blog}>
-        <div>
-          <h2>Latest News</h2>
-        </div>
-        <div className={Styles.latest_blog__box}>{articles}</div>
+  useEffect(() => {
+    fetchArticles();
+  }, []);
+
+  const articlesCard = articles.map((article, i) => (
+    <LatestBlogItem
+      id={i}
+      key={i}
+      article={article}
+      contentStatus={contentStatus}
+    />
+  ));
+
+  return (
+    <div className={Styles.latest_blog}>
+      <div>
+        <h2>Latest News</h2>
+        <hr />
       </div>
-    );
-  }
-  // return (
-  //   <div className={Styles.latest_blog}>
-  //     <div>
-  //       <h2>Latest News</h2>
-  //       <hr />
-  //     </div>
+      <div className={Styles.latest_blog__box}>{articlesCard}</div>
+    </div>
+  );
+};
 
-  //     <div className={Styles.latest_blog__box}>
-  //       <div className={Styles.latest_blog__boxWrapper}>
-  //         <div className={Styles.latest_blog__textWrapper}>
-  //           <span className={Styles.latest_blog__text}>
-  //             Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-  //           </span>
-  //           <p>30th Oct, 2019</p>
-  //         </div>
-  //         <div className={Styles.latest_blog__image}>{/* <img /> */}</div>
-  //       </div>
-
-  //       // <div className={Styles.latest_blog__boxWrapper}>
-  //       //   <div className={Styles.latest_blog__textWrapper}>
-  //       //     <span className={Styles.latest_blog__text}>
-  //       //       Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-  //       //     </span>
-  //       //     <p>30th Oct, 2019</p>
-  //       //   </div>
-  //       //   <div className={Styles.latest_blog__image}></div>
-  //       // </div>
-
-  //       // <div className={Styles.latest_blog__boxWrapper}>
-  //       //   <div className={Styles.latest_blog__textWrapper}>
-  //       //     <span className={Styles.latest_blog__text}>
-  //       //       Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-  //       //     </span>
-  //       //     <p>30th Oct, 2019</p>
-  //       //   </div>
-  //       //   <div className={Styles.latest_blog__image}></div>
-  //       // </div>
-
-  //       // <div className={Styles.latest_blog__boxWrapper}>
-  //       //   <div className={Styles.latest_blog__textWrapper}>
-  //       //     <span className={Styles.latest_blog__text}>
-  //       //       Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-  //       //     </span>
-  //       //     <p>30th Oct, 2019</p>
-  //       //   </div>
-  //       //   <div className={Styles.latest_blog__image}></div>
-  //       // </div>
-  //     </div>
-  //   </div>
-  // );
-}
+export default LatestBlog;

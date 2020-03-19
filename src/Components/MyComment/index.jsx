@@ -2,13 +2,21 @@ import React from 'react';
 import Styles from './index.module.scss';
 import { useState } from 'react';
 import gravatar from 'Assets/images/gravatar.png';
+import { ReactComponent as Spinner } from 'Assets/svg/spinner.svg';
 
 const CommentItem = ({ comment }) => {
   const {
     fields: { name, body },
     sys: { createdAt }
   } = comment;
-  const dateTime = createdAt ? new Date(createdAt).toDateString() : '';
+  const getDateTime = dateIso => {
+    const dateTimeStr = new Date(dateIso);
+    return `${dateTimeStr
+      .toLocaleTimeString()
+      .slice(0, 5)}, ${dateTimeStr.toDateString()}`;
+  };
+
+  const dateTime = createdAt ? getDateTime(createdAt) : '';
 
   return (
     <div className={Styles.comment__item}>
@@ -24,12 +32,13 @@ const CommentItem = ({ comment }) => {
   );
 };
 
-const MyCommentBox = ({ submitArticle, comments }) => {
+const MyCommentBox = ({ submitArticle, comments, createStatus }) => {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
 
   // console.log(comments, '+++ comments +++');
   const commentsLength = comments ? comments.length : 0;
+  const isFetching = createStatus === 'FETCHING';
 
   return (
     <div className={Styles.comment_wrapper}>
@@ -66,7 +75,10 @@ const MyCommentBox = ({ submitArticle, comments }) => {
           onChange={e => setComment(e.target.value)}
           required
         />
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={isFetching}>
+          <span>Submit</span>
+          {isFetching ? <Spinner className="login-spinner" /> : null}
+        </button>
       </form>
     </div>
   );
