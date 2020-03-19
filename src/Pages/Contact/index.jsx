@@ -20,7 +20,14 @@ function Contact() {
         <p>Just a click and we can talk more!</p>
         <span className="get-in-touch-icons">
           <i className="fa fa-facebook"></i>
-          <i className="fa fa-instagram"></i>
+
+          <a
+            href="https://www.instagram.com/hrworkng/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa fa-instagram"></i>
+          </a>
           <i className="fa fa-twitter"></i>
           <i className="fa fa-linkedin"></i>
         </span>
