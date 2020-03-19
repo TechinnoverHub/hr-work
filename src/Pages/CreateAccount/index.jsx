@@ -51,7 +51,7 @@ function CreateAccount() {
       setReqState('LOADING');
       const { data: response } = await createUser(values);
       const {
-        data: { token }
+        data: { token, user }
       } = response;
 
       setReqState('SUCCESS');
@@ -60,7 +60,7 @@ function CreateAccount() {
       });
       dispatch({
         type: 'SET_LOGGED_IN_USER',
-        payload: { token }
+        payload: { token, user }
       });
     } catch (error) {
       setReqState('ERROR');
