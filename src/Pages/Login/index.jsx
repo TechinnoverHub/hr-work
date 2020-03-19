@@ -39,13 +39,13 @@ function Login() {
       setReqLoading(true);
       const { data: response } = await loginUser(values);
       const {
-        data: { token }
+        data: { token, user }
       } = response;
 
       setReqLoading(false);
       dispatch({
         type: 'SET_LOGGED_IN_USER',
-        payload: { token }
+        payload: { token, user }
       });
     } catch (error) {
       console.log(error, 'login error');

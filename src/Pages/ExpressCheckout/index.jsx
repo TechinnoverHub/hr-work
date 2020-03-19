@@ -73,8 +73,13 @@ function ExpressCheckout() {
 
   if (state && userData.reqStatus === 'ERROR') {
     toast.error('Something Went Wrong!!! contact us');
+    // console.log('judeeeeee');
     return <Redirect to="/" />;
   }
+
+  // if (userData.reqStatus === 'SUCCESS' && userData.user.email.length < 1) {
+  //   toast.error('User not found');
+  // }
 
   return (
     <div>

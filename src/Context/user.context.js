@@ -11,11 +11,11 @@ function userReducer(state, action) {
   switch (action.type) {
     case 'SET_LOGGED_IN_USER': {
       const {
-        payload: { token }
+        payload: { token, user }
       } = action;
       setToken(token);
       setAuthHeaders(token);
-      return { ...state, isAuthenticated: true };
+      return { ...state, isAuthenticated: true, user };
     }
 
     case 'LOG_OUT_USER': {
