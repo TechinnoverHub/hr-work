@@ -7,11 +7,15 @@ const styles = css`
   color: red;
 `;
 
-const ErrorField = ({ formik, fieldName }) => {
+const ErrorField = ({ formik, fieldName, selectField }) => {
   return (
     <>
       {formik.touched[fieldName] && formik.errors[fieldName] ? (
-        <p css={styles}>{formik.errors[fieldName]}</p>
+        <p css={styles}>
+          {selectField
+            ? formik.errors[fieldName].name
+            : formik.errors[fieldName]}
+        </p>
       ) : null}
     </>
   );

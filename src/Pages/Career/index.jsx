@@ -1,14 +1,114 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { toast } from 'react-toastify';
+
 import Header from 'Components/Header';
 import './index.scss';
 import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
+import ErrorField from 'Components/ErrorField';
+import { careerFormSubmit } from 'Services/Form.service';
+import { ReactComponent as Spinner } from 'Assets/svg/spinner.svg';
 // import careerHeroImg from 'Assets/images/career-image.png';
 
 const careerHeroImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899356/career-image_vmgskx.png';
 
+const fileToBase64 = file => {
+  return new Promise(resolve => {
+    var reader = new FileReader();
+    // Read file content on file loaded event
+    reader.onload = function(event) {
+      resolve(event.target.result);
+    };
+
+    reader.readAsDataURL(file);
+  });
+};
+
 function Career() {
+  const [formStatus, setFormStatus] = useState('');
+  const formik = useFormik({
+    initialValues: {
+      firstname: '',
+      lastname: '',
+      role: '',
+      resume: '',
+      cover_letter: '',
+      email: '',
+      phone: '',
+      message: ''
+    },
+    validationSchema: Yup.object({
+      firstname: Yup.string().required('required'),
+      lastname: Yup.string().required('required'),
+      role: Yup.string().required('required'),
+      message: Yup.string().required('required'),
+      phone: Yup.string().required('required'),
+      email: Yup.string()
+        .email('Invalid email')
+        .required('required')
+    }),
+    validate: values => {
+      const errors = {};
+
+      if (!(values.resume instanceof File)) {
+        errors.resume = 'required';
+      }
+
+      if (!(values.cover_letter instanceof File)) {
+        errors.cover_letter = 'required';
+      }
+
+      return errors;
+    },
+    onSubmit: async values => {
+      // submitCareerForm(values);
+      alert(JSON.stringify(values, null, 2));
+
+      try {
+        const [resume_base64, cover_letter_base64] = await Promise.all([
+          fileToBase64(values.resume),
+          fileToBase64(values.cover_letter)
+        ]);
+
+        submitCareerForm({
+          ...values,
+          resume: resume_base64,
+          cover_letter: cover_letter_base64
+        });
+      } catch (error) {
+        toast.error('error uploading file', {
+          position: toast.POSITION.TOP_CENTER
+        });
+        console.error('error uploading file');
+      }
+    }
+  });
+
+  // console.log(formik.values.resume);
+  const submitCareerForm = async values => {
+    try {
+      setFormStatus('SUBMITTING');
+      const { data: response } = await careerFormSubmit(values);
+
+      if (response.status === 'success') {
+        setFormStatus('SUCCESS');
+        toast.success('Form submission successful', {
+          position: toast.POSITION.TOP_CENTER
+        });
+        formik.resetForm();
+      }
+    } catch (error) {
+      setFormStatus('ERROR');
+      console.log(error, 'error');
+      toast.error('Error submitting form', {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -85,67 +185,132 @@ function Career() {
 
       <div className="form-area">
         <div className="form-area-container">
-          <form id="form1">
+          <form id="form1" onSubmit={formik.handleSubmit}>
             <div className="first-row-form">
-              <label htmlFor="firstName">
+              <label htmlFor="firstname">
                 First Name
-                <input type="text" name="firstName" id="firstName" />
+                <ErrorField formik={formik} fieldName="firstname" />
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  onChange={formik.handleChange}
+                  value={formik.values.firstname}
+                />
               </label>
 
-              <label htmlFor="lastName">
+              <label htmlFor="lastname">
                 Last Name
-                <input type="text" name="lastName" id="lastName" />
+                <ErrorField formik={formik} fieldName="lastname" />
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  onChange={formik.handleChange}
+                  value={formik.values.lastname}
+                />
               </label>
             </div>
 
             <div className="second-row-form">
               <label htmlFor="email">
                 Email
-                <input type="email" name="email" id="email" required />
+                <ErrorField formik={formik} fieldName="email" />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
+                />
               </label>
 
-              <label htmlFor="phoneNumber">
+              <label htmlFor="phone">
                 Phone Number
-                <input type="number" name="phoneNumber" id="phoneNumber" />
+                <ErrorField formik={formik} fieldName="phone" />
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  onChange={formik.handleChange}
+                  value={formik.values.phone}
+                />
               </label>
             </div>
 
             <div className="third-row-form">
-              <label htmlFor="desiredRole">
+              <label htmlFor="role">
                 Desired Role
-                <input type="text" name="desiredRole" id="desiredRole" />
+                <ErrorField formik={formik} fieldName="role" />
+                <input
+                  type="text"
+                  name="role"
+                  id="role"
+                  onChange={formik.handleChange}
+                  value={formik.values.role}
+                />
               </label>
             </div>
 
             <div className="fourth-row-form">
-              <label htmlFor="reason">
+              <label htmlFor="message">
                 Why do you want to work here
+                <ErrorField formik={formik} fieldName="message" />
                 <textarea
                   rows="5"
                   cols="50"
-                  id="reason"
-                  name="reason"
+                  id="message"
+                  name="message"
+                  onChange={formik.handleChange}
+                  value={formik.values.message}
                 ></textarea>
               </label>
             </div>
 
             <div className="fifth-row-form">
-              <label htmlFor="">
+              <label htmlFor="resume">
                 Attach Resume
-                <input type="text" name="resume" id="resume" />
+                <ErrorField formik={formik} fieldName="resume" />
+                <input
+                  type="file"
+                  name="resume"
+                  id="resume"
+                  onChange={e =>
+                    formik.setFieldValue('resume', e.target.files[0])
+                  }
+                  onBlur={() => formik.setFieldTouched('resume', true)}
+                />
               </label>
 
-              <label htmlFor="">
+              <label htmlFor="cover_letter">
                 Attach cover letter
-                <input type="text" name="coverLetter" id="coverLetter" />
+                <ErrorField formik={formik} fieldName="cover_letter" />
+                <input
+                  type="file"
+                  name="cover_letter"
+                  id="cover_letter"
+                  onChange={e =>
+                    formik.setFieldValue('cover_letter', e.target.files[0])
+                  }
+                  onBlur={() => formik.setFieldTouched('cover_letter', true)}
+                />
               </label>
             </div>
           </form>
           <div className="image-box"></div>
         </div>
-        <button className="join-us" type="submit" form="form1">
+        <button
+          className="join-us"
+          type="submit"
+          form="form1"
+          disabled={formStatus === 'SUBMITTING'}
+        >
           <span>Join us today</span>
-          <i className="fa fa-play"></i>
+          {formStatus === 'SUBMITTING' ? (
+            <Spinner className="login-spinner spinner" />
+          ) : null}
+
+          {formStatus !== 'SUBMITTING' ? <i className="fa fa-play"></i> : null}
         </button>
       </div>
       <Footer />
