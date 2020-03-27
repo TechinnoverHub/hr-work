@@ -65,7 +65,7 @@ function Career() {
     },
     onSubmit: async values => {
       // submitCareerForm(values);
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
 
       try {
         const [resume_base64, cover_letter_base64] = await Promise.all([
