@@ -16,7 +16,8 @@ import {
   getCartLength,
   getReference,
   formatOrderObject,
-  formatSuccessObject
+  formatSuccessObject,
+  formatCartOrderPayload
 } from 'Utils/cartHelpers';
 import Spinner from 'Components/Spinner';
 import { saveOrder } from 'Utils/checkoutHelpers';
@@ -44,14 +45,9 @@ function Checkout() {
   const { total: totalQty, price: totalPrice } = getCartLength(cart);
 
   const callback = response => {
-    console.log('success. transaction ref is ' + response.reference);
-
-    // const orderDetails = formatOrderObject({
-    //   productId: _id,
-    //   variantId: planId,
-    //   ref: response.reference
-    // });
-    // saveOrder(orderDetails);
+    // console.log('success. transaction ref is ' + response.reference);
+    const orderDetails = formatCartOrderPayload(cart, response.reference);
+    saveOrder(orderDetails);
 
     const successCart = formatSuccessObject(cart);
     return history.push('/payment-success?cart=true', successCart);
@@ -135,7 +131,7 @@ function Checkout() {
                 disabled={totalQty < 1}
                 embed={false}
                 reference={getReference()}
-                email={paymentInfo.email}
+                email={userData.user.email}
                 amount={paymentInfo.amount}
                 paystackkey={API_KEY}
                 tag="button"
