@@ -76,10 +76,33 @@ function getCartTotal(cart) {
 }
 
 function formatOrderObject({ productId, planId, ref }) {
+  // return {
+  //   package: productId, // product id
+  //   plan: planId, // variant id
+  //   ref // pa
+  // };
+
   return {
-    package: productId, // product id
-    plan: planId, // variant id
-    ref // pa
+    ref,
+    items: [
+      {
+        package: productId, // product id
+        plan: planId // variant id
+      }
+    ]
+  };
+}
+
+function formatCartOrderPayload(cart, ref) {
+  const iterableCart = Object.values(cart);
+  const items = iterableCart.map(item => ({
+    package: item._id,
+    plan: item.planId
+  }));
+
+  return {
+    ref,
+    items
   };
 }
 
@@ -110,5 +133,6 @@ export {
   getCartTotal,
   formatOrderObject,
   getReference,
-  formatSuccessObject
+  formatSuccessObject,
+  formatCartOrderPayload
 };

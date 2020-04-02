@@ -37,7 +37,6 @@ function ExpressCheckout() {
   });
 
   const callback = response => {
-    console.log('success. transaction ref is ', response);
     const {
       payload: { _id, planId }
     } = state;
