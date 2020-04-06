@@ -49,8 +49,8 @@ export default () => {
           <div className={Styles.nav__address}>
             <p>
               <b>CONTACT US</b>
-              <br />
-              11 Deji Olamiju Street, <br /> Soluyi-Gbagada, Lagos
+              {/* <br />
+              11 Deji Olamiju Street, <br /> Soluyi-Gbagada, Lagos */}
               <br /> Call: 07034417961
               <br /> Email: info@alphaduxconsulting.com
             </p>
