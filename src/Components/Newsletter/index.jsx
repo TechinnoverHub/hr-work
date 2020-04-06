@@ -14,10 +14,6 @@ export default () => {
       //   data: {
       //     email_address: 'tomiadebanjo@gmail.com',
       //     status: 'pending'
-      //   },
-      //   auth: {
-      //     username: 'hrworkfrontend',
-      //     password: 'ea2d76d6156ebf3e184a95c8995c624a-us19'
       //   }
       // });
       // console.log(result);
