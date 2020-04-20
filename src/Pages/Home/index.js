@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
-import LatestBlog from 'Components/LatestBlog';
+// import LatestBlog from 'Components/LatestBlog';
 import { useHistory } from 'react-router-dom';
 import { SIDE_IMAGE } from './imageLinks';
 import { getAllPackages } from 'Services/Package.service';
 import PackageItem from 'Components/PackageItem';
+import Carousel from 'Components/Carousel';
 
 // import
 function Home() {
@@ -206,7 +207,12 @@ function Home() {
           </div>
         </div>
       </div>
-      <LatestBlog />
+      <div className="testimonial-section-heading">
+        <h2>What Clients Say</h2>
+        <hr />
+      </div>
+      <Carousel />
+      {/* <LatestBlog /> */}
       <Footer />
     </div>
   );
