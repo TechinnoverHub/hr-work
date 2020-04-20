@@ -596,3 +596,27 @@
 //   font-size: 12px;
 //   line-height: 34px;
 // }
+
+.testimonial-section-heading {
+  margin: 0 auto;
+  width: 80vw;
+
+  @media screen and (min-width: 800px) {
+    width: auto;
+    max-width: 1100px;
+  }
+
+  h2 {
+    color: #ef0633;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-top: 40px;
+    // padding-top: 2.5rem;
+  }
+
+  hr {
+    margin: 2.5rem 0px 2.9rem;
+    border: 0.5px solid #f99bad;
+  }
+}
