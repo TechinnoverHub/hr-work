@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { SIDE_IMAGE } from './imageLinks';
 import { getAllPackages } from 'Services/Package.service';
 import PackageItem from 'Components/PackageItem';
-import Carousel from 'Components/Carousel';
+import Carousel from 'Components/Carouselv2';
 
 // import
 function Home() {

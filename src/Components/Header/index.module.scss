@@ -208,6 +208,12 @@ nav {
     margin: 0 1.09375em;
     list-style: none;
 
+    &:hover {
+      a {
+        color: #ef0633;
+      }
+    }
+
     .cart__link {
       display: flex;
       justify-content: center;
@@ -243,10 +249,26 @@ nav {
 
   &.link_sticky {
     li {
+      position: relative;
       .link {
         color: #ef0633;
         font-weight: bold;
         transition: color 0.1s ease-out;
+      }
+
+      &:hover {
+        .link {
+          &:after {
+            height: 3px;
+            width: 100%;
+            content: '';
+            background: #ef0633;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            animation: hover-animation 0.2s ease-in-out;
+          }
+        }
       }
 
       .cart__counter {
@@ -254,5 +276,14 @@ nav {
         color: #ffffff;
       }
     }
+  }
+}
+
+@keyframes hover-animation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
