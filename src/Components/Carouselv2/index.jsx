@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import testimonialData from './testimonialData';
@@ -39,7 +39,7 @@ const outerContainer = css`
 
 const container = css`
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   max-width: 88%;
   flex-basis: 90%;
   align-items: center;
@@ -85,6 +85,8 @@ const cardCss = css`
 
 const Carousel = () => {
   const scrollRef = useRef(null);
+  const [clearIntervalState, updateClearIntervalState] = useState(false);
+
   const onClick = (direction = 'right') => {
     const container = scrollRef.current;
     // total overflow scroll width
@@ -103,8 +105,6 @@ const Carousel = () => {
     let behavior = 'smooth';
 
     if (direction === 'right') {
-      // console.log(scrollLeft, 'left');
-      // console.log(scrollNum, 'num right');
       if (scrollLeft + containerWidth >= scrollWidth) {
         scrollNum = 0;
         behavior = 'auto';
@@ -112,26 +112,34 @@ const Carousel = () => {
         scrollNum += scrollLeft;
       }
     } else {
-      // console.log(scrollNum, 'num left');
       scrollNum = scrollLeft - scrollNum;
     }
-    // container.scrollTo({ top: 0, left: scrollNum, behavior: 'smooth' });
+
     container.scrollTo({ top: 0, left: scrollNum, behavior });
   };
 
+  const clickHandler = direction => {
+    updateClearIntervalState(true);
+    onClick(direction);
+  };
+
   useEffect(() => {
-    const interval = setInterval(() => {
+    let interval = setInterval(() => {
       onClick('right');
     }, 3000);
+    if (clearIntervalState) {
+      clearInterval(interval);
+      updateClearIntervalState(false);
+    }
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [clearIntervalState]);
 
   return (
     <div css={outerContainer}>
-      <button onClick={() => onClick('left')}>
+      <button onClick={() => clickHandler('left')}>
         <BackIcon />
       </button>
       <div css={container} ref={scrollRef}>
@@ -142,7 +150,7 @@ const Carousel = () => {
           </div>
         ))}
       </div>
-      <button onClick={() => onClick('right')}>
+      <button onClick={() => clickHandler('right')}>
         <NextIcon />
       </button>
     </div>
