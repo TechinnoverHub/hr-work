@@ -39,7 +39,7 @@ const outerContainer = css`
 
 const container = css`
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   max-width: 88%;
   flex-basis: 90%;
   align-items: center;
