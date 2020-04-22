@@ -75,15 +75,17 @@ function getCartTotal(cart) {
   );
 }
 
-function formatOrderObject({ productId, planId, ref }) {
+function formatOrderObject({ productId, planId, ref, total, status }) {
   // return {
   //   package: productId, // product id
   //   plan: planId, // variant id
-  //   ref // pa
+  //   ref // pa8
   // };
 
   return {
     ref,
+    total,
+    status: status || 'successful',
     items: [
       {
         package: productId, // product id
@@ -93,7 +95,7 @@ function formatOrderObject({ productId, planId, ref }) {
   };
 }
 
-function formatCartOrderPayload(cart, ref) {
+function formatCartOrderPayload(cart, ref, total) {
   const iterableCart = Object.values(cart);
   const items = iterableCart.map(item => ({
     package: item._id,
@@ -102,7 +104,9 @@ function formatCartOrderPayload(cart, ref) {
 
   return {
     ref,
-    items
+    items,
+    total,
+    status: 'successful'
   };
 }
 

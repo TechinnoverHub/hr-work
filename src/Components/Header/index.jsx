@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, NavLink } from 'react-router-dom';
 import logo from 'Assets/svg/logo.svg';
 import logoDark from 'Assets/svg/DarkLogo.svg';
 import Styles from './index.module.scss';
@@ -89,45 +89,71 @@ export default () => {
             }`}
           >
             <li>
-              <Link className={Styles.link} to="/about">
+              <NavLink
+                className={Styles.link}
+                to="/about"
+                activeClassName={Styles.link__active}
+              >
                 Who we are
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link className={Styles.link} to="/packages">
+              <NavLink
+                className={Styles.link}
+                to="/packages"
+                activeClassName={Styles.link__active}
+              >
                 Packages
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link className={Styles.link} to="/blog">
+              <NavLink
+                className={Styles.link}
+                to="/blog"
+                activeClassName={Styles.link__active}
+                // activeClassName="link__active"
+              >
                 Blog
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link className={Styles.link} to="/careers">
+              <NavLink
+                className={Styles.link}
+                to="/careers"
+                activeClassName={Styles.link__active}
+              >
                 Careers
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link className={Styles.link} to="/contact">
+              <NavLink
+                className={Styles.link}
+                to="/contact"
+                activeClassName={Styles.link__active}
+              >
                 Contact
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link className={Styles.link} to="/account">
+              <NavLink
+                className={Styles.link}
+                to="/account"
+                activeClassName={Styles.link__active}
+              >
                 Account
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link
+              <NavLink
                 to="/cart"
                 className={`${Styles.link} ${Styles.cart__link}`}
+                activeClassName={Styles.link__active}
               >
                 <span className={Styles.cart__icon}>
                   <img
@@ -139,7 +165,7 @@ export default () => {
                   ) : null}
                 </span>
                 <span>Cart</span>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

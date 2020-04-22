@@ -65,10 +65,6 @@ function Login() {
     }
   };
 
-  // const loginRedirect = () => {
-  //   history.replace(from);÷
-  // };
-
   if (userState.isAuthenticated) {
     let { from } = location.state || { from: { pathname: '/account' } };
     return <Redirect to={from} />;
@@ -127,7 +123,12 @@ function Login() {
             <div className="create-account-button">
               <button
                 type="button"
-                onClick={() => history.push('/create-account')}
+                onClick={() =>
+                  history.push({
+                    pathname: '/create-account',
+                    state: location.state
+                  })
+                }
               >
                 Create an Account
               </button>

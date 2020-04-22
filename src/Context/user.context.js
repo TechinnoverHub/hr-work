@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import { setToken, setAuthHeaders, deleteToken } from 'Utils/authHelpers';
 
 import { getToken } from 'Utils/authHelpers';
-import { getUserProfile } from 'Services/Auth.service';
+import { fetchUser } from 'Actions/user';
 
 const UserStateContext = createContext();
 const UserDispatchContext = createContext();
@@ -44,25 +44,9 @@ function userReducer(state, action) {
 function UserProvider({ children }) {
   const [state, dispatch] = useReducer(userReducer, {
     isAuthenticated: false,
-    user: {},
+    user: { orders: [] },
     reqStatus: ''
   });
-
-  const fetchUser = async () => {
-    try {
-      dispatch({ type: 'USER_FETCHING_REQUEST' });
-      const { data: response } = await getUserProfile();
-
-      const {
-        data: { user }
-      } = response;
-      dispatch({ type: 'USER_FETCHING_SUCCESS', payload: user });
-      console.log(response, 'user details');
-    } catch (error) {
-      dispatch({ type: 'USER_FETCHING_ERROR' });
-      console.log(error, 'user profile fetch error');
-    }
-  };
 
   function autoLogin() {
     if (!state.isAuthenticated) {
@@ -70,7 +54,7 @@ function UserProvider({ children }) {
 
       if (token) {
         dispatch({ type: 'SET_LOGGED_IN_USER', payload: { token } });
-        fetchUser();
+        fetchUser(dispatch);
       }
     }
   }

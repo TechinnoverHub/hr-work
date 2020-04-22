@@ -46,7 +46,12 @@ function Checkout() {
 
   const callback = response => {
     // console.log('success. transaction ref is ' + response.reference);
-    const orderDetails = formatCartOrderPayload(cart, response.reference);
+    const total = paymentInfo.amount / 100;
+    const orderDetails = formatCartOrderPayload(
+      cart,
+      response.reference,
+      total
+    );
     saveOrder(orderDetails);
 
     const successCart = formatSuccessObject(cart);

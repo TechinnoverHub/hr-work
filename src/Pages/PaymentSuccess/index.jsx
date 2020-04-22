@@ -64,7 +64,10 @@ const PaymentSuccess = () => {
             <div className={Styles.row}>
               <p>Sub Total</p>
               <p>
-                ₦{price.toLocaleString()}&nbsp;<span>for {total} item</span>
+                ₦{price.toLocaleString()}&nbsp;
+                <span>
+                  for {total} {total === 1 ? 'item' : 'items'}
+                </span>
               </p>
             </div>
 

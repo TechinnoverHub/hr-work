@@ -171,10 +171,10 @@ nav {
   li {
     margin: 0 1.09375em;
     list-style: none;
+    position: relative;
 
     &:hover {
       .link {
-        position: relative;
         &:after {
           height: 3px;
           width: 100%;
@@ -185,6 +185,19 @@ nav {
           left: 0;
           animation: hover-animation 0.2s ease-in-out;
         }
+      }
+    }
+
+    .link.link__active {
+      &:after {
+        height: 3px;
+        width: 100%;
+        content: '';
+        background: #ef0633;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        animation: hover-animation 0.2s ease-in-out;
       }
     }
 

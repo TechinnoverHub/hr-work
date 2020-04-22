@@ -43,7 +43,8 @@ function ExpressCheckout() {
     const orderDetails = formatOrderObject({
       productId: _id,
       variantId: planId,
-      ref: response.reference
+      ref: response.reference,
+      total: paymentInfo.amount
     });
     saveOrder(orderDetails);
 

@@ -3,15 +3,26 @@
   border-radius: 6px;
   overflow: auto;
 
+  .table-no-orders {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #565656;
+    font-weight: 600;
+  }
+
   .account-orders-mobile-only {
     display: none;
 
     @media screen and (max-width: 799px) {
+      text-transform: capitalize;
       display: inline-block;
     }
   }
 
   .account-orders-desktop-only {
+    text-transform: capitalize;
     @media screen and (max-width: 799px) {
       display: none;
     }

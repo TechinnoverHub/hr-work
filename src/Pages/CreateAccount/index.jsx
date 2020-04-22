@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.scss';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useUserDispatch, useUserState } from 'Context/user.context';
@@ -14,10 +14,11 @@ import { createUser } from 'Services/Auth.service';
 
 function CreateAccount() {
   const [reqState, setReqState] = useState('');
-  const [reqErr, setReqErr] = useState('');
+  // const [reqErr, setReqErr] = useState('');
   const history = useHistory();
   const dispatch = useUserDispatch();
   const userState = useUserState();
+  const location = useLocation();
 
   const formik = useFormik({
     initialValues: {
@@ -73,7 +74,8 @@ function CreateAccount() {
   };
 
   if (userState.isAuthenticated) {
-    return <Redirect to={{ pathname: '/account' }} />;
+    let { from } = location.state || { from: { pathname: '/account' } };
+    return <Redirect to={from} />;
   }
 
   return (
@@ -180,7 +182,15 @@ function CreateAccount() {
               Already have an Account?
             </div>
             <div className="create-account-login-btn-bottom">
-              <button type="button" onClick={() => history.push('/login')}>
+              <button
+                type="button"
+                onClick={() =>
+                  history.push({
+                    pathname: '/login',
+                    state: location.state
+                  })
+                }
+              >
                 Login
               </button>
             </div>
