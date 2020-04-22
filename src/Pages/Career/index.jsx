@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
+import { useHistory } from 'react-router-dom';
 
 import Header from 'Components/Header';
-import './index.scss';
 import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
 import ErrorField from 'Components/ErrorField';
+import './index.scss';
+
 import { careerFormSubmit } from 'Services/Form.service';
 import { ReactComponent as Spinner } from 'Assets/svg/spinner.svg';
 // import careerHeroImg from 'Assets/images/career-image.png';
@@ -29,6 +31,7 @@ const fileToBase64 = file => {
 
 function Career() {
   const [formStatus, setFormStatus] = useState('');
+  const history = useHistory();
   const formik = useFormik({
     initialValues: {
       firstname: '',
@@ -64,9 +67,6 @@ function Career() {
       return errors;
     },
     onSubmit: async values => {
-      // submitCareerForm(values);
-      // alert(JSON.stringify(values, null, 2));
-
       try {
         const [resume_base64, cover_letter_base64] = await Promise.all([
           fileToBase64(values.resume),
@@ -87,7 +87,6 @@ function Career() {
     }
   });
 
-  // console.log(formik.values.resume);
   const submitCareerForm = async values => {
     try {
       setFormStatus('SUBMITTING');
@@ -128,7 +127,7 @@ function Career() {
             related issues, give you the peace of mind you deserve so you can
             focus on growing your business.
           </p>
-          <button className="read-more">
+          <button className="read-more" onClick={() => history.push('/about')}>
             <span>Read more</span>
             <i className="fa fa-play"></i>
           </button>
