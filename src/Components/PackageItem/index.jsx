@@ -191,7 +191,7 @@ const PackageItem = ({
           {title}
         </Link>
         <p css={packagePriceStyle}>
-          ₦{planPrice && planPrice.toLocaleString()}
+          {planPrice && `₦${planPrice.toLocaleString()}`}
         </p>
         <Link css={packageLinkStyle} to={`/package/${slugCode}`}>
           View Package

@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+const DashboardError = () => {
   return (
     <div className="dashboard-wrapper">
       <p>Welcome to your dashboard</p>
@@ -17,4 +17,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardError;

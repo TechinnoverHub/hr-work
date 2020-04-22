@@ -1,0 +1,21 @@
+.dashboard-wrapper {
+  @media screen and (min-width: 800px) {
+    padding-top: 20px;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+    color: #565656;
+  }
+}
+
+.dashboard-para {
+  margin-top: 20px;
+
+  a {
+    text-decoration: none;
+    color: #ef0633;
+  }
+}

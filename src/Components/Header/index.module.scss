@@ -214,6 +214,10 @@ nav {
       }
     }
 
+    .link.link__active {
+      color: #ef0633;
+    }
+
     .cart__link {
       display: flex;
       justify-content: center;
@@ -268,6 +272,19 @@ nav {
             left: 0;
             animation: hover-animation 0.2s ease-in-out;
           }
+        }
+      }
+
+      .link.link__active {
+        &:after {
+          height: 3px;
+          width: 100%;
+          content: '';
+          background: #ef0633;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          animation: hover-animation 0.2s ease-in-out;
         }
       }
 
