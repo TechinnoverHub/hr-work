@@ -71,6 +71,7 @@ function Packages() {
       const packageList = filterItems(params, packages);
       setFilteredPackages(packageList);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
 
   return (
@@ -95,12 +96,6 @@ function Packages() {
         reqStatus === 'ERROR' ? (
           <NoPackages status={reqStatus} />
         ) : null}
-        {/* <div className="show-more-wrapper">
-          <button className="show-more-btn">
-            <span>Show More</span>
-            <i className="fa fa-play"></i>
-          </button>
-        </div> */}
       </div>
 
       <div className="services-section-wrapper">

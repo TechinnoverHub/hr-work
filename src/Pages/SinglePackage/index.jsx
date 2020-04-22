@@ -180,8 +180,6 @@ function SinglePackage() {
                   </>
                 ) : null}
 
-                {/* <hr />  */}
-
                 {/* <div className="review-column">
                   <div className="review">
                     <span className="review-icon">
@@ -198,7 +196,6 @@ function SinglePackage() {
                     <span>4310131</span>
                   </div>
                 </div> */}
-                {/* <hr /> */}
 
                 <div className="single-package-amount">
                   <span className="big-amount">₦{price.toLocaleString()}</span>
