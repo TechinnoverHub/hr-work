@@ -163,7 +163,7 @@ function SinglePackage() {
                         duration={500}
                         isDynamic={true}
                       >
-                        Compare Plans
+                        Click to compare Plans
                       </Link>
                     </div>
                   </div>
