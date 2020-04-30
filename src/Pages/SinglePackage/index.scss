@@ -416,16 +416,10 @@
 
 // THE PLAN TABLE
 .plan-table-wrapper {
-  padding: 80px 0;
-
-  // @media screen and (min-width: 800px) {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   padding: 80px 0 0;
-
-  // }
+  padding: 80px 0 0;
 
   @media screen and (min-width: 800px) {
+    padding: 80px 0;
     display: grid;
     grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
     column-gap: 1.5%;
@@ -558,24 +552,25 @@
 // YOU MIGHT ALSO LIKE
 .product-you-like-text {
   font-weight: bold;
-  font-size: 40px;
   line-height: 34px;
   color: #888888;
-  margin-top: 90px;
   margin-bottom: 40px;
+  font-size: 30px;
 
-  @media screen and (max-width: 600px) {
-    font-size: 30px;
+  @media screen and (min-width: 800px) {
+    margin-top: 90px;
+    font-size: 40px;
   }
 }
 
-.product-you-like-box {
+.product-you-like-box-wrap {
   display: block;
   padding: 0 7%;
 
   @media screen and (min-width: 800px) {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    column-gap: 3.33%;
     padding: 10px 0 0;
   }
 }

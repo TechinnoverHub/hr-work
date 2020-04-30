@@ -3,15 +3,14 @@ import './index.scss';
 import Header from 'Components/Header';
 import Footer from 'Components/Footer';
 import Hero from 'Components/Hero';
-// import packageImg from 'Assets/images/packages-header-image.png';
 import BreadCrumbs from 'Pages/BreadCumbs';
 import { useHistory, useParams, Link as LinkTo } from 'react-router-dom';
-// import { Link } from 'react-router-hash-link';
 
 import { Link } from 'react-scroll';
 import { getPackage } from 'Services/Package.service';
 import { useCartDispatch } from 'Context/cart.context';
 import Spinner from 'Components/Spinner';
+import PackageItem from 'Components/PackageItem';
 
 const packageImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/q_auto:best,f_auto/v1580899354/packages-header-image_ovgunu.png';
@@ -62,6 +61,7 @@ function SinglePackage() {
   const history = useHistory();
   const params = useParams();
   const [planData, setPlanData] = useState({});
+  const [relatedPlans, setRelatedPlans] = useState([]);
   const [reqStatus, setReqStatus] = useState('');
   const [selectedPlan, setSelectedPlan] = useState({});
   const [price, setPrice] = useState(0);
@@ -90,6 +90,7 @@ function SinglePackage() {
       if (response.status === 'success') {
         setReqStatus('SUCCESS');
         setPlanData(response.data.package);
+        setRelatedPlans(response.data.related);
       }
     } catch (error) {
       setReqStatus('ERROR');
@@ -109,7 +110,8 @@ function SinglePackage() {
   useEffect(() => {
     const productCode = params.slug.split('_')[1];
     fetchPackage(productCode);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params]);
 
   useEffect(() => {
     // setChecked()
@@ -122,7 +124,6 @@ function SinglePackage() {
       setPrice(price);
     }
   }, [planData]);
-  // console.log(path.url, '++  path ++');
 
   if (reqStatus === 'FETCHING') {
     return <Spinner />;
@@ -163,7 +164,7 @@ function SinglePackage() {
                         duration={500}
                         isDynamic={true}
                       >
-                        Click to compare Plans
+                        Click to compare plans
                       </Link>
                     </div>
                   </div>
@@ -179,23 +180,6 @@ function SinglePackage() {
                     </ul>
                   </>
                 ) : null}
-
-                {/* <div className="review-column">
-                  <div className="review">
-                    <span className="review-icon">
-                      <div className="review-star"></div>
-                      <div className="review-star"></div>
-                      <div className="review-star"></div>
-                      <div className="review-star"></div>
-                      <div className="review-star"></div>
-                    </span>
-                    <span className="review-text"> 5 reviews</span>
-                  </div>
-                  <div className="product-code">
-                    <span>Product Code: </span>
-                    <span>4310131</span>
-                  </div>
-                </div> */}
 
                 <div className="single-package-amount">
                   <span className="big-amount">₦{price.toLocaleString()}</span>
@@ -242,101 +226,23 @@ function SinglePackage() {
               </div>
             </div>
           </div>
-          {/* <div className="overview-wrapper">
-          <div className="overview">
-            <h3>Overview</h3>
-            <p className="first-para">
-              HR Work is an advisory firm with strong competence and experience
-              in providing Human Resources Retainership Services to small or
-              medium sized organisations.
-            </p>
-            <p className="second-para">
-              We know that you are busy with deadlines and customer demands and
-              this consumes all your available time and as your business
-              expands, your employee challenges begin to multiply and then
-              problems with hiring, setting and measuring performance, policies
-              for direction among others become more evitable.
-            </p>
-          </div>
 
-          <div className="description">
-            <h3>Description</h3>
-            <p className="first-para">
-              HR Work is an advisory firm with strong competence and experience
-              in providing Human Resources Retainership Services to small or
-              medium sized organisations.
-            </p>
-            <p className="second-para">
-              We know that you are busy with deadlines and customer demands and
-              this consumes all your available time and as your business
-              expands, your employee challenges begin to multiply and then
-              problems with hiring, setting and measuring performance, policies
-              for direction among others become more evitable.
-            </p>
-          </div>
-        </div> */}
           <section className="plan-table-wrapper" id="plans">
-            {planData.plans.map(plan => (
-              <PlanItem item={plan} />
+            {planData.plans.map((plan, index) => (
+              <PlanItem item={plan} key={index} />
             ))}
           </section>
 
           <div className="product-you-like-wrapper">
             <h3 className="product-you-like-text">You might also like</h3>
-            <div className="product-you-like-box">
-              <div className="box-image1">
-                <div className="package-image">
-                  <div className="package-image-label-blue">
-                    <span>Retainership Category</span>
-                  </div>
-                </div>
-                <div className="package-body">
-                  <h3>HR Remote Manager</h3>
-                  <p className="price">₦3,480</p>
-                  <p className="package-body-category">
-                    Basic, Bronze, Foundation
-                  </p>
-                  <button className="product-you-like-box-button">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-
-              <div className="box-image2">
-                <div className="package-image">
-                  <div className="package-image-label-red">
-                    <span>Retainership Category</span>
-                  </div>
-                </div>
-                <div className="package-body">
-                  <h3>HR Remote Manager</h3>
-                  <p className="price">₦3,480</p>
-                  <p className="package-body-category">
-                    Basic, Bronze, Foundation
-                  </p>
-                  <button className="product-you-like-box-button">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-
-              <div className="box-image3">
-                <div className="package-image">
-                  <div className="package-image-label-green">
-                    <span>Retainership Category</span>
-                  </div>
-                </div>
-                <div className="package-body">
-                  <h3>HR Remote Manager</h3>
-                  <p className="price">₦3,480</p>
-                  <p className="package-body-category">
-                    Basic, Bronze, Foundation
-                  </p>
-                  <button className="product-you-like-box-button">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
+            <div className="product-you-like-box-wrap">
+              {relatedPlans.map((item, indexKey) => (
+                <PackageItem
+                  key={item._id || indexKey}
+                  item={item}
+                  packageLoading={reqStatus === 'FETCHING'}
+                />
+              ))}
             </div>
 
             {/* Stop here */}
@@ -351,48 +257,6 @@ function SinglePackage() {
               </button>
             </div>
           </div>
-
-          {/* <div className="recently-viewed">
-          <h3 className="recently-viewed-text">Recently viewed</h3>
-          <div className="recently-viewed-box">
-            <div className="box-image1">
-              <div className="package-image">
-                <div className="package-image-label-blue">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="recently-viewed-box-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-            <div className="box-image2">
-              <div className="package-image">
-                <div className="package-image-label-red">
-                  <span>Retainership Category</span>
-                </div>
-              </div>
-              <div className="package-body">
-                <h3>HR Remote Manager</h3>
-                <p className="price">₦3,480</p>
-                <p className="package-body-category">
-                  Basic, Bronze, Foundation
-                </p>
-                <button className="recently-viewed-box-button">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-       */}
         </div>
       ) : null}
       <Footer />
