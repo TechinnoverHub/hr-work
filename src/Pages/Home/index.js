@@ -19,7 +19,6 @@ function Home() {
     try {
       setPackagesLoading('FETCHING');
       const { data: response } = await getAllPackages({ limit: 3 });
-      // console.log(response);
       if (response.status === 'success') {
         setPackagesLoading('SUCCESS');
         setPackages(response.data.packages);
@@ -27,7 +26,6 @@ function Home() {
     } catch (error) {
       setPackagesLoading('ERROR');
       setPackages([]);
-      console.log(error);
     }
   };
 

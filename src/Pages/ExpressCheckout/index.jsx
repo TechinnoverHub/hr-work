@@ -74,7 +74,6 @@ function ExpressCheckout() {
 
   if (state && userData.reqStatus === 'ERROR') {
     toast.error('Something Went Wrong!!! contact us');
-    // console.log('judeeeeee');
     return <Redirect to="/" />;
   }
 

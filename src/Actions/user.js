@@ -12,6 +12,6 @@ export const fetchUser = async dispatch => {
     // console.log(response, 'user details');
   } catch (error) {
     dispatch({ type: 'USER_FETCHING_ERROR' });
-    console.log(error, 'user profile fetch error');
+    // console.log(error, 'user profile fetch error');
   }
 };

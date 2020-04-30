@@ -94,7 +94,7 @@ function SinglePackage() {
       }
     } catch (error) {
       setReqStatus('ERROR');
-      console.log(error.response, 'reerereorrr');
+      // console.log(error.response, 'reerereorrr');
     }
   };
 

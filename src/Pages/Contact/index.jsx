@@ -58,7 +58,6 @@ function Contact() {
       }
     } catch (error) {
       setFormStatus('ERROR');
-      console.log(error, 'error');
       toast.error('Error submitting form', {
         position: toast.POSITION.TOP_CENTER
       });

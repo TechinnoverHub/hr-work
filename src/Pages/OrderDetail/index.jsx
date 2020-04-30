@@ -5,14 +5,12 @@ import { useLocation, Redirect } from 'react-router-dom';
 const OrderDetail = () => {
   const location = useLocation();
 
-  console.log(location);
-
   if (!location.state) {
     return <Redirect to="/account/orders" />;
   }
 
   const {
-    state: { status, ref, date, items, total }
+    state: { ref, date, items, total }
   } = location;
   return (
     <div className="order-detail-right-box-wrapper">

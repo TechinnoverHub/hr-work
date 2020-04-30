@@ -20,14 +20,12 @@ const Blog = () => {
     client
       .getEntries({ content_type: 'blogPost' })
       .then(response => {
-        // console.log('FROM CONTENTFUL', response);
         setArticles(response.items);
         setContentLoading('SUCCESS');
       })
       .catch(err => {
         setContentLoading('ERROR');
         setArticles([]);
-        console.log('ERROR FROM CONTENTFUL', err);
       });
   };
 

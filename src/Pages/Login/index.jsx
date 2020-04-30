@@ -48,7 +48,6 @@ function Login() {
         payload: { token, user }
       });
     } catch (error) {
-      console.log(error, 'login error');
       setReqLoading(false);
       if (error.response) {
         const message =

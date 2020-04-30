@@ -4,7 +4,6 @@ import client from 'Components/Services/client';
 
 import AltHeader from 'Components/AltHeader';
 import Footer from 'Components/Footer';
-// import LatestBlog from 'Components/LatestBlog';
 import { useParams } from 'react-router';
 import Skeleton from 'react-loading-skeleton';
 import MyCommentBox from 'Components/MyComment';
@@ -22,11 +21,10 @@ const SingleBlog = () => {
   const [artLoadingStatus, setArtLoadingStatus] = useState('FETCHING');
   const [comLoadingStatus, setComLoadingStatus] = useState('');
   const params = useParams();
-  // console.log(params);
+
   const getEntries = async () => {
     try {
       const blogEntry = await client.getEntry(params.id);
-      // console.log(blogEntry, '+++++ blog');
       if (!article.sys) {
         setArtLoadingStatus('SUCCESS');
       }
@@ -43,11 +41,11 @@ const SingleBlog = () => {
     if (params && params.id) {
       getEntries();
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params]);
 
   const updateEntry = async (e, { name, comment }) => {
     e.preventDefault();
-    console.log(e);
     try {
       setComLoadingStatus('FETCHING');
       const getSpace = await newClient.getSpace(SPACE_ID);
@@ -62,7 +60,6 @@ const SingleBlog = () => {
         }
       });
       const newComment = await createdComment.publish();
-      console.log(newComment, 'new comment');
 
       const itemToUpdate = await getSpace.getEntry(params.id);
       let updatedItem;
@@ -70,7 +67,6 @@ const SingleBlog = () => {
         itemToUpdate.fields.userComments &&
         itemToUpdate.fields.userComments['en-US']
       ) {
-        console.log('+++ 1');
         itemToUpdate.fields.userComments['en-US'].push({
           sys: {
             type: 'Link',
@@ -96,17 +92,10 @@ const SingleBlog = () => {
       await updatedItem.publish();
       getEntries();
       setComLoadingStatus('SUCCESS');
-      console.log(updatedItem, '+++ updated item +++');
     } catch (error) {
       setComLoadingStatus('ERROR');
-      console.error(error);
     }
   };
-  // getParsedMarkdown(content) {
-  //   return {
-  //     __html: marked(content, { sanitize: true })
-  //   };
-  // }
 
   const Loader = () => {
     return (

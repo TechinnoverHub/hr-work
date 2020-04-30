@@ -17,7 +17,7 @@ const LatestBlog = () => {
       })
       .catch(err => {
         setContentStatus('ERROR');
-        console.log('ERROR FROM CONTENTFUL', err);
+        // console.log('ERROR FROM CONTENTFUL', err);
       });
   };
 

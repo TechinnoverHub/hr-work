@@ -89,7 +89,6 @@ function Career() {
     }
   });
 
-  // console.log(formik.values.resume);
   const submitCareerForm = async values => {
     try {
       setFormStatus('SUBMITTING');
@@ -104,7 +103,6 @@ function Career() {
       }
     } catch (error) {
       setFormStatus('ERROR');
-      console.log(error, 'error');
       toast.error('Error submitting form', {
         position: toast.POSITION.TOP_CENTER
       });
