@@ -78,7 +78,7 @@ function Home() {
               this consumes all your available time and as your business
               expands, your employee challenges begin to multiply and then
               problems with hiring, setting and measuring performance, policies
-              for direction among others become more evitable.
+              for direction among others become more inevitable.
             </p>
             <div className="Col-small-box">
               <div className="Col-small-box1">
