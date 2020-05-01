@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
+
 import './index.scss';
 // import { useEffect } from 'react';
 
@@ -6,7 +8,7 @@ const AccountDetails = ({ user }) => {
   return (
     <div className="account-right-box-wrapper">
       <div className="account-form">
-        <form className="account-form-container">
+        <form className="account-form-container" onSubmit={() => {}}>
           <div className="name-row">
             <label>
               First Name
@@ -15,6 +17,7 @@ const AccountDetails = ({ user }) => {
                 placeholder="Enter First Name"
                 name="firstname"
                 value={user.firstname}
+                readOnly={true}
               />
             </label>
 
@@ -25,11 +28,12 @@ const AccountDetails = ({ user }) => {
                 placeholder="Enter Last Name"
                 name="lastname"
                 value={user.lastname}
+                readOnly={true}
               />
             </label>
           </div>
 
-          <div className="account-field-row">
+          <div className="account-field-row email">
             <label>
               Email account
               <input
@@ -37,10 +41,12 @@ const AccountDetails = ({ user }) => {
                 placeholder="Enter Email account"
                 name="email"
                 value={user.email}
+                readOnly={true}
               />
             </label>
           </div>
-          <div className="change-password-text">Password change</div>
+
+          {/* <div className="change-password-text">Password change</div>
           <div className="change-password-section"></div>
           <div className="account-field-row">
             <label>
@@ -65,7 +71,7 @@ const AccountDetails = ({ user }) => {
           </div>
           <div className="account-save-button">
             <button type="submit">Save changes</button>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

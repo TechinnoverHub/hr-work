@@ -94,11 +94,10 @@ function SinglePackage() {
       }
     } catch (error) {
       setReqStatus('ERROR');
-      // console.log(error.response, 'reerereorrr');
     }
   };
 
-  const handleChange = (e, plan) => {
+  const handleChange = (_e, plan) => {
     setSelectedPlan(plan);
     setPrice(plan.price);
   };
@@ -129,10 +128,40 @@ function SinglePackage() {
     return <Spinner />;
   }
 
+  const addToCartHandler = (_selectedPlan, _planData) => {
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: mergeData(_selectedPlan, _planData)
+    });
+  };
+
+  const contactUsHandler = title => {
+    history.push({
+      pathname: '/contact',
+      state: {
+        subject: `Inquiry about ${title}`
+      }
+    });
+  };
+
+  const ButtonCustom = ({ onClick, text }) => {
+    return (
+      <button className="single-package-link-button" onClick={onClick}>
+        {text}
+      </button>
+    );
+  };
+
   return (
     <div>
       <Header />
       <Hero imgUrl={packageImg} heroTitle="Our Packages" />
+      {reqStatus === 'ERROR' ? (
+        <h2 className="single-package-page-error">
+          Something went wrong, Please try again later.
+        </h2>
+      ) : null}
+
       {reqStatus === 'SUCCESS' && Object.keys(planData).length > 0 ? (
         <div className="single-package-section">
           <div className="single-package-breadcrumbs-container">
@@ -173,7 +202,7 @@ function SinglePackage() {
                 {planData.details.length > 0 ? (
                   <>
                     <p className="hr-work-plan-text-action">Description</p>
-                    <ul>
+                    <ul className="hr-work-ul-list">
                       {planData.details.map(detail => (
                         <li key={detail}>{detail}</li>
                       ))}
@@ -181,44 +210,53 @@ function SinglePackage() {
                   </>
                 ) : null}
 
-                <div className="single-package-amount">
-                  <span className="big-amount">₦{price.toLocaleString()}</span>
-                  <span className="stroke-amount">
-                    {isRetainership(planData) ? '/month' : null}
-                  </span>
-                  <p className="billable-text">
-                    {isRetainership(planData)
-                      ? 'This amount is billed monthly'
-                      : 'This amount is a one-time payment'}
-                  </p>
-                </div>
+                {price > 0 ? (
+                  <div className="single-package-amount">
+                    <span className="big-amount">
+                      ₦{price.toLocaleString()}
+                    </span>
+                    <span className="stroke-amount">
+                      {isRetainership(planData) ? '/month' : null}
+                    </span>
+                    <p className="billable-text">
+                      {isRetainership(planData)
+                        ? 'This amount is billed monthly'
+                        : 'This amount is a one-time payment'}
+                    </p>
+                  </div>
+                ) : null}
 
                 {isRetainership(planData) ? (
-                  <LinkTo
-                    className="single-package-link-button"
-                    to={{
-                      pathname: '/checkout/express',
-                      state: { payload: mergeData(selectedPlan, planData) }
-                    }}
-                  >
-                    Buy Now
-                  </LinkTo>
+                  price > 0 ? (
+                    <LinkTo
+                      className="single-package-link-button"
+                      to={{
+                        pathname: '/checkout/express',
+                        state: { payload: mergeData(selectedPlan, planData) }
+                      }}
+                    >
+                      Buy Now
+                    </LinkTo>
+                  ) : (
+                    <ButtonCustom
+                      text="Contact Us"
+                      onClick={() => contactUsHandler(planData.title)}
+                    />
+                  )
+                ) : price > 0 ? (
+                  <ButtonCustom
+                    text="Add to Cart"
+                    onClick={() => addToCartHandler(selectedPlan, planData)}
+                  />
                 ) : (
-                  <button
-                    className="single-package-link-button"
-                    onClick={() =>
-                      dispatch({
-                        type: 'ADD_ITEM',
-                        payload: mergeData(selectedPlan, planData)
-                      })
-                    }
-                  >
-                    Add to Cart
-                  </button>
+                  <ButtonCustom
+                    text="Contact Us"
+                    onClick={() => contactUsHandler(planData.title)}
+                  />
                 )}
 
-                {planData.productType.toLocaleLowerCase() ===
-                'retainership' ? null : (
+                {planData.productType.toLocaleLowerCase() === 'retainership' ||
+                price < 1 ? null : (
                   <div>
                     <p className="billable-text">Call us for bulk purchases</p>
                   </div>
@@ -227,11 +265,13 @@ function SinglePackage() {
             </div>
           </div>
 
-          <section className="plan-table-wrapper" id="plans">
-            {planData.plans.map((plan, index) => (
-              <PlanItem item={plan} key={index} />
-            ))}
-          </section>
+          {planData.plans.length > 0 ? (
+            <section className="plan-table-wrapper" id="plans">
+              {planData.plans.map((plan, index) => (
+                <PlanItem item={plan} key={index} />
+              ))}
+            </section>
+          ) : null}
 
           <div className="product-you-like-wrapper">
             <h3 className="product-you-like-text">You might also like</h3>
@@ -244,8 +284,6 @@ function SinglePackage() {
                 />
               ))}
             </div>
-
-            {/* Stop here */}
 
             <div className="show-more-wrapper hr-work-show-more">
               <button

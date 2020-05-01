@@ -18,9 +18,7 @@ const MyAccount = () => {
   const userStore = useUserState();
 
   useEffect(() => {
-    if (userStore.reqStatus === 'ERROR' || userStore.reqStatus === '') {
-      fetchUser(dispatch);
-    }
+    fetchUser(dispatch);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

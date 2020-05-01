@@ -12,6 +12,15 @@ const OrderDetail = () => {
   const {
     state: { ref, date, items, total }
   } = location;
+
+  const computeDisplayPrice = item => {
+    const itemQty = item.quantity || 1;
+    const itemPrice = item.package.price;
+    const subTotal = itemQty * itemPrice;
+
+    return subTotal.toLocaleString();
+  };
+
   return (
     <div className="order-detail-right-box-wrapper">
       <div className="order-detail-right-box-text">
@@ -31,16 +40,19 @@ const OrderDetail = () => {
             {items.map(item => (
               <tr key={item._id}>
                 <td>
-                  {item.package.title} <span> x 1</span>
+                  {item.package.title} <span> x {item.quantity || 1}</span>
                 </td>
-                <td>₦{item.package.price.toLocaleString()}</td>
+                <td>₦{computeDisplayPrice(item)}</td>
               </tr>
             ))}
 
             <tr>
               <td>Sub Total</td>
               <td>
-                ₦{total.toLocaleString()} <span>for {items.length} item</span>
+                ₦{total.toLocaleString()}{' '}
+                <span>
+                  for {items.length} {items.length === 1 ? 'item' : 'items'}
+                </span>
               </td>
             </tr>
             <tr>

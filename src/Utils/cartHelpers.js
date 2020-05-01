@@ -76,12 +76,6 @@ function getCartTotal(cart) {
 }
 
 function formatOrderObject({ productId, planId, ref, total, status }) {
-  // return {
-  //   package: productId, // product id
-  //   plan: planId, // variant id
-  //   ref // pa8
-  // };
-
   return {
     ref,
     total,
@@ -89,7 +83,8 @@ function formatOrderObject({ productId, planId, ref, total, status }) {
     items: [
       {
         package: productId, // product id
-        plan: planId // variant id
+        plan: planId, // variant id
+        quantity: 1
       }
     ]
   };
@@ -99,7 +94,8 @@ function formatCartOrderPayload(cart, ref, total) {
   const iterableCart = Object.values(cart);
   const items = iterableCart.map(item => ({
     package: item._id,
-    plan: item.planId
+    plan: item.planId,
+    quantity: item.qty
   }));
 
   return {

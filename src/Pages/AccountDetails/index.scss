@@ -5,9 +5,9 @@
   padding: 20px 0px;
 }
 
-.account-form {
-  margin-bottom: 80px;
-}
+// .account-form {
+//   margin-bottom: 80px;
+// }
 
 .account-form-container {
   margin: 0 auto;
@@ -37,6 +37,18 @@
 
       @media screen and (max-width: 800px) {
         margin-top: 30px;
+      }
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  .account-field-row.email {
+    input {
+      &:focus {
+        outline: none;
       }
     }
   }

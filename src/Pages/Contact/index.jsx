@@ -12,6 +12,7 @@ import Hero from 'Components/Hero';
 import ErrorField from 'Components/ErrorField';
 import { contactFormSubmit } from 'Services/Form.service';
 import { ReactComponent as Spinner } from 'Assets/svg/spinner.svg';
+import { useLocation } from 'react-router';
 
 // import contactImg from 'Assets/images/contactPGIMG.png';
 
@@ -20,10 +21,13 @@ const contactImg =
 
 function Contact() {
   const [formStatus, setFormStatus] = useState('');
+  const location = useLocation();
+  const purposeInitialValue =
+    location.state && location.state.subject ? location.state.subject : '';
   const formik = useFormik({
     initialValues: {
       name: '',
-      purpose: '',
+      purpose: purposeInitialValue,
       phone: '',
       email: '',
       company: '',
