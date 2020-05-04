@@ -125,7 +125,12 @@ const SingleBlog = () => {
             <h2 className="Title">{article.fields && article.fields.title}</h2>
             <div className="single-post--image">
               <img
-                src={article.fields && article.fields.featured.fields.file.url}
+                src={
+                  article.fields &&
+                  article.fields.featured &&
+                  article.fields.featured.fields &&
+                  article.fields.featured.fields.file.url
+                }
                 alt=""
               />
             </div>
