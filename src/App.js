@@ -20,6 +20,8 @@ import PrivateRoute from 'Components/PrivateRoute';
 import { UserProvider } from 'Context/user.context';
 import PaymentSuccess from 'Pages/PaymentSuccess';
 import SingleBlog from 'Pages/SingleBlogPost';
+import ResetEmail from 'Pages/ResetPassword/ResetEmail';
+import UpdatePassword from 'Pages/ResetPassword/UpdatePassword';
 
 export default function App() {
   return (
@@ -75,6 +77,14 @@ export default function App() {
 
             <Route path="/payment-success">
               <PaymentSuccess />
+            </Route>
+
+            <Route path="/reset-password/update">
+              <UpdatePassword />
+            </Route>
+
+            <Route path="/reset-password" exact>
+              <ResetEmail />
             </Route>
           </Switch>
           <ScrollToTop />

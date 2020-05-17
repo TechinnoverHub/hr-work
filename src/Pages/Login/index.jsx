@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, useHistory, useLocation, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './index.scss';
@@ -118,7 +118,12 @@ function Login() {
           </div>
           <div className="login-horizontal-line"></div>
           <div className="login-bottom-section">
-            <span className="login-bottom-text">Don’t have an Account?</span>
+            <div className="login-bottom-section-text">
+              <span className="login-bottom-text">Don’t have an Account?</span>
+              <Link className="login-bottom-text" to="/reset-password">
+                Forgot Password?
+              </Link>
+            </div>
             <div className="create-account-button">
               <button
                 type="button"

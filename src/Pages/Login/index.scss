@@ -204,6 +204,16 @@
   color: rgba(86, 86, 86, 0.3);
 }
 
+a.login-bottom-text {
+  color: #ef0633;
+  text-decoration: none;
+}
+
+.login-bottom-section-text {
+  display: flex;
+  justify-content: space-between;
+}
+
 .create-account-button {
   margin: 20px 0px auto;
 }
