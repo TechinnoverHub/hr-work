@@ -52,7 +52,7 @@ export default () => {
               {/* <br />
               11 Deji Olamiju Street, <br /> Soluyi-Gbagada, Lagos */}
               <br /> Call: 07034417961
-              <br /> Email: info@alphaduxconsulting.com
+              <br /> Email: contactus@hrwork.ng
             </p>
           </div>
         </div>
