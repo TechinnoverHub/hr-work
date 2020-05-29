@@ -33,7 +33,9 @@ function RadioGroup({ detail, handleChange, selectedItem }) {
   );
 }
 
-const PlanItem = ({ item }) => {
+const PlanItem = ({ item, productType }) => {
+  console.log(item);
+
   return (
     <div className="plan-table-gold">
       <div className="plan-table-gold-text">
@@ -50,7 +52,9 @@ const PlanItem = ({ item }) => {
         <div className="plan-table-gold-price">
           <span className="gold-dollar-sign">₦</span>
           <span className="gold-price">{item.price.toLocaleString()}</span>
-          <span className="gold-year">/Month</span>
+          {productType === 'RETAINERSHIP' && (
+            <span className="gold-year">/Month</span>
+          )}
         </div>
       </div>
     </div>
@@ -268,7 +272,11 @@ function SinglePackage() {
           {planData.plans.length > 0 ? (
             <section className="plan-table-wrapper" id="plans">
               {planData.plans.map((plan, index) => (
-                <PlanItem item={plan} key={index} />
+                <PlanItem
+                  item={plan}
+                  key={index}
+                  productType={planData.productType}
+                />
               ))}
             </section>
           ) : null}

@@ -75,6 +75,7 @@
 
   .hr-work-radio-group {
     margin-bottom: 10px;
+
     label {
       color: #888888;
       font-weight: 600;
@@ -317,6 +318,7 @@
 }
 
 .single-package-cart-button {
+
   button,
   a {
     padding: 0.9232rem 2rem;
@@ -363,6 +365,7 @@
     display: grid;
     grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
     column-gap: 1.5%;
+    row-gap: 20px;
     padding: 80px 0 0;
   }
 }
@@ -515,7 +518,7 @@
   }
 }
 
-.product-you-like-box > div {
+.product-you-like-box>div {
   width: 100%;
   margin-bottom: 36px;
   border-radius: 14px;
@@ -716,7 +719,7 @@
   }
 }
 
-.recently-viewed-box > div {
+.recently-viewed-box>div {
   width: 30%;
   height: 555px;
   border-radius: 14px;
