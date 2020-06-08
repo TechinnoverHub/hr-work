@@ -51,7 +51,7 @@ export default () => {
               <b>CONTACT US</b>
               {/* <br />
               11 Deji Olamiju Street, <br /> Soluyi-Gbagada, Lagos */}
-              <br /> Call: 07034417961
+              <br /> Call: +2349039856985, +13069932712, +2347066548065
               <br /> Email: contactus@hrwork.ng
             </p>
           </div>
