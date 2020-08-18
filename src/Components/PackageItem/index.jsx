@@ -110,6 +110,13 @@ const packagePriceStyle = css`
   text-align: center;
   color: #ef0633;
   padding: 22px 0px;
+
+  span {
+    color: #000;
+    opacity: 0.7;
+    text-decoration: line-through;
+    font-size: 20px;
+  }
 `;
 
 // const packageCategoryStyle = css`
@@ -162,7 +169,16 @@ const itemImg =
   'https://res.cloudinary.com/hrworkmanager/image/upload/f_auto,q_auto/v1580899349/packages-image_b2ow2y.png';
 
 const PackageItem = ({
-  item: { _id, productType, price, title, plans, slug, productCode },
+  item: {
+    _id,
+    productType,
+    price,
+    discountPrice,
+    title,
+    plans,
+    slug,
+    productCode
+  },
   packageLoading
 }) => {
   // const dispatch = useCartDispatch();
@@ -190,9 +206,16 @@ const PackageItem = ({
         <Link to={`/package/${slugCode}`} css={packageHeadingStyle}>
           {title}
         </Link>
-        <p css={packagePriceStyle}>
-          {planPrice && `₦${planPrice.toLocaleString()}`}
-        </p>
+        {discountPrice ? (
+          <p css={packagePriceStyle}>
+            <span>{planPrice && `₦${planPrice.toLocaleString()}`}</span>
+            {'   '}₦{discountPrice.toLocaleString()}
+          </p>
+        ) : (
+          <p css={packagePriceStyle}>
+            {planPrice && `₦${planPrice.toLocaleString()}`}
+          </p>
+        )}
         <Link css={packageLinkStyle} to={`/package/${slugCode}`}>
           View Package
         </Link>
