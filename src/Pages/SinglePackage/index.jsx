@@ -51,7 +51,11 @@ const PlanItem = ({ item, productType }) => {
         </ul>
         <div className="plan-table-gold-price">
           <span className="gold-dollar-sign">₦</span>
-          <span className="gold-price">{item.price.toLocaleString()}</span>
+          <span className="gold-price">
+            {item.discountPrice
+              ? `${item.discountPrice.toLocaleString()}`
+              : `${item.price.toLocaleString()}`}
+          </span>
           {productType === 'RETAINERSHIP' && (
             <span className="gold-year">/Month</span>
           )}
@@ -120,10 +124,17 @@ function SinglePackage() {
     // setChecked()
     if (planData.plans && planData.plans.length > 0) {
       // setChecked(planData.plans[0].name);
-      setPrice(planData.plans[0].price);
+      setPrice(planData.plans[0].discountPrice || planData.plans[0].price);
       setSelectedPlan(planData.plans[0]);
     } else {
-      const price = planData.price || 0;
+      let price;
+
+      if (planData.discountPrice) {
+        price = planData.discountPrice || 0;
+      } else {
+        price = planData.price || 0;
+      }
+
       setPrice(price);
     }
   }, [planData]);
@@ -217,7 +228,31 @@ function SinglePackage() {
                 {price > 0 ? (
                   <div className="single-package-amount">
                     <span className="big-amount">
-                      ₦{price.toLocaleString()}
+                      {planData.discountPrice && (
+                        <span
+                          style={{
+                            fontSize: '20px',
+                            color: '#000',
+                            opacity: '0.7',
+                            textDecoration: 'line-through'
+                          }}
+                        >
+                          ₦{planData.price.toLocaleString()}
+                        </span>
+                      )}
+                      {planData.plans && planData.plans[0]?.discountPrice && (
+                        <span
+                          style={{
+                            color: '#000',
+                            opacity: '0.7',
+                            fontSize: '20px',
+                            textDecoration: 'line-through'
+                          }}
+                        >
+                          ₦{planData.plans[0].price.toLocaleString()}
+                        </span>
+                      )}
+                      {'     '}₦{price.toLocaleString()}
                     </span>
                     <span className="stroke-amount">
                       {isRetainership(planData) ? '/month' : null}

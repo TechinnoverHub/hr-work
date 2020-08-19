@@ -182,7 +182,10 @@ const PackageItem = ({
   packageLoading
 }) => {
   // const dispatch = useCartDispatch();
-  const planPrice = price || (plans && plans[0] && plans[0].price);
+  const planPrice =
+    discountPrice ||
+    price ||
+    (plans && plans[0] && (plans[0].discountPrice || plans[0].price));
   const slugCode = `${slug}_${productCode}`;
   const isFetching = packageLoading === 'FETCHING';
 
@@ -213,6 +216,10 @@ const PackageItem = ({
           </p>
         ) : (
           <p css={packagePriceStyle}>
+            {plans && plans[0]?.discountPrice && (
+              <span>₦${plans[0].discountPrice.toLocaleString()}</span>
+            )}
+            {'    '}
             {planPrice && `₦${planPrice.toLocaleString()}`}
           </p>
         )}

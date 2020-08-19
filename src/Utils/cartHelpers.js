@@ -2,7 +2,7 @@ function getCartLength(cart) {
   return Object.values(cart).reduce(
     (acc, curr) => {
       acc.total += Number(curr.qty);
-      acc.price += Number(curr.qty) * Number(curr.price);
+      acc.price += Number(curr.qty) * Number(curr.discountPrice || curr.price);
       return acc;
     },
     { total: 0, price: 0 }

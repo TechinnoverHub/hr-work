@@ -15,6 +15,8 @@ const ShoppingCart = () => {
   const history = useHistory();
   const { total: totalQty, price: totalPrice } = getCartLength(cart);
 
+  console.log(cart);
+
   return (
     <div>
       <Header />
@@ -27,7 +29,7 @@ const ShoppingCart = () => {
                   Home
                 </Link>
               </li>
-              <span>></span>
+              <span></span>
               <li>Shopping Cart</li>
             </ul>
           </div>

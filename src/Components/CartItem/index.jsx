@@ -6,7 +6,8 @@ import { useCartDispatch } from 'Context/cart.context';
 
 const CartItem = ({ item }) => {
   const dispatch = useCartDispatch();
-  const itemTotal = item && Number(item.price) * Number(item.qty);
+  const itemTotal =
+    item && Number(item.discountPrice || item.price) * Number(item.qty);
 
   if (!item) return null;
 
@@ -45,8 +46,10 @@ const CartItem = ({ item }) => {
             <p>
               ₦{itemTotal && itemTotal.toLocaleString()}
               <span>
-                ₦{item.price && item.price.toLocaleString()} x {item.qty}{' '}
-                {item.qty === 1 ? 'item' : 'items'}
+                {item.discountPrice
+                  ? `₦${item.discountPrice.toLocaleString()}`
+                  : `₦${item.price && item.price.toLocaleString()}`}{' '}
+                x {item.qty} {item.qty === 1 ? 'item' : 'items'}
               </span>
             </p>
           </div>
