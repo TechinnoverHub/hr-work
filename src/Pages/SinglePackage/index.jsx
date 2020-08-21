@@ -50,11 +50,23 @@ const PlanItem = ({ item, productType }) => {
           ))}
         </ul>
         <div className="plan-table-gold-price">
-          <span className="gold-dollar-sign">₦</span>
+          {/* <span className="gold-dollar-sign"></span> */}
           <span className="gold-price">
-            {item.discountPrice
-              ? `${item.discountPrice.toLocaleString()}`
-              : `${item.price.toLocaleString()}`}
+            {item.discountPrice ? (
+              <React.Fragment>
+                <span
+                  style={{
+                    fontSize: '17px',
+                    textDecoration: 'line-through'
+                  }}
+                >
+                  ₦{item.price.toLocaleString()}
+                </span>
+                <br />₦{item.discountPrice.toLocaleString()}
+              </React.Fragment>
+            ) : (
+              `₦${item.price.toLocaleString()}`
+            )}
           </span>
           {productType === 'RETAINERSHIP' && (
             <span className="gold-year">/Month</span>
@@ -73,6 +85,7 @@ function SinglePackage() {
   const [reqStatus, setReqStatus] = useState('');
   const [selectedPlan, setSelectedPlan] = useState({});
   const [price, setPrice] = useState(0);
+  const [discountPrice, setDiscountPrice] = useState(0);
   // const cart = useCartState();
   const dispatch = useCartDispatch();
 
@@ -108,6 +121,7 @@ function SinglePackage() {
   const handleChange = (_e, plan) => {
     setSelectedPlan(plan);
     setPrice(plan.price);
+    setDiscountPrice(plan.discountPrice || 0);
   };
 
   const isRetainership = _planData => {
@@ -124,7 +138,8 @@ function SinglePackage() {
     // setChecked()
     if (planData.plans && planData.plans.length > 0) {
       // setChecked(planData.plans[0].name);
-      setPrice(planData.plans[0].discountPrice || planData.plans[0].price);
+      setPrice(planData.plans[0].price);
+      setDiscountPrice(planData.plans[0].discountPrice || 0);
       setSelectedPlan(planData.plans[0]);
     } else {
       let price;
@@ -240,19 +255,23 @@ function SinglePackage() {
                           ₦{planData.price.toLocaleString()}
                         </span>
                       )}
-                      {planData.plans && planData.plans[0]?.discountPrice && (
-                        <span
-                          style={{
-                            color: '#000',
-                            opacity: '0.7',
-                            fontSize: '20px',
-                            textDecoration: 'line-through'
-                          }}
-                        >
-                          ₦{planData.plans[0].price.toLocaleString()}
-                        </span>
+                      {discountPrice ? (
+                        <React.Fragment>
+                          <span
+                            style={{
+                              color: '#000',
+                              opacity: '0.7',
+                              fontSize: '20px',
+                              textDecoration: 'line-through'
+                            }}
+                          >
+                            ₦{price.toLocaleString()}
+                          </span>
+                          {'     '}₦{discountPrice.toLocaleString()}
+                        </React.Fragment>
+                      ) : (
+                        <span>₦{price.toLocaleString()}</span>
                       )}
-                      {'     '}₦{price.toLocaleString()}
                     </span>
                     <span className="stroke-amount">
                       {isRetainership(planData) ? '/month' : null}

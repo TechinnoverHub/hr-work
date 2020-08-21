@@ -7,6 +7,10 @@ import { Link } from 'react-router-dom';
 import { useCartDispatch } from 'Context/cart.context';
 import Skeleton from 'react-loading-skeleton';
 
+function truncateString(str = '', num) {
+  return str.length > num ? str.slice(0, num) + '...' : str;
+}
+
 const categoryColor = {
   retainership: '#0057da',
   professional: '#ef0633',
@@ -182,10 +186,6 @@ const PackageItem = ({
   packageLoading
 }) => {
   // const dispatch = useCartDispatch();
-  const planPrice =
-    discountPrice ||
-    price ||
-    (plans && plans[0] && (plans[0].discountPrice || plans[0].price));
   const slugCode = `${slug}_${productCode}`;
   const isFetching = packageLoading === 'FETCHING';
 
@@ -207,21 +207,30 @@ const PackageItem = ({
       </Link>
       <div css={packageBodyStyle}>
         <Link to={`/package/${slugCode}`} css={packageHeadingStyle}>
-          {title}
+          {truncateString(title, 50)}
         </Link>
-        {discountPrice ? (
-          <p css={packagePriceStyle}>
-            <span>{planPrice && `₦${planPrice.toLocaleString()}`}</span>
-            {'   '}₦{discountPrice.toLocaleString()}
-          </p>
-        ) : (
-          <p css={packagePriceStyle}>
-            {plans && plans[0]?.discountPrice && (
-              <span>₦${plans[0].discountPrice.toLocaleString()}</span>
+        {plans?.length > 0 ? (
+          <React.Fragment>
+            {plans[0].discountPrice ? (
+              <p css={packagePriceStyle}>
+                <span>{`₦${plans[0].price.toLocaleString()}`}</span>
+                {'   '}₦{plans[0].discountPrice.toLocaleString()}
+              </p>
+            ) : (
+              <p css={packagePriceStyle}>₦{plans[0].price.toLocaleString()}</p>
             )}
-            {'    '}
-            {planPrice && `₦${planPrice.toLocaleString()}`}
-          </p>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            {discountPrice ? (
+              <p css={packagePriceStyle}>
+                <span>{`₦${price.toLocaleString()}`}</span>
+                {'   '}₦{discountPrice.toLocaleString()}
+              </p>
+            ) : (
+              <p css={packagePriceStyle}>₦{price?.toLocaleString()}</p>
+            )}
+          </React.Fragment>
         )}
         <Link css={packageLinkStyle} to={`/package/${slugCode}`}>
           View Package
