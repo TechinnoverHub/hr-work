@@ -211,24 +211,32 @@ const PackageItem = ({
         </Link>
         {plans?.length > 0 ? (
           <React.Fragment>
-            {plans[0].discountPrice ? (
-              <p css={packagePriceStyle}>
-                <span>{`₦${plans[0].price.toLocaleString()}`}</span>
-                {'   '}₦{plans[0].discountPrice.toLocaleString()}
-              </p>
-            ) : (
-              <p css={packagePriceStyle}>₦{plans[0].price.toLocaleString()}</p>
+            {(plans[0].discountPrice || plans[0].price) && (
+              <React.Fragment>
+                {plans[0].discountPrice ? (
+                  <p css={packagePriceStyle}>
+                    <span>{`₦${plans[0].price.toLocaleString()}`}</span>
+                    {'   '}₦{plans[0].discountPrice.toLocaleString()}
+                  </p>
+                ) : (
+                  <p css={packagePriceStyle}>
+                    ₦{plans[0].price.toLocaleString()}
+                  </p>
+                )}
+              </React.Fragment>
             )}
           </React.Fragment>
         ) : (
           <React.Fragment>
-            {discountPrice ? (
+            {discountPrice && discountPrice > 0 ? (
               <p css={packagePriceStyle}>
                 <span>{`₦${price.toLocaleString()}`}</span>
                 {'   '}₦{discountPrice.toLocaleString()}
               </p>
             ) : (
-              <p css={packagePriceStyle}>₦{price?.toLocaleString()}</p>
+              <p css={packagePriceStyle}>
+                {price > 0 && `₦${price?.toLocaleString()}`}
+              </p>
             )}
           </React.Fragment>
         )}
