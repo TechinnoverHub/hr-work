@@ -57,6 +57,7 @@ function ExpressCheckout() {
   useEffect(() => {
     if (state && state.payload) {
       const { payload } = state;
+      console.log(payload);
       const priceNum = payload?.discountPrice || payload?.price || 0;
       const planCode = payload && payload.plan_code;
       setPaymentInfo(state => ({ ...state, amount: priceNum, planCode }));

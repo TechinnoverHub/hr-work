@@ -6,7 +6,7 @@ import Styles from './express.module.scss';
 
 const CartItem = ({ item }) => {
   // const dispatch = useCartDispatch();
-  const itemTotal = item && item.price;
+  const itemTotal = item && (item.discountPrice || item.price);
 
   if (!item) return null;
 

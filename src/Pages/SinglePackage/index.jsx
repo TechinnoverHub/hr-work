@@ -97,6 +97,7 @@ function SinglePackage() {
       ..._planData,
       plan_code: _planData.plan_code || _selectedPlan.plan_code,
       price: _planData.price || _selectedPlan.price,
+      discountPrice: _planData.discountPrice || _selectedPlan.discountPrice,
       planName: _selectedPlan.name || null,
       details: _selectedPlan.details || _planData.details,
       planId: _selectedPlan._id || null,
