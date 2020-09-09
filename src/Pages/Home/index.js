@@ -5,7 +5,7 @@ import Footer from 'Components/Footer';
 // import LatestBlog from 'Components/LatestBlog';
 import { useHistory } from 'react-router-dom';
 import { SIDE_IMAGE } from './imageLinks';
-import { getAllPackages } from 'Services/Package.service';
+import { getFeaturedPackages } from 'Services/Package.service';
 import PackageItem from 'Components/PackageItem';
 import Carousel from 'Components/Carouselv2';
 
@@ -18,7 +18,7 @@ function Home() {
   const getPackages = async () => {
     try {
       setPackagesLoading('FETCHING');
-      const { data: response } = await getAllPackages({ limit: 3 });
+      const { data: response } = await getFeaturedPackages({ limit: 3 });
       if (response.status === 'success') {
         setPackagesLoading('SUCCESS');
         setPackages(response.data.packages);
