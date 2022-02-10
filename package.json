@@ -17,7 +17,7 @@
     "jwt-decode": "^2.2.0",
     "marked": "^0.8.0",
     "no-scroll": "^2.1.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.12.0",
     "react-commentbox": "^3.0.1",
     "react-dom": "^16.12.0",
